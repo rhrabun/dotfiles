@@ -23,7 +23,6 @@ zinit light Aloxaf/fzf-tab
 
 # Oh-My-Zsh plugins
 zinit snippet OMZP::git
-zinit snippet OMZP::sudo
 zinit snippet OMZP::aliases
 zinit snippet OMZP::history
 zinit snippet OMZP::colored-man-pages
@@ -38,6 +37,8 @@ zinit snippet OMZP::terraform
 
 # Load completions
 autoload -Uz compinit && compinit
+
+zinit cdreplay -q
 
 # ZSH History configuration:
 HISTSIZE=10000
