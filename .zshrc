@@ -97,3 +97,5 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH:$GOPATH/bin
 
 # Aliases
 alias ls="ls --color"
+alias htop="htop --tree"
+alias activate="source .venv/bin/activate"
