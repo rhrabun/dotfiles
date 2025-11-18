@@ -71,6 +71,10 @@ zstyle ':completion:*' menu no # Disable default completion menu (use fzf instea
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' # Colors for zfz autocompletion
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath' # Preview of directory for fzf zoxide autocompletion
 
+# Autosuggest settings
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20"
+ZSH_AUTOSUGGEST_USE_ASYNC=1
+
 # Use fzf with zsh
 eval "$(fzf --zsh)"
 
