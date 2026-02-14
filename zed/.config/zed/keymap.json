@@ -9,9 +9,19 @@
   {
     "bindings": {
       "ctrl-e": "workspace::ToggleRightDock",
-      "ctrl-j": "workspace::ToggleBottomDock",
+      "alt-j": "workspace::ToggleBottomDock",
       "ctrl-o": "workspace::ToggleLeftDock",
       "ctrl-z": "workspace::ToggleCenteredLayout",
+    },
+  },
+  // Panes navigation
+  {
+    "context": "Dock || Terminal || Editor",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
     },
   },
   {
@@ -31,14 +41,10 @@
     "bindings": {
       "space p": "editor::Format",
       "space f": "file_finder::Toggle",
-      // Panes
+      // Panes splits
       "space r": "pane::SplitRight",
       "space v": "workspace::NewFileSplitVertical",
-      "space s": "workspace::NewFileSplitHorizontal",
-      "space h": "workspace::ActivatePaneLeft",
-      "space l": "workspace::ActivatePaneRight",
-      "space k": "workspace::ActivatePaneUp",
-      "space j": "workspace::ActivatePaneDown",
+      "space h": "workspace::NewFileSplitHorizontal",
       // harpoon-like navigation
       "space 1": ["pane::ActivateItem", 0],
       "space 2": ["pane::ActivateItem", 1],
@@ -124,15 +130,6 @@
     "context": "Terminal",
     "bindings": {
       "ctrl-/": "workspace::ToggleBottomDock",
-    },
-  },
-  {
-    "context": "Dock",
-    "bindings": {
-      "ctrl-h": "workspace::ActivatePaneLeft",
-      "ctrl-l": "workspace::ActivatePaneRight",
-      "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown",
     },
   },
   // Empty pane, set of keybindings that are available when there is no active editor
