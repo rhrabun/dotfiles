@@ -15,50 +15,22 @@ Clone repo into $HOME/.dotfiles
 Run these from inside `~/.dotfiles`
 
 ```bash
-# Dry-run all
-stow -n -v */
+# All
+stow */
 
-# Stow all
-stow -v */
-
-# Unstow all
-stow -D -v */
-
-# Dry run one
-stow -n -v package
-
-# Stow one
-stow -v  package
-
-# Unstow one
-stow -D -v package
+# Package
+stow package
 ```
+Dry-run: `-v -n`
+Unstow: `-D`
 
 ## System specific
 #### VSCode
 *Mac*
-```bash
-# Dry run
-stow -n -v vscode -t "$HOME/Library/Application Support/Code/User"
-
-# Stow
-stow vscode -t "$HOME/Library/Application Support/Code/User"
-
-# Unstow
-stow -D vscode -t "$HOME/Library/Application Support/Code/User"
-```
+`stow vscode -t "$HOME/Library/Application Support/Code/User"`
 
 *Linux*
-```bash
-# Dry run
-stow -n -v vscode -t "$HOME/.config/Code/User"
-
-# Stow
-stow vscode -t "$HOME/.config/Code/User"
-
-# Unstow
-stow -D vscode -t "$HOME/.config/Code/User"
-```
+`stow vscode -t "$HOME/.config/Code/User"`
 
 ### Note
 Since ansible is configured to use https to clone the public repo without setting up keys first, configure ssh remote by
