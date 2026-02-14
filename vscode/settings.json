@@ -1,0 +1,542 @@
+{
+    "telemetry.telemetryLevel": "off",
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "workbench.iconTheme": "material-icon-theme",
+    "gitlens.codeLens.enabled": false,
+    "todo-tree.tree.showScanModeButton": false,
+    "editor.fontFamily": "Fira Mono",
+    "editor.fontLigatures": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.editor.enablePreview": false,
+    "sync.gist": "26ad5e30fe46ecab6055403d0ea6747b",
+    "workbench.tree.renderIndentGuides": "always",
+    "oneDarkPro.italic": false,
+    "oneDarkPro.bold": false,
+    "material-icon-theme.folders.color": "#53565c",
+    "material-icon-theme.folders.theme": "specific",
+    "material-icon-theme.opacity": null,
+    "material-icon-theme.saturation": 1,
+    "material-icon-theme.hidesExplorerArrows": false,
+    "material-icon-theme.activeIconPack": "angular",
+    "yaml.customTags": [
+        "!Equals sequence",
+        "!FindInMap sequence",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!Join sequence",
+        "!Ref",
+        "!Select sequence",
+        "!Split sequence",
+        "!Sub"
+    ],
+    "files.insertFinalNewline": true,
+    "files.associations": {
+    "*Dockerfile*": "dockerfile",
+    "*.template": "yaml",
+    "*.vue": "html"
+    },
+    "markdown-preview-enhanced.liveUpdate": true,
+    "markdown-preview-enhanced.scrollSync": false,
+    "explorer.autoReveal": false,
+    "explorer.decorations.colors": false,
+    "[terraform]": {
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "hashicorp.terraform"
+    },
+    "explorer.compactFolders": false,
+    "explorer.confirmDelete": false,
+    "extensions.ignoreRecommendations": false,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "keep",
+        "gitlens.codeLens.scopes": [
+            "document"
+        ],
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "files.exclude": {
+        "**/__pycache__": true
+    },
+    "editor.fontSize": 15,
+    "editor.minimap.enabled": false,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "redhat.telemetry.enabled": false,
+    "explorer.confirmDragAndDrop": false,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "[go]": {
+        "editor.defaultFormatter": "golang.go",
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "window.customTitleBarVisibility": "auto",
+    "amazonQ.telemetry": false,
+    "files.autoSave": "afterDelay",
+    "workbench.sideBar.location": "right",
+    // VIM Config
+  "vim.showMarksInGutter": false,
+  "editor.lineNumbers": "relative",
+  "vim.useSystemClipboard": true,
+  "vim.foldfix": true,
+  "vim.surround": true,
+  "vim.easymotion": true,
+  "vim.useCtrlKeys": true,
+  "vim.easymotionKeys": "asdghklqwertyuiopzxcvbnmfj",
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+        { "before": ["leader", "w"], "commands": [":w!"] },
+        { "before": ["leader", "q"], "commands": [":q!"] },
+        { "before": ["leader", "w", "q"], "commands": [":wq!"] },
+        // Splits
+        { "before": ["leader", "v"], "commands": [":vsplit"] },
+        { "before": ["leader", "s"], "commands": [":split"] },
+
+    // FLASH.NVIM
+    {
+      // Flash
+      "before": ["s"],
+      "after": ["<leader>", "<leader>", "/"]
+    },
+    {
+      // Flash Treesitter
+      "before": ["S"],
+      "after": ["<leader>", "<leader>", "<leader>", "j"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    // GENERAL
+    // If there are problems with splits, these are old settings
+    //     // panes
+    //     {
+    //     "before": ["leader", "h"],
+    //     "commands": ["workbench.action.focusLeftGroup"]
+    //     },
+    //     {
+    //     "before": ["leader", "j"],
+    //     "commands": ["workbench.action.focusBelowGroup"]
+    //     },
+    //     {
+    //     "before": ["leader", "k"],
+    //     "commands": ["workbench.action.focusAboveGroup"]
+    //     },
+    //     {
+    //     "before": ["leader", "l"],
+    //     "commands": ["workbench.action.focusRightGroup"]
+    {
+      // Go to left split
+      "before": ["<C-h>"],
+      "after": ["<C-W>", "h"]
+    },
+    {
+      // Go to lower split 
+      "before": ["<C-j>"],
+      "after": ["<C-W>", "j"]
+    },
+    {
+      // Go to upper split
+      "before": ["<C-k>"],
+      "after": ["<C-W>", "k"]
+    },
+    {
+      // Go to right split
+      "before": ["<C-l>"],
+      "after": ["<C-W>", "l"]
+    },
+    {
+      // Prev buffer
+      "before": ["<S-h>"],
+      "commands": [":bprev"]
+    },
+    {
+      // Next buffer
+      "before": ["<S-l>"],
+      "commands": [":bnext"]
+    },
+    {
+      // Prev buffer
+      "before": ["[", "b"],
+      "commands": [":bprev"]
+    },
+    {
+      // Next buffer
+      "before": ["]", "b"],
+      "commands": [":bnext"]
+    },
+    {
+      "before": ["g", "w"],
+      "after": ["*"]
+    },
+    // {
+    //   // Next search result
+    //   "before": ["n"],
+    //   "commands": ["N/A - current VSCode behaviour"]
+    // },
+    // {
+    //   // Prev search result
+    //   "before": ["N"],
+    //   "commands": ["N/A - current VSCode behaviour"]
+    // },
+    // {
+    //   // Save file
+    //   "before": ["<C-s"],
+    //   "commands": ["N/A - current VSCode behaviour"]
+    // },
+    {
+      // Lazy
+      "before": ["<leader>", "l"],
+      "commands": ["workbench.view.extensions"]
+    },
+    {
+      // New File
+      "before": ["<leader>", "f", "n"],
+      "commands": ["workbench.action.files.newUntitledFile"]
+    },
+    {
+      // Lazygit (root dir)
+      "before": ["<leader>", "g", "g"],
+      "commands": ["workbench.view.scm"],
+      "when": "workbench.scm.active"
+    },
+    {
+      // Lazygit (cwd)
+      "before": ["<leader>", "g", "G"],
+      "commands": ["workbench.view.scm"],
+      "when": "workbench.scm.active"
+    },
+    {
+      // Quit all
+      "before": ["<leader>", "q", "q"],
+      "commands": ["workbench.action.quit"]
+    },
+    {
+      // Terminal (root dir)
+      "before": ["<leader>", "f", "t"],
+      "commands": ["workbench.action.createTerminalEditor"],
+      "when": "terminal.active"
+    },
+    {
+      // Terminal (cwd)
+      "before": ["<leader>", "f", "T"],
+      "commands": ["workbench.action.createTerminalEditor"],
+      "when": "terminal.active"
+    },
+    // LSP
+    {
+      // Line Diagnostics
+      "before": ["<leader>", "c", "d"],
+      "commands": ["editor.action.showHover"],
+      "when": "workbench.panel.output.active"
+    },
+    {
+      // LSP info
+      "before": ["<leader>", "c", "l"],
+      "commands": ["workbench.action.output.toggleOutput"]
+    },
+    {
+      // Goto Definition
+      "before": ["g", "d"],
+      "commands": ["editor.action.revealDefinition"]
+    },
+    {
+      // References
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
+    },
+    {
+      // Goto Declaration
+      "before": ["g", "D"],
+      "commands": ["editor.action.revealDeclaration"]
+    },
+    {
+      // Goto Implementation
+      "before": ["g", "I"],
+      "commands": ["editor.action.goToImplementation"]
+    },
+    {
+      // Goto T[y]pe Definition
+      "before": ["g", "y"],
+      "commands": ["editor.action.goToTypeDefinition"]
+    },
+    {
+      // Hover
+      "before": ["K"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      // Signature Help
+      "before": ["g", "K"],
+      "commands": ["editor.action.triggerParameterHints"],
+      "when": "editorHasSignatureHelpProvider && editorTextFocus"
+    },
+    {
+      // Signature Help
+      "before": ["<C-k>"],
+      "commands": ["editor.action.triggerParameterHints"],
+      "when": "editorHasSignatureHelpProvider && editorTextFocus"
+    },
+    {
+      // Next Diagnostic
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"],
+      "when": "editorFocus"
+    },
+    {
+      // Prev Diagnostic
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"],
+      "when": "editorFocus"
+    },
+    {
+      // Next Error
+      "before": ["]", "e"],
+      "commands": ["editor.action.marker.next"],
+      "when": "editorFocus"
+    },
+    {
+      // Prev Error
+      "before": ["[", "e"],
+      "commands": ["editor.action.marker.prev"],
+      "when": "editorFocus"
+    },
+    {
+      // Next Warning
+      "before": ["]", "w"],
+      "commands": ["editor.action.marker.next"],
+      "when": "editorFocus"
+    },
+    {
+      // Prev Warning
+      "before": ["[", "w"],
+      "commands": ["editor.action.marker.prev"],
+      "when": "editorFocus"
+    },
+    {
+      // Format Document
+      "before": ["<leader>", "c", "f"],
+      "commands": ["editor.action.formatDocument"],
+      "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+    },
+    {
+      // Code Action
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"],
+      "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+      // Source Action
+      "before": ["<leader>", "c", "A"],
+      "commands": ["editor.action.quickFix"],
+      "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+      // Rename
+      "before": ["<leader>", "c", "r"],
+      "commands": ["editor.action.rename"],
+      "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+
+    // BUFFERLINE.NVIM
+    {
+      // Toggle pin
+      // NOTE: Separate commands required due to VSCode limitations
+      // pin
+      "before": ["<leader>", "b", "p"],
+      "commands": ["workbench.action.pinEditor"],
+      "when": "!activeEditorIsPinned"
+    },
+    {
+      // Toggle pin
+      // NOTE: Separate commands required due to VSCode limitations
+      // unpin
+      "before": ["<leader>", "b", "u"],
+      "commands": ["workbench.action.unpinEditor"],
+      "when": "activeEditorIsPinned"
+    },
+    {
+      // Delete non-pinned buffers
+      "before": ["<leader>", "b", "P"],
+      "commands": ["workbench.action.closeAllEditors"]
+    },
+    // NEO-TREE.NVIM TODO - do I need that?
+    {
+      // Explorer NeoTree (root dir)
+      "before": ["<leader>", "fe"],
+      "commands": ["workbench.files.action.showActiveFileInExplorer"]
+    },
+    {
+      // Explorer NeoTree (cwd)
+      "before": ["<leader>", "fE"],
+      "commands": ["workbench.explorer.fileView.toggleVisibility"]
+    },
+    {
+      // Explorer NeoTree (root dir)
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.files.action.showActiveFileInExplorer"]
+    },
+    {
+      // Explorer NeoTree (cwd)
+      "before": ["<leader>", "E"],
+      "commands": ["workbench.explorer.fileView.toggleVisibility"]
+    },
+
+    // NOICE.NVIM
+    {
+      // Noice Last Message
+      "before": ["<leader>", "s", "n", "l"],
+      "commands": ["workbench.action.output.toggleOutput"],
+      "when": "workbench.panel.output.active"
+    },
+    {
+      // Noice History
+      "before": ["<leader>", "s", "n", "h"],
+      "commands": ["workbench.action.output.toggleOutput"],
+      "when": "workbench.panel.output.active"
+    },
+    {
+      // Noice All
+      "before": ["<leader>", "s", "n", "a"],
+      "commands": ["workbench.action.output.toggleOutput"],
+      "when": "workbench.panel.output.active"
+    },
+    // NVIM-SPECTRE
+    {
+      // Replace in files (Spectre)
+      "before": ["<leader>", "s", "r"],
+      "commands": ["editor.action.startFindReplaceAction"],
+      "when": "editorFocus || editorIsOpen"
+    },
+    // TELESCOPE.NVIM
+    {
+      // Grep (root dir)
+      "before": ["<leader>", "/"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      // Find Files (root dir)
+      "before": ["<leader>", "<space>"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      // Buffers
+      "before": ["<leader>", "f", "b"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      // Find Files (root dir)
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      // Find Files (cwd)
+      "before": ["<leader>", "f", "F"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      // Recent
+      "before": ["<leader>", "f", "r"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      // Recent (cwd)
+      "before": ["<leader>", "f", "R"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      // commits
+      "before": ["<leader>", "g", "c"],
+      "commands": ["workbench.view.scm"],
+      "when": "workbench.scm.active"
+    },
+    {
+      // status
+      "before": ["<leader>", "g", "s"],
+      "commands": ["workbench.view.scm"],
+      "when": "workbench.scm.active"
+    },
+    {
+      // Buffer
+      "before": ["<leader>", "s", "b"],
+      "commands": ["editor.action.startFindReplaceAction"],
+      "when": "editorFocus || editorIsOpen"
+    },
+    {
+      // Commands
+      "before": ["<leader>", "s", "C"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    {
+      // Document diagnostics
+      "before": ["<leader>", "s", "d"],
+      "commands": ["workbench.actions.view.problems"],
+      "when": "workbench.panel.markers.view.active"
+    },
+    {
+      // Workspace diagnostics
+      "before": ["<leader>", "s", "D"],
+      "commands": ["workbench.actions.view.problems"],
+      "when": "workbench.panel.markers.view.active"
+    },
+    {
+      // Grep (root dir)
+      "before": ["<leader>", "s", "g"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      // Grep (cwd)
+      "before": ["<leader>", "s", "G"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      // Help Pages
+      "before": ["<leader>", "s", "h"],
+      "commands": ["workbench.action.openDocumentationUrl"]
+    },
+    {
+      // Key Maps
+      "before": ["<leader>", "s", "k"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    {
+      // Colorscheme with preview
+      "before": ["<leader>", "u", "C"],
+      "commands": ["workbench.action.selectTheme"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<"],
+      "after": ["<", "g", "v"]
+    },
+    {
+      "before": [">"],
+      "after": [">", "g", "v"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["k", "j"],
+      "after": ["<Esc>"]
+    },
+  ]
+}
