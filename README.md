@@ -9,6 +9,9 @@ Branches can be used to define specific configuration for different machines. `m
 * stow
 
 ## CheatSheet
+Clone repo into $HOME/.dotfiles  
+`git clone https://github.com/rhrabun/dotfiles.git $HOME/.dotfiles`
+
 Run these from inside `~/.dotfiles`
 
 ```bash
@@ -29,7 +32,7 @@ stow -D -v package
 
 # Dry run one
 stow -n -v package
-
+```
 
 ### Note
 Since ansible is configured to use https to clone the public repo without setting up keys first, configure ssh remote by
