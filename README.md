@@ -34,7 +34,7 @@ stow -v  package
 stow -D -v package
 ```
 
-### System specific
+## System specific
 #### VSCode
 *Mac*
 ```bash
