@@ -8,13 +8,28 @@ Branches can be used to define specific configuration for different machines. `m
 * git
 * stow
 
-## How-To
-1. Clone repo into $HOME/.dotfiles  
-`git clone https://github.com/rhrabun/dotfiles.git $HOME/.dotfiles`
-2. Create links with  
-`stow . --dir $HOME/.dotfiles/ --target $HOME --verbose 2`
-3. To unlink  
-`stow -D . -d $HOME/.dotfiles/ -t $HOME --verbose 2`
+## CheatSheet
+Run these from inside `~/.dotfiles`
+
+```bash
+# Stow all
+stow -v */
+
+# Unstow all
+stow -D -v */
+
+# Dry-run all
+stow -n -v */
+
+# Stow one
+stow -v  package
+
+# Unstow one
+stow -D -v package
+
+# Dry run one
+stow -n -v package
+
 
 ### Note
 Since ansible is configured to use https to clone the public repo without setting up keys first, configure ssh remote by
