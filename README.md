@@ -21,15 +21,15 @@ stow */
 # Package
 stow package
 ```
-Dry-run: `-v -n`
+Dry-run: `-v -n`  
 Unstow: `-D`
 
 ## System specific
 #### VSCode
-*Mac*
+*Mac*  
 `stow vscode -t "$HOME/Library/Application Support/Code/User"`
 
-*Linux*
+*Linux*  
 `stow vscode -t "$HOME/.config/Code/User"`
 
 ### Note
