@@ -10,12 +10,12 @@
     ]
   },
   "Output": {
-      "prefix": "tfout",
-      "body": [
-        "output \"${1:name}\" {",
-        "\tdescription = $2",
-        "\tvalue = $3",
-        "}"
-      ]
-    }
+    "prefix": "tfout",
+    "body": [
+      "output \"${1:name}\" {",
+      "\tdescription = $2",
+      "\tvalue = $3",
+      "}"
+    ]
+  }
 }
