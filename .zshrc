@@ -1,12 +1,47 @@
-export GOPATH=$HOME/.go
-export PATH=$HOME/bin:/usr/local/bin:$PATH:$GOPATH/bin
+# Set zinit directory
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-# Path to  oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
+# Download Zinit if not exists
+if [ ! -d "$ZINIT_HOME" ]; then
+   mkdir -p "$(dirname $ZINIT_HOME)"
+   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+
+# Load zinit
+source "${ZINIT_HOME}/zinit.zsh"
+
+# Theme
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# ZSH plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
+
+# Oh-My-Zsh plugins
+zinit snippet OMZP::git
+zinit snippet OMZP::sudo
+zinit snippet OMZP::aliases
+zinit snippet OMZP::history
+zinit snippet OMZP::colored-man-pages
+zinit snippet OMZP::command-not-found
+zinit snippet OMZP::uv
+zinit snippet OMZP::aws
+zinit snippet OMZP::docker
+zinit snippet OMZP::golang
+zinit snippet OMZP::ansible
+zinit snippet OMZP::kubectl
+zinit snippet OMZP::terraform
+
+# Load completions
+autoload -Uz compinit && compinit
 
 # ZSH History configuration:
 HISTSIZE=10000
-SAVEHIST=10000
+SAVEHIST=$HISTSIZE
 HISTFILE=~/.cache/zsh/history
 HISTDUP=erase
 setopt appendhistory
@@ -16,50 +51,26 @@ setopt hist_ignore_dups
 setopt hist_ignore_all_dups
 setopt hist_find_no_dups
 
-# ZSH Theme
-#ZSH_THEME="fino"
-source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
+# Keybindings
+# Search cmd history with ctrl-p and ctrl-n
+bindkey '^p' history-search-backwards
+bindkey '^n' history-search-forward
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+# Completion tweaks
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # Case-insensitive autocompletion
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # Colors for autocompletion
+zstyle ':completion:*' menu no # Disable default completion menu (use fzf instead)
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' # Colors for zfz autocompletion
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath' # Preview of directory for fzf zoxide autocompletion
 
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
+# Use fzf with zsh
+eval "$(fzf --zsh)"
 
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  # system
-  aliases
-  history
-  colored-man-pages
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  # utils
-  git
-  terraform
-  helm
-  ansible
-  httpie
-  uv
-  docker
-  kubectl
-  aws
-  virtualenv
-  pip
-  golang
-)
+# Use zoxide instead of cd
+eval "$(zoxide init zsh --cmd cd)"
 
 # Create .zcompdump files in custom location instead of home
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
-
-source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -68,11 +79,9 @@ else
   export EDITOR='vi'
 fi
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Set Golang env variables
+export GOPATH=$HOME/.go
+export PATH=$HOME/bin:/usr/local/bin:$PATH:$GOPATH/bin
 
-# Use fzf with zsh
-eval "$(fzf --zsh)"
-
-# Use zoxide instead of cd
-eval "$(zoxide init zsh --cmd cd)"
+# Aliases
+alias ls="ls --color"
