@@ -40,7 +40,7 @@
 theme = Atom
 
 font-size = 14
-font-family="MonoLisa Variable"
+font-family="JetBrainsMono Nerd Font"
 font-thicken=true
 
 window-height=30
