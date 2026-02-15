@@ -42,6 +42,7 @@
   "relative_line_numbers": "enabled",
   "base_keymap": "VSCode",
   "ensure_final_newline_on_save": true,
+  "soft_wrap": "editor_width",
   "autosave": {
     "after_delay": {
       "milliseconds": 1000
