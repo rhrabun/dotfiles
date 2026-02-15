@@ -46,7 +46,8 @@
       "alt-h": "vim::Left",
       "alt-l": "vim::Right",
       "alt-j": "vim::Down",
-      "alt-k": "vim::Up"
+      "alt-k": "vim::Up",
+      "j k": "vim::NormalBefore"
     }
   },
   { // Fix the annoying issue of not being able to skip completion suggestion and go to newline without exiting insert mode 
