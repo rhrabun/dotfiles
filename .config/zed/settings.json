@@ -39,7 +39,7 @@
   "gutter": {
     "line_numbers": true
   },
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "base_keymap": "VSCode",
   "ensure_final_newline_on_save": true,
   "autosave": {
@@ -57,16 +57,8 @@
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "ui_font_size": 16,
   "buffer_font_size": 16.0,
-  "icon_theme": {
-    "mode": "dark",
-    "light": "Zed (Default)",
-    "dark": "Zed (Default)"
-  },
-  "theme": {
-    "mode": "dark",
-    "light": "One Light",
-    "dark": "One Dark - Darkened"
-  },
+  "icon_theme": "Zed (Default)",
+  "theme": "Ayu Mirage",
   "preview_tabs": {
     "enabled": false
   },
