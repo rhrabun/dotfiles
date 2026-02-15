@@ -82,19 +82,20 @@ plugins=(
   aliases
   history
   colored-man-pages
-  screen
   zsh-autosuggestions
   zsh-syntax-highlighting
   # utils
+  git
+  terraform
+  helm
+  ansible
   httpie
+  uv
   docker
   kubectl
-  helm
   aws
   virtualenv
-  pip  
-  npm
-  nvm
+  pip
   golang
 )
 
