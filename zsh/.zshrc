@@ -99,5 +99,3 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH:$GOPATH/bin
 alias ls="ls --color"
 alias zinitupgrade="zinit self-update && zinit update --all"
 alias macupgrade="brew update && brew upgrade && brew cu -af && brew autoremove && brew cleanup --prune=30 -s && brew doctor && mas update && mas upgrade"
-alias link_stow="stow . --dir $HOME/.dotfiles/ --target $HOME --verbose 2"
-alias unlink_stow="stow -D . -d $HOME/.dotfiles/ -t $HOME --verbose 2"
