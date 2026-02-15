@@ -10,6 +10,9 @@ filetype indent on
 " Turn syntax highlighting on
 syntax on
 
+" Use system clipboard
+set clipboard=unnamedplus
+
 " Relative numbers
 set number
 set relativenumber
