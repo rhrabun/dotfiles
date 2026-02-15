@@ -15,7 +15,9 @@
   },
   {
     "context": "Editor",
-    "bindings": {}
+    "bindings": {
+      "ctrl-g": "editor::ShowCompletions"
+    }
   },
   {
     "context": "Editor && vim_mode == normal",
