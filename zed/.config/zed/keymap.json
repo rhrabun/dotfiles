@@ -1,0 +1,264 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "bindings": {
+      "ctrl-e": "workspace::ToggleRightDock",
+      "alt-j": "workspace::ToggleBottomDock",
+      "ctrl-o": "workspace::ToggleLeftDock",
+      "ctrl-z": "workspace::ToggleCenteredLayout",
+    },
+  },
+  // Panes navigation
+  {
+    "context": "Dock || Terminal || Editor",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-g": "editor::ShowCompletions",
+    },
+  },
+  // {
+  //   "context": "right_dock != agents_panel",
+  //   "bindings": {
+  //     "alt-c": "agent::NewThread"
+  //   },
+  // },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space p": "editor::Format",
+      "space f": "file_finder::Toggle",
+      // Panes splits
+      "space r": "pane::SplitRight",
+      "space v": "workspace::NewFileSplitVertical",
+      "space h": "workspace::NewFileSplitHorizontal",
+      // harpoon-like navigation
+      "space 1": ["pane::ActivateItem", 0],
+      "space 2": ["pane::ActivateItem", 1],
+      "space 3": ["pane::ActivateItem", 2],
+      "space 4": ["pane::ActivateItem", 3],
+      "space 5": ["pane::ActivateItem", 4],
+      "space 6": ["pane::ActivateItem", 5],
+      "space 7": ["pane::ActivateItem", 6],
+      "space 8": ["pane::ActivateItem", 7],
+      "space 9": ["pane::ActivateItem", 8],
+      "space 0": "pane::ActivateLastItem",
+      "] b": "pane::ActivateNextItem",
+      "[ b": "pane::ActivatePreviousItem",
+      "space ,": "tab_switcher::Toggle",
+      // Nice to have
+      "space w": "workspace::SaveWithoutFormat",
+      "space q": "pane::CloseActiveItem",
+      "space w q": ["workspace::SendKeystrokes", "space w space q"],
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "alt-h": "vim::Left",
+      "alt-l": "vim::Right",
+      "alt-j": "vim::Down",
+      "alt-k": "vim::Up",
+      "j k": "vim::NormalBefore",
+    },
+  },
+  {
+    // Fix the annoying issue of not being able to skip completion suggestion and go to newline without exiting insert mode
+    "context": "Editor && showing_completions",
+    "bindings": {
+      "enter": "editor::Newline",
+      "escape": "editor::Cancel",
+    },
+  },
+  // Move lines
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "shift-j": "editor::MoveLineDown",
+      "shift-k": "editor::MoveLineUp",
+    },
+  },
+  {
+    "context": "Editor && !readonly",
+    "bindings": {
+      "alt-shift-j": "editor::MoveLineDown",
+      "alt-shift-k": "editor::MoveLineUp",
+    },
+  },
+  // File Tree
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "n": "project_panel::NewFile",
+      "r": "project_panel::Rename",
+      "x": "project_panel::Cut",
+      "c": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "d": "project_panel::Delete",
+      "shift-n": "project_panel::NewDirectory",
+    },
+  },
+  // Git panel
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "q": "git_panel::Close",
+    },
+  },
+  // 	// Agent panel
+  // 	{
+  // 	"context": "Workspace && right_dock == agents_panel",
+  // 	"bindings": {
+  // 		"alt-c": "agents::ToggleAgentsPanel",
+  // 		// "alt-c": "workspace::ToggleRightDock",
+  // 	}
+  // },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-/": "workspace::ToggleBottomDock",
+    },
+  },
+  // Empty pane, set of keybindings that are available when there is no active editor
+  {
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      // Open file finder
+      "space space": "file_finder::Toggle",
+      // New file
+      "space f n": "workspace::NewFile",
+      // Open recent project
+      "space f p": "projects::OpenRecent",
+      // Search in all the files
+      "space s g": "workspace::NewSearch",
+      // Quit zed
+      "space q q": "zed::Quit",
+    },
+  },
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      // Refactoring
+      "space c r ": "editor::Rename",
+      "space s r": "buffer_search::DeployReplace",
+      // Git
+      "space g g": "git_panel::ToggleFocus",
+      "space g h d": "editor::ExpandAllDiffHunks",
+      "space g h D": "git::Diff",
+      "space g h r": "git::Restore",
+      "space g h R": "git::RestoreFile",
+      // Toggle inlay hints
+      "space u i": "editor::ToggleInlayHints",
+      // Toggle soft wrap
+      "space u w": "editor::ToggleSoftWrap",
+      // Open markdown preview
+      "space m p": "markdown::OpenPreview",
+      "space m P": "markdown::OpenPreviewToTheSide",
+      // Open recent project
+      "space f p": "projects::OpenRecent",
+      // Search word under cursor in current pane
+      "space s w": "buffer_search::Deploy",
+      // Search word under cursor in all panes
+      "space s W": "pane::DeploySearch",
+      // Tab things. Almost as good as harpoon.
+      "space 1": ["pane::ActivateItem", 0],
+      "space 2": ["pane::ActivateItem", 1],
+      "space 3": ["pane::ActivateItem", 2],
+      "space 4": ["pane::ActivateItem", 3],
+      "space 5": ["pane::ActivateItem", 4],
+      "space 6": ["pane::ActivateItem", 5],
+      "space 7": ["pane::ActivateItem", 6],
+      "space 8": ["pane::ActivateItem", 7],
+      "space 9": ["pane::ActivateItem", 8],
+      "space 0": "pane::ActivateLastItem",
+      "] b": "pane::ActivateNextItem",
+      "[ b": "pane::ActivatePreviousItem",
+      "space ,": "tab_switcher::Toggle",
+      // Jump to the previous location
+      "space b b": "pane::AlternateFile",
+      // Close buffer
+      "space b d": "pane::CloseActiveItem",
+      // Close inactive buffers
+      "space b q": "pane::CloseOtherItems",
+      // New file
+      "space f n": "workspace::NewFile",
+      // Search in the current buffer
+      "space s b": "vim::Search",
+      // Search in all the files
+      "space s g": "workspace::NewSearch",
+      // Search
+      "space /": "workspace::NewSearch",
+      // Git
+      "space g b": "git::Blame",
+      // LSP & Code actions
+      "space c a": "editor::ToggleCodeActions",
+      "space s d": "diagnostics::Deploy",
+      "space s s": "outline::Toggle",
+      "g d": "editor::GoToDefinition",
+      "g r": "editor::FindAllReferences",
+      "g D": "editor::GoToDeclaration",
+      "g I": "editor::GoToImplementation",
+      "g y": "editor::GoToTypeDefinition",
+      "K": "editor::Hover",
+      "g K": "editor::ToggleInlayHints",
+      // Format
+      "space c f": "editor::Format",
+      // Telescope
+      "space f f": "file_finder::Toggle",
+      "space space": "file_finder::Toggle",
+      // Quit zed
+      "space q q": "zed::Quit",
+      // Jump to hunks
+      "] h": "editor::GoToHunk",
+      "[ h": "editor::GoToPreviousHunk",
+      "] c": "editor::GoToHunk",
+      "[ c": "editor::GoToPreviousHunk",
+      // Jump to diagnostic
+      "] d": "editor::GoToDiagnostic",
+      "[ d": "editor::GoToPreviousDiagnostic",
+      "] e": "editor::GoToDiagnostic",
+      "[ e": "editor::GoToPreviousDiagnostic",
+      // Excerpts
+      "] q": "editor::MoveToStartOfNextExcerpt",
+      "[ q": "editor::MoveToStartOfExcerpt",
+    },
+  },
+  // Center the cursor on the screen when scrolling
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "ctrl-d": ["workspace::SendKeystrokes", "ctrl-d z z"],
+      "ctrl-u": ["workspace::SendKeystrokes", "ctrl-u z z"],
+      "n": ["workspace::SendKeystrokes", "n z z z v"],
+    },
+  },
+  // Extras when deleting
+  {
+    "context": "vim_operator == d",
+    "bindings": {
+      "o": "editor::ExpandAllDiffHunks",
+      "r": "git::Restore",
+    },
+  },
+  // EasyMotion / Sneak
+  {
+    "context": "vim_mode == normal || vim_mode == visual",
+    "bindings": {
+      "s": "vim::PushSneak",
+      "S": "vim::PushSneakBackward",
+    },
+  },
+]
