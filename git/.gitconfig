@@ -1,6 +1,6 @@
 # This is Git's per-user configuration file.
 [core]
-	excludesfile = ./.gitignore_global
+	excludesfile = ~/.gitignore_global
 [push]
 	default = current
 [init]
