@@ -23,24 +23,18 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # ZSH plugins
-zinit light zsh-users/zsh-syntax-highlighting
+zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
+zinit light zsh-users/zsh-syntax-highlighting
 
 # Oh-My-Zsh plugins
+zinit snippet OMZP::aws
 zinit snippet OMZP::git
 zinit snippet OMZP::aliases
-zinit snippet OMZP::history
+zinit snippet OMZP::terraform
 zinit snippet OMZP::colored-man-pages
 zinit snippet OMZP::command-not-found
-zinit snippet OMZP::uv
-zinit snippet OMZP::aws
-zinit snippet OMZP::docker
-zinit snippet OMZP::golang
-zinit snippet OMZP::ansible
-zinit snippet OMZP::kubectl
-zinit snippet OMZP::terraform
 
 # Load completions
 autoload -Uz compinit && compinit
