@@ -3,7 +3,6 @@
 .PHONY: help all stow dry-run unstow
 .DEFAULT_GOAL := help
 
-STOW := stow
 STOW_FLAGS := -v --restow --target=$(HOME)
 
 UNAME_S    := $(shell uname -s)
@@ -52,7 +51,7 @@ unstow delete clean: ## Unstow all
 
 unstow-%: ## Unstow single package
 	@if [ "$*" = "vscode" ]; then \
-	    $(STOW) -v --target="$(VSCODE_TARGET)" -D $*; \
+	    stow -v --target="$(VSCODE_TARGET)" -D $*; \
 	else \
-	    $(STOW) -v --target=$(HOME) -D $*; \
+	    stow -v --target=$(HOME) -D $*; \
 	fi
