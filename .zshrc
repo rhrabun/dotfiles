@@ -100,4 +100,5 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH:$GOPATH/bin
 alias ls="ls --color"
 alias htop="htop --tree"
 alias activate="source .venv/bin/activate"
-alias bupgrade="brew update && brew upgrade && brew cu -af && brew autoremove && brew cleanup && brew doctor"
+alias zinitupgrade="zinit self-update && zinit update --all"
+alias brewupgrade="brew update && brew upgrade && brew cu -af && brew autoremove && brew cleanup && brew doctor"
