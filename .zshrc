@@ -64,6 +64,12 @@ setopt hist_find_no_dups
 bindkey '^p' history-search-backwards
 bindkey '^n' history-search-forward
 
+# Ctrl + X + E function
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
+
 # Completion tweaks
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # Case-insensitive autocompletion
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # Colors for autocompletion
