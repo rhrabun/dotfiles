@@ -89,5 +89,6 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init zsh --cmd cd)"
 
 # Aliases
+alias ls="ls --color"
 alias zinitupgrade="zinit self-update && zinit update --all"
 alias macupgrade="brew update && brew upgrade && brew cu -af && brew autoremove && brew cleanup --prune=30 -s && brew doctor && mas update && mas upgrade"
