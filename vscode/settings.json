@@ -11,8 +11,8 @@
   "amazonQ.telemetry": false,
   // Visual 
   "editor.fontSize": 15,
-  "editor.fontFamily": "JetBrainsMono Nerd Font",
-  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'Cascadia Code', 'Fira Code'",
+  "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font Mono', 'Cascadia Mono', 'Fira Mono'",
   "editor.fontLigatures": true,
   "window.customTitleBarVisibility": "auto",
   "workbench.colorTheme": "One Dark Pro Darker",
