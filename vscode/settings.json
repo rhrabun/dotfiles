@@ -1,96 +1,102 @@
+// LazyVim-like config with some custom tweaks
 {
-    "telemetry.telemetryLevel": "off",
-    "workbench.colorTheme": "One Dark Pro Darker",
-    "workbench.iconTheme": "material-icon-theme",
-    "gitlens.codeLens.enabled": false,
-    "todo-tree.tree.showScanModeButton": false,
-    "editor.fontFamily": "Fira Mono",
-    "editor.fontLigatures": false,
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.editor.enablePreview": false,
-    "sync.gist": "26ad5e30fe46ecab6055403d0ea6747b",
-    "workbench.tree.renderIndentGuides": "always",
-    "oneDarkPro.italic": false,
-    "oneDarkPro.bold": false,
-    "material-icon-theme.folders.color": "#53565c",
-    "material-icon-theme.folders.theme": "specific",
-    "material-icon-theme.opacity": null,
-    "material-icon-theme.saturation": 1,
-    "material-icon-theme.hidesExplorerArrows": false,
-    "material-icon-theme.activeIconPack": "angular",
-    "yaml.customTags": [
-        "!Equals sequence",
-        "!FindInMap sequence",
-        "!GetAtt",
-        "!GetAZs",
-        "!ImportValue",
-        "!Join sequence",
-        "!Ref",
-        "!Select sequence",
-        "!Split sequence",
-        "!Sub"
-    ],
-    "files.insertFinalNewline": true,
-    "files.associations": {
+  // VSCode
+  "update.mode": "default",
+  "extensions.autoCheckUpdates": true,
+  "extensions.autoUpdate": "onlyEnabledExtensions",
+  "telemetry.telemetryLevel": "off",
+  "security.workspace.trust.untrustedFiles": "open",
+  "redhat.telemetry.enabled": false,
+  "explorer.confirmDragAndDrop": false,
+  "amazonQ.telemetry": false,
+  // Visual 
+  "editor.fontSize": 15,
+  "editor.fontFamily": "Fira Mono",
+  "editor.fontLigatures": true,
+  "window.customTitleBarVisibility": "auto",
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.hidesExplorerArrows": true,
+  "oneDarkPro.italic": false,
+  "oneDarkPro.bold": false,
+  "editor.minimap.enabled": false,
+  "workbench.sideBar.location": "right",
+  "workbench.editor.enablePreview": false,
+  "explorer.autoReveal": false,
+  "files.autoSave": "afterDelay",
+  // Editor
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.tree.renderIndentGuides": "always",
+  "files.insertFinalNewline": true,
+  "explorer.decorations.colors": false,
+  "editor.accessibilitySupport": "off",
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  //AI
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false
+  },
+  "github.copilot.nextEditSuggestions.enabled": false,
+  //Extensions
+  "extensions.ignoreRecommendations": false,
+  "markdown-preview-enhanced.liveUpdate": true,
+  "markdown-preview-enhanced.scrollSync": false,
+  // Languages
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "editor.defaultFormatter": "vscode.json-language-features",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go",
+  },
+  "files.associations": {
     "*Dockerfile*": "dockerfile",
     "*.template": "yaml",
     "*.vue": "html"
+  },
+  "[terraform]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "hashicorp.terraform"
+  },
+  "[yaml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "keep",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
     },
-    "markdown-preview-enhanced.liveUpdate": true,
-    "markdown-preview-enhanced.scrollSync": false,
-    "explorer.autoReveal": false,
-    "explorer.decorations.colors": false,
-    "[terraform]": {
-        "editor.tabSize": 2,
-        "editor.defaultFormatter": "hashicorp.terraform"
-    },
-    "explorer.compactFolders": false,
-    "explorer.confirmDelete": false,
-    "extensions.ignoreRecommendations": false,
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
-    },
-    "[yaml]": {
-        "editor.insertSpaces": true,
-        "editor.tabSize": 2,
-        "editor.autoIndent": "keep",
-        "gitlens.codeLens.scopes": [
-            "document"
-        ],
-        "editor.quickSuggestions": {
-            "other": true,
-            "comments": false,
-            "strings": true
-        },
-        "editor.defaultFormatter": "redhat.vscode-yaml"
-    },
-    "files.exclude": {
-        "**/__pycache__": true
-    },
-    "editor.fontSize": 15,
-    "editor.minimap.enabled": false,
-    "notebook.cellToolbarLocation": {
-        "default": "right",
-        "jupyter-notebook": "left"
-    },
-    "security.workspace.trust.untrustedFiles": "open",
-    "redhat.telemetry.enabled": false,
-    "explorer.confirmDragAndDrop": false,
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "editor.defaultFormatter": "vscode.json-language-features",
-    "[go]": {
-        "editor.defaultFormatter": "golang.go",
-    },
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter"
-    },
-    "window.customTitleBarVisibility": "auto",
-    "amazonQ.telemetry": false,
-    "files.autoSave": "afterDelay",
-    "workbench.sideBar.location": "right",
-    // VIM Config
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "files.exclude": {
+    "**/__pycache__": true
+  },
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "yaml.customTags": [
+    "!Equals sequence",
+    "!FindInMap sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!Join sequence",
+    "!Ref",
+    "!Select sequence",
+    "!Split sequence",
+    "!Sub"
+  ],
+  // VIM Config
   "vim.showMarksInGutter": false,
   "editor.lineNumbers": "relative",
   "vim.useSystemClipboard": true,
@@ -100,14 +106,33 @@
   "vim.useCtrlKeys": true,
   "vim.easymotionKeys": "asdghklqwertyuiopzxcvbnmfj",
   "vim.leader": "<space>",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["k", "j"],
+      "after": ["<Esc>"]
+    },
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<"],
+      "after": ["<", "g", "v"]
+    },
+    {
+      "before": [">"],
+      "after": [">", "g", "v"]
+    }
+  ],
   "vim.normalModeKeyBindingsNonRecursive": [
-        { "before": ["leader", "w"], "commands": [":w!"] },
-        { "before": ["leader", "q"], "commands": [":q!"] },
-        { "before": ["leader", "w", "q"], "commands": [":wq!"] },
-        // Splits
-        { "before": ["leader", "v"], "commands": [":vsplit"] },
-        { "before": ["leader", "s"], "commands": [":split"] },
-
+    { "before": ["leader", "w"], "commands": [":w!"] },
+    { "before": ["leader", "q"], "commands": [":q!"] },
+    { "before": ["leader", "w", "q"], "commands": [":wq!"] },
+    // Splits
+    { "before": ["leader", "v"], "commands": [":vsplit"] },
+    { "before": ["leader", "s"], "commands": [":split"] },
     // FLASH.NVIM
     {
       // Flash
@@ -351,7 +376,6 @@
       "commands": ["editor.action.rename"],
       "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
     },
-
     // BUFFERLINE.NVIM
     {
       // Toggle pin
@@ -395,7 +419,6 @@
       "before": ["<leader>", "E"],
       "commands": ["workbench.explorer.fileView.toggleVisibility"]
     },
-
     // NOICE.NVIM
     {
       // Noice Last Message
@@ -519,24 +542,4 @@
       "commands": ["workbench.action.selectTheme"]
     }
   ],
-  "vim.visualModeKeyBindings": [
-    {
-      "before": ["<"],
-      "after": ["<", "g", "v"]
-    },
-    {
-      "before": [">"],
-      "after": [">", "g", "v"]
-    }
-  ],
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["j", "k"],
-      "after": ["<Esc>"]
-    },
-    {
-      "before": ["k", "j"],
-      "after": ["<Esc>"]
-    },
-  ]
 }
