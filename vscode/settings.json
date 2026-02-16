@@ -32,6 +32,7 @@
   "editor.accessibilitySupport": "off",
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
   //AI
   "github.copilot.enable": {
     "*": false,
@@ -49,7 +50,7 @@
   },
   "editor.defaultFormatter": "vscode.json-language-features",
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter"
+    "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "[go]": {
     "editor.defaultFormatter": "golang.go",
