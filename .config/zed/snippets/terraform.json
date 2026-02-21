@@ -1,0 +1,21 @@
+{
+  "Variable": {
+    "prefix": "tfvar",
+    "body": [
+      "variable \"${1:name}\" {",
+      "\ttype = $2",
+      "\tdescription = $3",
+      "\tdefault = $4",
+      "}"
+    ]
+  },
+  "Output": {
+      "prefix": "tfout",
+      "body": [
+        "output \"${1:name}\" {",
+        "\tdescription = $2",
+        "\tvalue = $3",
+        "}"
+      ]
+    }
+}
