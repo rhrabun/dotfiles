@@ -1,0 +1,80 @@
+// Place your key bindings in this file to override the defaults
+[
+    // FILE TREE
+  {
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "ctrl+e"
+  },
+  {
+    "command": "workbench.files.action.focusFilesExplorer",
+    "key": "ctrl+e",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "n",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "command": "renameFile",
+    "key": "r",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+n",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "command": "deleteFile",
+    "key": "d",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  // TERMINAL
+  {
+    "key": "alt+j",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "alt+n",
+    "command": "workbench.action.terminal.new"
+  },
+  {
+    "key": "alt+b",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "alt+a",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  // COPILOT
+  {
+    "key": "alt+c",
+    "command": "workbench.panel.chat.view.copilot.focus",
+    "when": "!view.workbench.panel.chat.view.copilot.visible || editorFocus || terminalFocus"
+  },
+  {
+    "key": "alt+c",
+    "command": "workbench.action.togglePanel",
+    "when": "view.workbench.panel.chat.view.copilot.visible && !editorFocus"
+  },
+  // EXTRA
+  {
+    "key": "ctrl+z",
+    "command": "workbench.action.toggleZenMode"
+  },
+  {
+    // Move line down
+    "key": "alt+shift+j",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    // Move line up
+    "key": "alt+shift+k",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  }
+]

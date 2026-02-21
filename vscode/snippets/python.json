@@ -1,0 +1,7 @@
+{
+	"If main": {
+		"prefix": ["ifmain"],
+		"body": ["if __name__ == \"__main__\":", "\t${1:main()}"],
+		"description": "Custom snippet for ifmain command"
+	  }
+}
