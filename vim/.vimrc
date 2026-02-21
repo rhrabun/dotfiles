@@ -11,7 +11,7 @@ filetype indent on
 syntax on
 
 " Use system clipboard
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " Relative numbers
 set number
