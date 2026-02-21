@@ -49,6 +49,13 @@
       "alt-k": "vim::Up"
     }
   },
+  { // Fix the annoying issue of not being able to skip completion suggestion and go to newline without exiting insert mode 
+    "context": "Editor && showing_completions",
+    "bindings": {
+      "enter": "editor::Newline",
+      "escape": "editor::Cancel"
+    }
+  },
   {
     "context": "Editor && vim_mode == visual",
     "bindings": {
