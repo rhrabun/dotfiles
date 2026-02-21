@@ -255,10 +255,17 @@
   },
   // EasyMotion / Sneak
   {
-    "context": "vim_mode == normal || vim_mode == visual",
+    "context": "vim_mode == normal",
     "bindings": {
       "s": "vim::PushSneak",
       "S": "vim::PushSneakBackward",
     },
   },
+  // Surround
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-s": "vim::PushAddSurrounds"
+    }
+  }
 ]
