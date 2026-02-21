@@ -1,1 +1,62 @@
+# macOS
 .DS_Store
+
+# VS Code
+.vscode/*
+
+# Vim / Neovim
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+ENV/
+build/
+dist/
+*.egg-info/
+.eggs/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Go
+bin/
+pkg/
+*.test
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+
+# Logs
+*.log
+*.pid
+*.out
+*.err
+
+# Environment / secrets
+.env
+.env.*
+*.pem
+*.key
+*.crt
+
+# Archives
+*.zip
+*.tar
+*.gz
+*.tgz
+
+# Misc
+tmp/
+temp/
+.cache/
