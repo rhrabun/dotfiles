@@ -15,7 +15,11 @@
   "project_panel": {
     "dock": "right",
     "auto_reveal_entries": false,
-    "auto_fold_dirs": false
+    "auto_fold_dirs": false,
+    "git_status": true,
+    "indent_guides": {
+      "show":"always"
+    }
   },
   "git_panel": {
     "dock": "right"
@@ -31,6 +35,7 @@
   },
   // Editor
   "vim_mode": true,
+  "auto_signature_help": false,
   "gutter": {
     "line_numbers": true
   },
