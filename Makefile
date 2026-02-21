@@ -7,17 +7,25 @@ STOW_FLAGS := -v --restow --target=$(HOME)
 
 UNAME_S    := $(shell uname -s)
 
-# OS-specific targets
+PACKAGES := $(wildcard */)
+PACKAGES := $(filter-out vscode/,$(PACKAGES))
+
+# OS-specific packages
+LINUX_PACKAGES=hyprland/
+MACOS_PACKAGES=aerospace/
+
+# OS-specific package lists and targets
 ifeq ($(UNAME_S),Darwin)
-    VSCODE_TARGET := $(HOME)/Library/Application Support/Code/User
+	PACKAGES := $(filter-out $(LINUX_PACKAGES),$(PACKAGES))
+	
+	VSCODE_TARGET := $(HOME)/Library/Application Support/Code/User
 else ifeq ($(UNAME_S),Linux)
-    VSCODE_TARGET := $(HOME)/.config/Code/User
+	PACKAGES := $(filter-out $(MACOS_PACKAGES),$(PACKAGES))
+	
+	VSCODE_TARGET := $(HOME)/.config/Code/User
 else
     $(error Unsupported OS: $(UNAME_S))
 endif
-
-PACKAGES := $(wildcard */)
-PACKAGES := $(filter-out vscode/,$(PACKAGES))
 
 help:
 	@echo "Commands:"
