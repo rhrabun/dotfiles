@@ -1,4 +1,7 @@
 # This is Git's per-user configuration file.
+[user]
+    name = Raman Hrabun
+    email = 62804309+rhrabun@users.noreply.github.com
 [core]
 	excludesfile = ~/.gitignore_global
 [push]
