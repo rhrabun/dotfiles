@@ -18,7 +18,7 @@
     "auto_fold_dirs": false,
     "git_status": true,
     "indent_guides": {
-      "show":"always"
+      "show": "always"
     }
   },
   "git_panel": {
@@ -80,5 +80,28 @@
     "enabled": true,
     "coloring": "indent_aware"
   },
-  "show_wrap_guides": true
+  "show_wrap_guides": true,
+  // FILE DETECTION RULES
+  "file_types": {
+    "Ansible": [
+      "**.ansible.yml",
+      "**.ansible.yaml",
+      "**/defaults/*.yml",
+      "**/defaults/*.yaml",
+      "**/meta/*.yml",
+      "**/meta/*.yaml",
+      "**/tasks/*.yml",
+      "**/tasks/*.yaml",
+      "**/handlers/*.yml",
+      "**/handlers/*.yaml",
+      "**/group_vars/*.yml",
+      "**/group_vars/*.yaml",
+      "**/host_vars/*.yml",
+      "**/host_vars/*.yaml",
+      "**/playbooks/*.yml",
+      "**/playbooks/*.yaml",
+      "**playbook*.yml",
+      "**playbook*.yaml"
+    ]
+  }
 }
