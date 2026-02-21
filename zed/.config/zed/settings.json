@@ -57,8 +57,16 @@
   },
   // Appearance
   "buffer_font_family": "JetBrainsMono Nerd Font",
-  "ui_font_size": 16,
   "buffer_font_size": 16.0,
+  "buffer_font_features": {
+    "calt": true,
+    "liga": true
+  },
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "ui_font_size": 15,
+  "terminal": {
+    "font_family": "JetBrainsMonoNL Nerd Font Mono"
+  },
   "icon_theme": "Material Icon Theme",
   "theme": "One Dark Pro",
   "preview_tabs": {
