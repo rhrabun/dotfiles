@@ -8,31 +8,10 @@ Branches can be used to define specific configuration for different machines. `m
 * git
 * stow
 
-## CheatSheet
-Clone repo into $HOME/.dotfiles  
-`git clone https://github.com/rhrabun/dotfiles.git $HOME/.dotfiles`
+## How-To
+I have a strange love for creating Makefiles, so you can use [this](./Makefile) to run Stow or to see commands
 
-Run these from inside `~/.dotfiles`
-
-```bash
-# All
-stow */
-
-# Package
-stow package
-```
-Dry-run: `-v -n`  
-Unstow: `-D`
-
-## System specific
-#### VSCode
-*Mac*  
-`stow vscode -t "$HOME/Library/Application Support/Code/User"`
-
-*Linux*  
-`stow vscode -t "$HOME/.config/Code/User"`
-
-### Note
-Since ansible is configured to use https to clone the public repo without setting up keys first, configure ssh remote by
+## Note for myself
+Since ansible is configured to use https to clone the public repo, to use ssh you need to configre `remote` accordingly
 1. `git remote add origin git@github.com:rhrabun/dotfiles.git`
 2. `git push -u origin main`
