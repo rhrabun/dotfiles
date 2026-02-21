@@ -9,8 +9,8 @@
   {
     "bindings": {
       "ctrl-e": "workspace::ToggleRightDock",
-      "alt-j": "workspace::ToggleBottomDock",
-      "ctrl-o": "workspace::ToggleLeftDock",
+      "ctrl-alt-j": "workspace::ToggleBottomDock",
+      "ctrl-alt-l": "workspace::ToggleLeftDock",
       "ctrl-z": "workspace::ToggleCenteredLayout",
     },
   },

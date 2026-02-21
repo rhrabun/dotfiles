@@ -32,31 +32,31 @@
   },
   // TERMINAL
   {
-    "key": "alt+j",
+    "key": "ctrl+alt+j",
     "command": "workbench.action.terminal.toggleTerminal"
   },
   {
-    "key": "alt+n",
+    "key": "ctrl+alt+n",
     "command": "workbench.action.terminal.new"
   },
   {
-    "key": "alt+b",
+    "key": "ctrl+alt+p",
     "command": "workbench.action.terminal.focusPrevious",
     "when": "terminalFocus"
   },
   {
-    "key": "alt+a",
+    "key": "ctrl+alt+o",
     "command": "workbench.action.terminal.focusNext",
     "when": "terminalFocus"
   },
   // COPILOT
   {
-    "key": "alt+c",
+    "key": "ctrl+alt+h",
     "command": "workbench.panel.chat.view.copilot.focus",
     "when": "!view.workbench.panel.chat.view.copilot.visible || editorFocus || terminalFocus"
   },
   {
-    "key": "alt+c",
+    "key": "ctrl+alt+h",
     "command": "workbench.action.togglePanel",
     "when": "view.workbench.panel.chat.view.copilot.visible && !editorFocus"
   },
