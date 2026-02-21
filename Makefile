@@ -27,11 +27,10 @@ else
     $(error Unsupported OS: $(UNAME_S))
 endif
 
-help:
-	@echo "Commands:"
-	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
-
-all stow install: ## Stow all
+help: ## Show commands
+	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m\033[0m\n"} /^[$$()% a-zA-Z_-]+:.*?##/ { printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
+	
+all stow: ## Stow all
 	stow $(STOW_FLAGS) $(PACKAGES)
 	stow -v --restow --target="$(VSCODE_TARGET)" vscode
 
@@ -53,7 +52,7 @@ dry-stow-%: ## Dry-run single package
 		stow -n $(STOW_FLAGS) $*; \
 	fi
 
-unstow delete clean: ## Unstow all
+unstow delete: ## Unstow all
 	stow -v --target=$(HOME) -D $(PACKAGES)
 	stow -v --target="$(VSCODE_TARGET)" -D vscode
 
