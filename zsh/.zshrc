@@ -5,6 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Prevent execution in non-interactive shells
+[[ -o interactive ]] || return
+
 # Set zinit directory
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -36,9 +39,13 @@ zinit snippet OMZP::colored-man-pages
 zinit snippet OMZP::command-not-found
 
 # Load completions
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+compinit
 
 zinit cdreplay -q
+
+# Create .zcompdump files in custom location instead of home
+export ZSH_COMPDUMP="$HOME/.cache/zsh/.zcompdump-$HOST"
 
 # ZSH History configuration:
 HISTSIZE=10000
@@ -81,21 +88,6 @@ eval "$(fzf --zsh)"
 # Use zoxide instead of cd
 eval "$(zoxide init zsh --cmd cd)"
 
-# Create .zcompdump files in custom location instead of home
-export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vi'
-else
-  export EDITOR='vi'
-fi
-
-# Set Golang env variables
-export GOPATH=$HOME/.go
-export PATH=$HOME/bin:/usr/local/bin:$PATH:$GOPATH/bin
-
 # Aliases
-alias ls="ls --color"
 alias zinitupgrade="zinit self-update && zinit update --all"
 alias macupgrade="brew update && brew upgrade && brew cu -af && brew autoremove && brew cleanup --prune=30 -s && brew doctor && mas update && mas upgrade"
