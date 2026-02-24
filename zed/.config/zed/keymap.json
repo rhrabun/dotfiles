@@ -8,11 +8,45 @@
 [
   {
     "bindings": {
-      "ctrl-e": "workspace::ToggleRightDock",
-      "ctrl-alt-j": "workspace::ToggleBottomDock",
-      "ctrl-alt-l": "workspace::ToggleLeftDock",
+      "ctrl-e": "project_panel::ToggleFocus",
+      "ctrl-alt-j": "terminal_panel::Toggle",
+      "ctrl-alt-l": "git_panel::ToggleFocus",
       "ctrl-z": "workspace::ToggleCenteredLayout",
     },
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "ctrl-e": "workspace::ToggleRightDock",
+    },
+  },
+  {
+      "context": "GitPanel",
+      "bindings": {
+        "ctrl-alt-l": "workspace::ToggleLeftDock",
+      },
+    },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-alt-j": "workspace::ToggleBottomDock",
+    }
+  },
+  // Next two are the most annoying blocks I had to deal with
+  // This opens agent panel if not opened or focused
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-alt-h": "agent::ToggleFocus"
+    }
+  },
+  // This tells that when there are both Editor and AgentPanel context, latter wins
+  // Otherwise, Editor had higher precedence and default keybinding that got in a way
+  {
+    "context": "AgentPanel > Editor",
+    "bindings": {
+      "ctrl-alt-h": "workspace::ToggleBottomDock"
+    }
   },
   // Panes navigation
   {
@@ -30,12 +64,6 @@
       "ctrl-g": "editor::ShowCompletions",
     },
   },
-  // {
-  //   "context": "right_dock != agents_panel",
-  //   "bindings": {
-  //     "alt-c": "agent::NewThread"
-  //   },
-  // },
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
@@ -118,14 +146,6 @@
       "q": "git_panel::Close",
     },
   },
-  // 	// Agent panel
-  // 	{
-  // 	"context": "Workspace && right_dock == agents_panel",
-  // 	"bindings": {
-  // 		"alt-c": "agents::ToggleAgentsPanel",
-  // 		// "alt-c": "workspace::ToggleRightDock",
-  // 	}
-  // },
   {
     "context": "Terminal",
     "bindings": {
