@@ -1,5 +1,24 @@
 // Place your key bindings in this file to override the defaults
 [
+  // Go to the new line instead of accepting suggestions 
+  {
+    "key": "enter",
+    "command": "type",
+    "args": { "text": "\n" },
+    "when": "editorTextFocus && (suggestWidgetVisible || github.copilot.inlineSuggestionVisible)"
+  },
+  // Accept suggestions with Tab
+  {
+    "key": "tab",
+    "command": "acceptSelectedSuggestion",
+    "when": "editorTextFocus && (suggestWidgetVisible || github.copilot.inlineSuggestionVisible)"
+  },
+  // Close suggestions without exiting Vim insert mode
+  {
+    "key": "escape",
+    "command": "hideSuggestWidget",
+    "when": "editorTextFocus && (suggestWidgetVisible || github.copilot.inlineSuggestionVisible)"
+  },
     // FILE TREE
   {
     "command": "workbench.action.toggleSidebarVisibility",
