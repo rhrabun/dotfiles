@@ -38,7 +38,8 @@
   "github.copilot.enable": {
     "*": false,
     "plaintext": false,
-    "markdown": false
+    "markdown": false,
+    "scminput": false
   },
   "github.copilot.nextEditSuggestions.enabled": false,
   //Extensions

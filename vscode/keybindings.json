@@ -79,6 +79,10 @@
     "command": "workbench.action.togglePanel",
     "when": "view.workbench.panel.chat.view.copilot.visible && !editorFocus"
   },
+  {
+    "key": "ctrl+alt+c",
+    "command": "github.copilot.completions.toggle"
+  },
   // EXTRA
   {
     "key": "ctrl+z",

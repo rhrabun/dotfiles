@@ -12,6 +12,7 @@
       "ctrl-alt-j": "terminal_panel::Toggle",
       "ctrl-alt-l": "git_panel::ToggleFocus",
       "ctrl-z": "workspace::ToggleCenteredLayout",
+      "ctrl-alt-c": "editor::ToggleEditPrediction"
     },
   },
   {
