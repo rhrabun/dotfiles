@@ -80,7 +80,7 @@
     "when": "view.workbench.panel.chat.view.copilot.visible && !editorFocus"
   },
   {
-    "key": "ctrl+alt+c",
+    "key": "ctrl+alt+y",
     "command": "github.copilot.completions.toggle"
   },
   // EXTRA
