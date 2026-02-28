@@ -10,9 +10,9 @@
   "explorer.confirmDragAndDrop": false,
   "amazonQ.telemetry": false,
   // Visual 
-  "editor.fontSize": 15,
-  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'Cascadia Code', 'Fira Code'",
-  "terminal.integrated.fontFamily": "'JetBrainsMonoNL Nerd Font Mono', 'Cascadia Mono', 'Fira Mono'",
+  "editor.fontSize": 16,
+  "editor.fontFamily": "'FiraCode Nerd Font', 'Cascadia Code', 'Fira Code'",
+  "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono', 'Cascadia Mono', 'Fira Mono'",
   "editor.fontLigatures": true,
   "window.customTitleBarVisibility": "auto",
   "workbench.colorTheme": "One Dark Pro Darker",
@@ -36,7 +36,7 @@
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   //AI
   "github.copilot.enable": {
-    "*": false,
+    "*": true,
     "plaintext": false,
     "markdown": false,
     "scminput": false
@@ -150,6 +150,14 @@
   ],
   "vim.normalModeKeyBindings": [
     // GENERAL
+    {
+      "before": ["<leader>", "f", "s"],
+      "commands": ["workbench.action.openSettingsJson"]
+    },
+    {
+      "before": ["<leader>", "f", "k"],
+      "commands": ["workbench.action.openGlobalKeybindingsFile"]
+    },
     // If there are problems with splits, these are old settings
     //     // panes
     //     {

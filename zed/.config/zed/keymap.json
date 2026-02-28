@@ -12,7 +12,9 @@
       "ctrl-alt-j": "terminal_panel::Toggle",
       "ctrl-alt-l": "git_panel::ToggleFocus",
       "ctrl-z": "workspace::ToggleCenteredLayout",
-      "ctrl-alt-y": "editor::ToggleEditPrediction"
+      "ctrl-alt-y": "editor::ToggleEditPrediction",
+      "space f s": "zed::OpenSettingsFile",
+      "space f k": "zed::OpenKeymapFile"
     },
   },
   {
