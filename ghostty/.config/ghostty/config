@@ -1,4 +1,4 @@
-# This is the configuration file for Ghostty.
+
 #
 # The template does not set any default options, since Ghostty ships
 # with sensible defaults for all options. Users should only need to set
@@ -12,8 +12,8 @@
 
 theme = Atom
 
-font-size = 14
-font-family="JetBrainsMono Nerd Font"
+font-size = 15
+font-family="FiraCode Nerd Font Mono"
 font-thicken=true
 
 window-height=30
