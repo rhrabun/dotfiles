@@ -23,5 +23,3 @@ background-opacity = 0.96
 confirm-close-surface=false
 
 # Keybinds
-keybind = super+h=new_split:right
-keybind = super+v=new_split:down
