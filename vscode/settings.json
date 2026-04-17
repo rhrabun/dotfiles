@@ -12,8 +12,13 @@
   // Visual 
   "editor.fontSize": 16,
   "editor.fontFamily": "'FiraCode Nerd Font', 'Cascadia Code', 'Fira Code'",
-  "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono', 'Cascadia Mono', 'Fira Mono'",
   "editor.fontLigatures": true,
+  "chat.fontSize": 15,
+  "chat.fontFamily": "'FiraCode Nerd Font', 'Cascadia Code', 'Fira Code'",
+  "chat.editor.fontSize": 15,
+  "chat.editor.fontFamily": "'FiraCode Nerd Font Mono', 'Cascadia Mono', 'Fira Mono'",
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono', 'Cascadia Mono', 'Fira Mono'",
   "window.customTitleBarVisibility": "auto",
   "workbench.colorTheme": "One Dark Pro Darker",
   "workbench.iconTheme": "material-icon-theme",
@@ -34,7 +39,7 @@
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
-  //AI
+  // AI
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
@@ -42,17 +47,18 @@
     "scminput": false
   },
   "github.copilot.nextEditSuggestions.enabled": false,
-  //Extensions
+  // Extensions
   "extensions.ignoreRecommendations": false,
   "markdown-preview-enhanced.liveUpdate": true,
   "markdown-preview-enhanced.scrollSync": false,
   // Languages
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
   "editor.defaultFormatter": "vscode.json-language-features",
+  "python.createEnvironment.trigger": "off",
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[go]": {
     "editor.defaultFormatter": "golang.go",
@@ -158,23 +164,6 @@
       "before": ["<leader>", "f", "k"],
       "commands": ["workbench.action.openGlobalKeybindingsFile"]
     },
-    // If there are problems with splits, these are old settings
-    //     // panes
-    //     {
-    //     "before": ["leader", "h"],
-    //     "commands": ["workbench.action.focusLeftGroup"]
-    //     },
-    //     {
-    //     "before": ["leader", "j"],
-    //     "commands": ["workbench.action.focusBelowGroup"]
-    //     },
-    //     {
-    //     "before": ["leader", "k"],
-    //     "commands": ["workbench.action.focusAboveGroup"]
-    //     },
-    //     {
-    //     "before": ["leader", "l"],
-    //     "commands": ["workbench.action.focusRightGroup"]
     {
       // Go to left split
       "before": ["<C-h>"],

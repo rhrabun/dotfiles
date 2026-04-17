@@ -68,6 +68,11 @@
     "command": "workbench.action.terminal.focusNext",
     "when": "terminalFocus"
   },
+  {
+    "key": "ctrl+alt+r",
+    "command": "workbench.action.terminal.rename",
+    "when": "terminalFocus"
+  },
   // COPILOT
   {
     "key": "ctrl+alt+h",
@@ -85,10 +90,15 @@
   },
   // EXTRA
   {
-      "key": "ctrl+alt+m",
-      // "command": "workbench.action.toggleEditorWidths",
-      "command": "workbench.action.toggleMaximizeEditorGroup",
-      "when": "editorTextFocus"
+    "key": "ctrl+w",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+m",
+    // "command": "workbench.action.toggleMaximizeEditorGroup",
+    "command": "workbench.action.toggleEditorWidths",
+    "when": "editorTextFocus"
   },
   {
     "key": "ctrl+z",
