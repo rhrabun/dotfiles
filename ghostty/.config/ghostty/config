@@ -23,3 +23,4 @@ background-opacity = 0.96
 confirm-close-surface=false
 
 # Keybinds
+keybind = cmd+u=toggle_background_opacity
