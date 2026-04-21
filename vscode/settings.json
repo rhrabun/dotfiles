@@ -50,7 +50,7 @@
   // Extensions
   "extensions.ignoreRecommendations": false,
   "markdown-preview-enhanced.liveUpdate": true,
-  "markdown-preview-enhanced.scrollSync": false,
+  "markdown-preview-enhanced.scrollSync": true,
   // Languages
   "editor.defaultFormatter": "vscode.json-language-features",
   "python.createEnvironment.trigger": "off",
