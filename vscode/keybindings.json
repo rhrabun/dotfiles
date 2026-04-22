@@ -1,25 +1,26 @@
 // Place your key bindings in this file to override the defaults
 [
-  // Go to the new line instead of accepting suggestions 
+  // SUGGESTIONS
   {
+    // Go to the new line instead of accepting suggestions 
     "key": "enter",
     "command": "type",
     "args": { "text": "\n" },
     "when": "editorTextFocus && (suggestWidgetVisible || github.copilot.inlineSuggestionVisible)"
   },
-  // Accept suggestions with Tab
   {
+    // Accept suggestions with Tab
     "key": "tab",
     "command": "acceptSelectedSuggestion",
     "when": "editorTextFocus && (suggestWidgetVisible || github.copilot.inlineSuggestionVisible)"
   },
-  // Close suggestions without exiting Vim insert mode
   {
+    // Close suggestions without exiting Vim insert mode
     "key": "escape",
     "command": "hideSuggestWidget",
     "when": "editorTextFocus && (suggestWidgetVisible || github.copilot.inlineSuggestionVisible)"
   },
-    // FILE TREE
+  // FILE TREE
   {
     "command": "workbench.action.toggleSidebarVisibility",
     "key": "ctrl+e"
@@ -76,13 +77,12 @@
   // COPILOT
   {
     "key": "ctrl+alt+h",
-    "command": "workbench.panel.chat.view.copilot.focus",
-    "when": "!view.workbench.panel.chat.view.copilot.visible || editorFocus || terminalFocus"
-  },
+    "command": "workbench.action.chat.open",
+    "when": "!chatSetupDisabledInWorkspace && !chatSetupHidden" },
   {
     "key": "ctrl+alt+h",
-    "command": "workbench.action.togglePanel",
-    "when": "view.workbench.panel.chat.view.copilot.visible && !editorFocus"
+    "command": "workbench.action.closeSidebar",
+    "when": "!editorFocus"
   },
   {
     "key": "ctrl+alt+y",
@@ -95,16 +95,6 @@
     "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+alt+m",
-    // "command": "workbench.action.toggleMaximizeEditorGroup",
-    "command": "workbench.action.toggleEditorWidths",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+z",
-    "command": "workbench.action.toggleZenMode"
-  },
-  {
     // Move line down
     "key": "alt+shift+j",
     "command": "editor.action.moveLinesDownAction",
@@ -115,5 +105,24 @@
     "key": "alt+shift+k",
     "command": "editor.action.moveLinesUpAction",
     "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+z",
+    "command": "workbench.action.toggleZenMode"
+  },
+  {
+    // Resize editor groups (e.g. when working with splits or chat)
+    "key": "ctrl+alt+.",
+    "command": "workbench.action.increaseViewSize",
+  },
+  {
+    "key": "ctrl+alt+,",
+    "command": "workbench.action.decreaseViewSize",
+  },
+  {
+    "key": "ctrl+alt+m",
+    // "command": "workbench.action.toggleMaximizeEditorGroup",
+    "command": "workbench.action.toggleEditorWidths",
+    "when": "editorTextFocus"
   }
 ]

@@ -1,6 +1,9 @@
 // LazyVim-like config with some custom tweaks
 {
-  // VSCode
+  // Per-environment settings
+  "amazonQ.telemetry": false,
+
+  // General
   "update.mode": "default",
   "extensions.autoCheckUpdates": true,
   "extensions.autoUpdate": "onlyEnabledExtensions",
@@ -8,7 +11,6 @@
   "security.workspace.trust.untrustedFiles": "open",
   "redhat.telemetry.enabled": false,
   "explorer.confirmDragAndDrop": false,
-  "amazonQ.telemetry": false,
   // Visual 
   "editor.fontSize": 16,
   "editor.fontFamily": "'FiraCode Nerd Font', 'Cascadia Code', 'Fira Code'",
@@ -40,6 +42,7 @@
   "explorer.confirmDelete": false,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   // AI
+  "chat.viewSessions.orientation": "stacked",
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
@@ -50,7 +53,7 @@
   // Extensions
   "extensions.ignoreRecommendations": false,
   "markdown-preview-enhanced.liveUpdate": true,
-  "markdown-preview-enhanced.scrollSync": true,
+  "markdown-preview-enhanced.scrollSync": false,
   // Languages
   "editor.defaultFormatter": "vscode.json-language-features",
   "python.createEnvironment.trigger": "off",
@@ -541,5 +544,5 @@
       "before": ["<leader>", "u", "C"],
       "commands": ["workbench.action.selectTheme"]
     }
-  ],
+  ]
 }
