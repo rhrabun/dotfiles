@@ -81,7 +81,7 @@
     "when": "!chatSetupDisabledInWorkspace && !chatSetupHidden" },
   {
     "key": "ctrl+alt+h",
-    "command": "workbench.action.closeSidebar",
+    "command": "workbench.action.closeAuxiliaryBar",
     "when": "!editorFocus"
   },
   {
