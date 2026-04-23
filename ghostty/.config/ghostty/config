@@ -1,14 +1,6 @@
 
-#
-# The template does not set any default options, since Ghostty ships
-# with sensible defaults for all options. Users should only need to set
-# options that they want to change from the default.
-#
-# Run `ghostty +show-config --default --docs` to view a list of
-# all available config options and their default values.
-#
-# Additionally, each config option is also explained in detail
-# on Ghostty's website, at https://ghostty.org/docs/config.
+# ghostty +list-keybinds --default
+# ghostty +show-config --default --docs
 
 theme = Atom
 
@@ -24,3 +16,16 @@ confirm-close-surface=false
 
 # Keybinds
 keybind = cmd+u=toggle_background_opacity
+
+# Navigate splits
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+j=goto_split:bottom	
+keybind = ctrl+k=goto_split:top
+keybind = ctrl+l=goto_split:right
+
+# Scroll
+keybind = ctrl+alt+arrow_up=scroll_page_lines:-5 
+keybind = ctrl+alt+arrow_down=scroll_page_lines:5 
+keybind = ctrl+alt+page_up=scroll_page_lines:-25
+keybind = ctrl+alt+page_down=scroll_page_lines:25 
+
