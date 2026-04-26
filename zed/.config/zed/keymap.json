@@ -8,48 +8,17 @@
 [
   {
     "bindings": {
-      "ctrl-e": "project_panel::ToggleFocus",
+      // Open and close panels
+      "ctrl-e": "project_panel::Toggle",
       "ctrl-alt-j": "terminal_panel::Toggle",
-      "ctrl-alt-l": "git_panel::ToggleFocus",
+      "ctrl-alt-l": "git_panel::Toggle",
+      "ctrl-alt-h": "agent::Toggle",
+      // Zen mode
       "ctrl-z": "workspace::ToggleCenteredLayout",
       "ctrl-alt-y": "editor::ToggleEditPrediction",
       "space f s": "zed::OpenSettingsFile",
-      "space f k": "zed::OpenKeymapFile"
+      "space f k": "zed::OpenKeymapFile",
     },
-  },
-  {
-    "context": "ProjectPanel",
-    "bindings": {
-      "ctrl-e": "workspace::ToggleRightDock",
-    },
-  },
-  {
-      "context": "GitPanel",
-      "bindings": {
-        "ctrl-alt-l": "workspace::ToggleLeftDock",
-      },
-    },
-  {
-    "context": "Terminal",
-    "bindings": {
-      "ctrl-alt-j": "workspace::ToggleBottomDock",
-    }
-  },
-  // Next two are the most annoying blocks I had to deal with
-  // This opens agent panel if not opened or focused
-  {
-    "context": "Editor",
-    "bindings": {
-      "ctrl-alt-h": "agent::ToggleFocus"
-    }
-  },
-  // This tells that when there are both Editor and AgentPanel context, latter wins
-  // Otherwise, Editor had higher precedence and default keybinding that got in a way
-  {
-    "context": "AgentPanel > Editor",
-    "bindings": {
-      "ctrl-alt-h": "workspace::ToggleBottomDock"
-    }
   },
   // Panes navigation
   {
@@ -70,23 +39,11 @@
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
-      "space p": "editor::Format",
-      "space f": "file_finder::Toggle",
+      "space c f": "editor::Format",
       // Panes splits
       "space r": "pane::SplitRight",
       "space v": "workspace::NewFileSplitVertical",
       "space h": "workspace::NewFileSplitHorizontal",
-      // harpoon-like navigation
-      "space 1": ["pane::ActivateItem", 0],
-      "space 2": ["pane::ActivateItem", 1],
-      "space 3": ["pane::ActivateItem", 2],
-      "space 4": ["pane::ActivateItem", 3],
-      "space 5": ["pane::ActivateItem", 4],
-      "space 6": ["pane::ActivateItem", 5],
-      "space 7": ["pane::ActivateItem", 6],
-      "space 8": ["pane::ActivateItem", 7],
-      "space 9": ["pane::ActivateItem", 8],
-      "space 0": "pane::ActivateLastItem",
       "] b": "pane::ActivateNextItem",
       "[ b": "pane::ActivatePreviousItem",
       "space ,": "tab_switcher::Toggle",
@@ -104,7 +61,7 @@
       "alt-j": "vim::Down",
       "alt-k": "vim::Up",
       "j k": "vim::NormalBefore",
-      "ctrl-space": "editor::ShowCompletions"
+      "ctrl-space": "editor::ShowCompletions",
     },
   },
   {
@@ -148,12 +105,6 @@
     "context": "GitPanel",
     "bindings": {
       "q": "git_panel::Close",
-    },
-  },
-  {
-    "context": "Terminal",
-    "bindings": {
-      "ctrl-/": "workspace::ToggleBottomDock",
     },
   },
   // Empty pane, set of keybindings that are available when there is no active editor
@@ -241,7 +192,6 @@
       // Format
       "space c f": "editor::Format",
       // Telescope
-      "space f f": "file_finder::Toggle",
       "space space": "file_finder::Toggle",
       // Quit zed
       "space q q": "zed::Quit",
@@ -289,7 +239,7 @@
   {
     "context": "vim_mode == visual",
     "bindings": {
-      "shift-s": "vim::PushAddSurrounds"
-    }
-  }
+      "shift-s": "vim::PushAddSurrounds",
+    },
+  },
 ]
