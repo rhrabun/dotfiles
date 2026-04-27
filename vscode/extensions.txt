@@ -3,6 +3,7 @@ docker.docker
 github.copilot-chat
 golang.go
 gruntfuggly.todo-tree
+hashicorp.hcl
 hashicorp.terraform
 ms-azuretools.vscode-containers
 ms-azuretools.vscode-docker
