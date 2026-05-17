@@ -47,7 +47,7 @@ zinit cdreplay -q
 # Create .zcompdump files in custom location instead of home
 export ZSH_COMPDUMP="$HOME/.cache/zsh/.zcompdump-$HOST"
 
-# ZSH History configuration:
+# ZSH History configuration
 HISTSIZE=10000
 SAVEHIST=$HISTSIZE
 HISTFILE=~/.cache/zsh/history
@@ -87,6 +87,9 @@ eval "$(fzf --zsh)"
 
 # Use zoxide instead of cd
 eval "$(zoxide init zsh --cmd cd)"
+
+# Emacs like keybindings for shell
+bindkey -e
 
 # Aliases
 alias lg="lazygit"
