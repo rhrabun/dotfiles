@@ -59,24 +59,13 @@ setopt hist_ignore_dups
 setopt hist_ignore_all_dups
 setopt hist_find_no_dups
 
-# Keybindings
-# Search cmd history with ctrl-p and ctrl-n
-bindkey '^p' history-search-backwards
-bindkey '^n' history-search-forward
-
-# Ctrl + X + E function
-autoload -Uz edit-command-line
-zle -N edit-command-line
-bindkey '^xe' edit-command-line
-bindkey '^x^e' edit-command-line
-
 # Completion tweaks
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # Case-insensitive autocompletion
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # Colors for autocompletion
 zstyle ':completion:*' menu no # Disable default completion menu (use fzf instead)
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' # Colors for zfz autocompletion
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath' # Preview of directory for fzf zoxide autocompletion
-# zstyle ':fzf-tab:*' fzf-bindings 'tab:accept' # Use tab to accept suggestion instead of cycling through 
+zstyle ':fzf-tab:*' fzf-bindings 'tab:accept' # Use tab to accept suggestion instead of cycling through 
 
 # Autosuggest settings
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20"
@@ -92,7 +81,15 @@ eval "$(zoxide init zsh --cmd cd)"
 bindkey -e
 
 # Aliases
-alias lg="lazygit"
-alias ls="ls --color"
-alias zinitupgrade="zinit self-update && zinit update --all && zinit cclear"
-alias macupgrade="brew update && brew upgrade && brew cu -af && brew autoremove && brew cleanup --prune=30 -s && brew doctor && mas update && mas upgrade"
+source ~/.zsh_aliases
+
+# Keybindings
+# Search cmd history with ctrl-p and ctrl-n
+bindkey '^p' history-search-backwards
+bindkey '^n' history-search-forward
+
+# Ctrl + X + E function
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
