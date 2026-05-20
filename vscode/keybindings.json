@@ -154,11 +154,11 @@
   {
     // Resize editor groups (e.g. when working with splits or chat)
     "key": "ctrl+alt+.",
-    "command": "workbench.action.increaseViewSize",
+    "command": "workbench.action.increaseViewWidth",
   },
   {
     "key": "ctrl+alt+,",
-    "command": "workbench.action.decreaseViewSize",
+    "command": "workbench.action.decreaseViewWidth",
   },
   {
     "key": "ctrl+alt+m",
