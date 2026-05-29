@@ -54,6 +54,7 @@
   "extensions.ignoreRecommendations": false,
   "markdown-preview-enhanced.liveUpdate": true,
   "markdown-preview-enhanced.scrollSync": false,
+  "ansible.lightspeed.enabled": false,
   // Languages
   "editor.defaultFormatter": "vscode.json-language-features",
   "json.format.keepLines": true,
