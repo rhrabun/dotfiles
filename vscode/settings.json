@@ -31,14 +31,15 @@
   "workbench.sideBar.location": "right",
   "workbench.editor.enablePreview": false,
   "explorer.autoReveal": false,
-  "files.autoSave": "afterDelay",
-  // Editor
-  "workbench.startupEditor": "newUntitledFile",
   "workbench.tree.renderIndentGuides": "always",
-  "files.insertFinalNewline": true,
   "explorer.decorations.colors": false,
-  "editor.accessibilitySupport": "off",
   "explorer.compactFolders": false,
+  // Editor
+  "files.eol": "\n",
+  "files.autoSave": "afterDelay",
+  "files.insertFinalNewline": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.accessibilitySupport": "off",
   "explorer.confirmDelete": false,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   // AI
