@@ -63,6 +63,7 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "python.createEnvironment.trigger": "off",
+  "python.languageServer": "None", // Disable Pylance to avoid conflicts with ty
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff"
   },

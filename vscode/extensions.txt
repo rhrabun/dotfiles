@@ -1,3 +1,4 @@
+astral-sh.ty
 charliermarsh.ruff
 docker.docker
 github.copilot-chat
