@@ -1,9 +1,9 @@
 astral-sh.ty
 charliermarsh.ruff
 docker.docker
+fanaticpythoner.better-todo-tree
 github.copilot-chat
 golang.go
-gruntfuggly.todo-tree
 hashicorp.hcl
 hashicorp.terraform
 ms-azuretools.vscode-containers

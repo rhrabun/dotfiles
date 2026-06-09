@@ -505,5 +505,5 @@
       "before": [ "<leader>", "u", "C" ],
       "commands": [ "workbench.action.selectTheme" ]
     }
-  ],
+  ]
 }
