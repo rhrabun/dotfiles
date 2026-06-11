@@ -43,7 +43,7 @@
   },
   // SUGGESTIONS
   {
-    // Go to the new line instead of accepting suggestions 
+    // Go to the new line instead of accepting suggestions
     "key": "enter",
     "command": "type",
     "args": { "text": "\n" },

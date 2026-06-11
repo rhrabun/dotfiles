@@ -19,13 +19,12 @@ keybind = cmd+u=toggle_background_opacity
 
 # Navigate splits
 keybind = ctrl+h=goto_split:left
-keybind = ctrl+j=goto_split:bottom	
+keybind = ctrl+j=goto_split:bottom
 keybind = ctrl+k=goto_split:top
 keybind = ctrl+l=goto_split:right
 
 # Scroll
-keybind = ctrl+alt+arrow_up=scroll_page_lines:-5 
-keybind = ctrl+alt+arrow_down=scroll_page_lines:5 
+keybind = ctrl+alt+arrow_up=scroll_page_lines:-5
+keybind = ctrl+alt+arrow_down=scroll_page_lines:5
 keybind = ctrl+alt+page_up=scroll_page_lines:-25
-keybind = ctrl+alt+page_down=scroll_page_lines:25 
-
+keybind = ctrl+alt+page_down=scroll_page_lines:25

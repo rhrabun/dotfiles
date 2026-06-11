@@ -11,7 +11,7 @@
   "security.workspace.trust.untrustedFiles": "open",
   "redhat.telemetry.enabled": false,
   "explorer.confirmDragAndDrop": false,
-  // Visual 
+  // Visual
   "editor.fontSize": 16,
   "editor.fontFamily": "'FiraCode Nerd Font', 'Cascadia Code', 'Fira Code'",
   "editor.fontLigatures": true,
@@ -177,7 +177,7 @@
       "after": [ "<C-W>", "h" ]
     },
     {
-      // Go to lower split 
+      // Go to lower split
       "before": [ "<C-j>" ],
       "after": [ "<C-W>", "j" ]
     },

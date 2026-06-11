@@ -3,7 +3,7 @@ if [[ -x /opt/homebrew/bin/brew ]]; then
 fi
 
 export GOPATH=$HOME/.go
-export PATH=$HOME/bin:/usr/local/bin:$PATH:$GOPATH/bin
+export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH:$GOPATH/bin
 
 export EDITOR=vim
 export VISUAL=vim
