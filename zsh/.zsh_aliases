@@ -1,6 +1,6 @@
 # General
 alias ls="ls --color"
-alias zinitupgrade="zinit self-update && zinit update --all && zinit cclear"
+alias zinitupgrade="zinit self-update && zinit update --all && zinit cclear && zinit delete --clean"
 alias macupgrade="brew update && brew upgrade && brew cu -af && brew autoremove && brew cleanup --prune=30 -s && brew doctor && mas update && mas upgrade"
 
 # Git
@@ -9,7 +9,7 @@ alias gc="git commit"
 alias ga="git add"
 alias gst="git status"
 alias gb="git branch"
-alias gpull="git fetch --prune && git pull"
+alias grb="git fetch --prune && git rebase --autostash"
 alias lg="lazygit"
 
 # Terraform

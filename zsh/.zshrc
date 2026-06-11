@@ -33,8 +33,6 @@ zinit light zsh-users/zsh-syntax-highlighting
 
 # Oh-My-Zsh plugins
 zinit snippet OMZP::aws
-zinit snippet OMZP::git
-zinit snippet OMZP::terraform
 zinit snippet OMZP::colored-man-pages
 zinit snippet OMZP::command-not-found
 
