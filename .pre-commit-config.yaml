@@ -1,16 +1,44 @@
+default_stages: [pre-commit]
+fail_fast: false
+
 repos:
+  # General file fixers
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
       - id: check-yaml
+      - id: check-toml
+      - id: check-merge-conflict
       - id: end-of-file-fixer
       - id: mixed-line-ending
         args: [--fix=lf]
       - id: trailing-whitespace
+      - id: check-case-conflict
+      - id: detect-private-key
+      - id: detect-aws-credentials
+        args: [--allow-missing-credentials]
+      - id: check-added-large-files
+
+  # JSON with comments (JSON5)
+  - repo: https://gitlab.com/bmares/check-json5
+    rev: v1.0.1
+    hooks:
+    - id: check-json5
+
+  # Terraform
   - repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.106.0
     hooks:
       - id: terraform_fmt
+      - id: terraform_validate
       - id: terraform_docs
         args:
           - --args=--lockfile=false
+
+  # Python - Ruff
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.17
+    hooks:
+      - id: ruff-check
+        args: [--fix]
+      - id: ruff-format
