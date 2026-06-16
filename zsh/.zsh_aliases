@@ -4,12 +4,14 @@ alias zinitupgrade="zinit self-update && zinit update --all && zinit cclear && z
 alias macupgrade="brew update && brew upgrade && brew cu -af && brew autoremove && brew cleanup --prune=30 -s && brew doctor && mas update && mas upgrade"
 
 # Git
-alias gp="git push"
-alias gc="git commit"
 alias ga="git add"
-alias gst="git status"
+alias gp="git push"
 alias gb="git branch"
+alias gc="git commit"
+alias gst="git status"
+alias gco="git checkout"
 alias grb="git fetch --prune && git rebase --autostash"
+
 alias lg="lazygit"
 
 # Terraform
