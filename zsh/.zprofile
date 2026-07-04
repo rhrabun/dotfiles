@@ -7,3 +7,5 @@ export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH:$GOPATH/bin
 
 export EDITOR=vim
 export VISUAL=vim
+
+export HOMEBREW_NO_AUTO_UPDATE=1
