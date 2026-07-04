@@ -1,0 +1,11 @@
+
+{
+  "If Error": {
+    "prefix": ["iferr"],
+    "body": [
+      "if err != nil:",
+      "\t${1:handleError(err)}"
+    ],
+    "description": "Custom snippet for error handling"
+  }
+}

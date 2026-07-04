@@ -1,0 +1,14 @@
+README.md
+
+# MacOs-specific
+{{- if ne .chezmoi.os "darwin"}}
+Library
+{{- end }}
+
+# Linux-specific
+{{- if ne .chezmoi.os "linux"}}
+*aerospace*
+.config/hypr
+.config/Code
+{{- end }}
+

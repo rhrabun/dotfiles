@@ -1,0 +1,24 @@
+# General
+alias ls="ls --color"
+alias cm="chezmoi"
+alias zinitupgrade="zinit self-update && zinit update --all && zinit cclear && zinit delete --clean"
+alias macupgrade="brew update && brew upgrade && brew cu -af && brew autoremove && brew cleanup --prune=30 -s && brew doctor && mas update && mas upgrade"
+
+# Git
+alias ga="git add"
+alias gp="git push"
+alias gb="git branch"
+alias gc="git commit"
+alias gst="git status"
+alias gco="git checkout"
+alias grb="git fetch --prune && git rebase --autostash"
+
+alias lg="lazygit"
+
+# Terraform
+alias tfi="terraform init"
+alias tfp="terraform plan"
+alias tfa="terraform apply"
+alias tfd="terraform destroy"
+alias tff="terraform fmt -recursive"
+alias tfv="terraform fmt -recursive && terraform validate"
