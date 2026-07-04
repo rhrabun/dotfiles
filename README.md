@@ -4,10 +4,10 @@ Configuration files for my local machine
 
 ## Prerequisites
 * git
-* stow
+* chezmoi
 
 ## How-To
-I have a strange love for creating Makefiles, so you can use [this](./Makefile) to run Stow or to see commands
+`chezmoi init --apply https://github.com/rhrabun/dotfiles.git`
 
 ## Note for myself
 Since ansible is configured to use https to clone the public repo, to use ssh you need to configre `remote` accordingly
