@@ -11,4 +11,3 @@ Library
 .config/hypr
 .config/Code
 {{- end }}
-
