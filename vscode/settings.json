@@ -6,7 +6,7 @@
   // General
   "update.mode": "manual",
   "extensions.autoCheckUpdates": false,
-  "extensions.autoUpdate": false,
+  "extensions.autoUpdate": "off",
   "telemetry.telemetryLevel": "off",
   "security.workspace.trust.untrustedFiles": "open",
   "redhat.telemetry.enabled": false,
