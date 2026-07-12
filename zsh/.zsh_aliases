@@ -2,7 +2,7 @@
 alias ls="ls --color"
 alias cm="chezmoi"
 alias zinitupgrade="zinit self-update && zinit update --all && zinit cclear && zinit delete --clean"
-alias macupgrade="brew update && brew upgrade && brew cu -af && brew autoremove && brew cleanup --prune=30 -s && brew doctor && mas update && mas upgrade"
+alias macupgrade="brew update && brew upgrade --greedy && brew autoremove && brew cleanup --prune=30 -s && brew doctor && mas update && mas upgrade"
 
 # Git
 alias ga="git add"
