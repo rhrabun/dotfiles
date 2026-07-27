@@ -44,6 +44,9 @@
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   // AI
   "chat.viewSessions.orientation": "stacked",
+  "chat.agentSkillsLocations": {
+    "~/.agents/skills": true
+  },
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
