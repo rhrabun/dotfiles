@@ -54,6 +54,7 @@
     "scminput": false
   },
   "github.copilot.nextEditSuggestions.enabled": false,
+  "chat.speechToText.enabled": true,
   // Extensions
   "extensions.ignoreRecommendations": false,
   "markdown-preview-enhanced.liveUpdate": true,
