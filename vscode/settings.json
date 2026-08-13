@@ -11,13 +11,13 @@
   "security.workspace.trust.untrustedFiles": "open",
   "redhat.telemetry.enabled": false,
   "explorer.confirmDragAndDrop": false,
-  // Visual
+  // Visual 
   "editor.fontSize": 16,
   "editor.fontFamily": "'FiraCode Nerd Font', 'Cascadia Code', 'Fira Code'",
   "editor.fontLigatures": true,
-  "chat.fontSize": 15,
+  "chat.fontSize": 16,
   "chat.fontFamily": "'FiraCode Nerd Font', 'Cascadia Code', 'Fira Code'",
-  "chat.editor.fontSize": 15,
+  "chat.editor.fontSize": 16,
   "chat.editor.fontFamily": "'FiraCode Nerd Font Mono', 'Cascadia Mono', 'Fira Mono'",
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono', 'Cascadia Mono', 'Fira Mono'",
@@ -31,22 +31,18 @@
   "workbench.sideBar.location": "right",
   "workbench.editor.enablePreview": false,
   "explorer.autoReveal": false,
-  "workbench.tree.renderIndentGuides": "always",
-  "explorer.decorations.colors": false,
-  "explorer.compactFolders": false,
-  // Editor
-  "files.eol": "\n",
   "files.autoSave": "afterDelay",
-  "files.insertFinalNewline": true,
+  // Editor
   "workbench.startupEditor": "newUntitledFile",
+  "workbench.tree.renderIndentGuides": "always",
+  "files.insertFinalNewline": true,
+  "explorer.decorations.colors": false,
   "editor.accessibilitySupport": "off",
+  "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
-  // AI
-  "chat.viewSessions.orientation": "stacked",
-  "chat.agentSkillsLocations": {
-    "~/.agents/skills": true
-  },
+  "files.eol": "\n",
+  // AI / Copilot
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
@@ -54,11 +50,19 @@
     "scminput": false
   },
   "github.copilot.nextEditSuggestions.enabled": false,
+  "chat.mcp.gallery.enabled": true,
+  "chat.viewSessions.orientation": "stacked",
+  "dictation.enabled": true,
+  "chat.agentFilesLocations": {
+    "~/.agents": true
+  },
+  "chat.agentSkillsLocations": {
+    "~/.agents/skills": true
+  },
   // Extensions
-  "extensions.ignoreRecommendations": false,
+  "extensions.ignoreRecommendations": true,
   "markdown-preview-enhanced.liveUpdate": true,
   "markdown-preview-enhanced.scrollSync": false,
-  "ansible.lightspeed.enabled": false,
   // Languages
   "editor.defaultFormatter": "vscode.json-language-features",
   "json.format.keepLines": true,
@@ -66,7 +70,6 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "python.createEnvironment.trigger": "off",
-  "python.languageServer": "None", // Disable Pylance to avoid conflicts with ty
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
@@ -74,9 +77,10 @@
     "editor.defaultFormatter": "golang.go",
   },
   "files.associations": {
-    "*Dockerfile*": "dockerfile",
+    "*.vue": "html",
+    "*.tpl": "jsonc",
     "*.template": "yaml",
-    "*.vue": "html"
+    "*Dockerfile*": "dockerfile",
   },
   "[terraform]": {
     "editor.tabSize": 2,
@@ -94,8 +98,7 @@
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "files.exclude": {
-    "**/__pycache__": true,
-    "**/.ruff_cache": true
+    "**/__pycache__": true
   },
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
