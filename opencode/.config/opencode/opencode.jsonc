@@ -1,5 +1,11 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "model": "opencode/deepseek-v4-flash-free",
-  "autoupdate": true
+  "autoupdate": true,
+  "references": {
+    "omarchy": {
+      "repository": "basecamp/omarchy",
+      "description": "Use for Omarchy config and manual details"
+    }
+  }
 }

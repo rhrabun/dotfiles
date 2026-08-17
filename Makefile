@@ -14,7 +14,7 @@ PACKAGES := $(wildcard */)
 PACKAGES := $(filter-out obsidian/,$(PACKAGES))
 
 # OS-specific packages
-LINUX_PACKAGES=hyprland/
+LINUX_PACKAGES=hyprland/ voxtype/
 MACOS_PACKAGES=aerospace/
 
 ifeq ($(UNAME_S),Darwin)
