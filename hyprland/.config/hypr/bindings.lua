@@ -30,13 +30,14 @@ hl.unbind("SUPER + SHIFT + S")        -- Google Maps
 
 -- Hyper key (Caps Lock) shortcuts. Caps Lock is configured as Mod3 in
 -- input.lua, so bind with MOD3.
-o.bind("MOD3 + G", "Ghostty", { omarchy = "terminal" })
-o.bind("MOD3 + B", "Browser", { omarchy = "browser" })
+o.bind("MOD3 + V", "VSCode", { focus = "code", launch = "code" })
+o.bind("MOD3 + G", "Ghostty", { focus = "ghostty", launch = "ghostty" })
+o.bind("MOD3 + B", "Browser", { focus = "chromium", launch = "chromium" })
 
 -- Workspace assignments.
 -- Verify class names with `hyprctl clients` if a rule doesn't apply.
-o.window("(Chromium|helium)", { workspace = "4" })
-o.window("(code|Code)", { workspace = "3" })
+o.window("(?i)(chromium|helium)", { workspace = "4" })
+o.window("(code|Code)", { workspace = "2" })
 o.window("com.mitchellh.ghostty", { workspace = "1" })
 
 -- Logitech MX Keys examples:
