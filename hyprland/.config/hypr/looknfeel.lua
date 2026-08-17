@@ -21,10 +21,3 @@ hl.config({
 	},
 })
 
--- https://wiki.hypr.land/Configuring/Dwindle-Layout/
-hl.config({
-    layout =  {
-    	-- Avoid overly wide single-window layouts on wide screens
-    	single_window_aspect_ratio = "1 1",
-	},
-})
