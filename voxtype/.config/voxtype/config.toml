@@ -9,7 +9,7 @@
 # ("idle", "recording", "transcribing") to this file whenever it changes.
 # Required for `voxtype record toggle` and `voxtype status` commands.
 state_file = "auto"
-engine = "whisper"
+engine = "parakeet"
 
 [hotkey]
 # Hotkey is configured in Hyprland. Default is Super + Ctrl + X
@@ -23,7 +23,7 @@ cancel_key = "ESC"
 # List devices with: pactl list sources short
 device = "default"
 
-# Sample rate in Hz (whisper expects 16000)
+# Sample rate in Hz (parakeet expects 16000)
 sample_rate = 16000
 
 # Maximum recording duration in seconds (safety limit)
@@ -42,28 +42,10 @@ pause_media = true
 # Volume level (0.0 to 1.0)
 # volume = 0.7
 
-[whisper]
-# Model to use for transcription
-# Options: tiny, tiny.en, base, base.en, small, small.en, medium, medium.en, large-v3, large-v3-turbo
-# .en models are English-only but faster and more accurate for English
-# large-v3-turbo is faster than large-v3 with minimal accuracy loss (recommended for GPU)
-# Or provide absolute path to a custom .bin model file
-model = "base.en"
-
-# Language for transcription
-# Use "en" for English, "auto" for auto-detection
-# See: https://github.com/openai/whisper#available-models-and-languages
-language = "en"
-
-# Translate non-English speech to English
-translate = false
-mode = "local"
-flash_attention = false
+[parakeet]
+model = "parakeet-tdt-0.6b-v3"
 on_demand_loading = false
-gpu_isolation = false
-
-# Number of CPU threads for inference (omit for auto-detection)
-# threads = 4
+streaming = false
 
 [output]
 # Primary output mode: "type" or "clipboard"
@@ -77,6 +59,9 @@ fallback_to_clipboard = true
 # Delay between typed characters in milliseconds
 # 0 = fastest possible, increase if characters are dropped
 type_delay_ms = 1
+auto_submit = false
+shift_enter_newlines = false
+pre_type_delay_ms = 0
 
 # Post-processing command (optional)
 # Pipe transcribed text through an external command for cleanup before output.
@@ -97,10 +82,36 @@ on_recording_stop = false
 
 # Show notification with transcribed text after transcription completes
 on_transcription = false
+show_engine_icon = false
 
-[parakeet]
-model = "parakeet-tdt-0.6b-v3"
-on_demand_loading = false
+[text]
+spoken_punctuation = false
+smart_auto_submit = false
+
+[meeting]
+enabled = false
+
+[meeting.diarization]
+enabled = false
+
+[meeting.audio]
+source = "mic"
+
+[osd]
+enabled = true
+frontend = "gtk4"
+position = "bottom-center"
+width_px = 400
+height_px = 48
+margin_px = 24
+top_margin = 0.85
+opacity = 0.95
+waveform_window_secs = 3.0
+peak_decay_db_per_sec = 6.0
+waveform_gain = 10.0
+
+[status]
+icon_theme = "emoji"
 
 # [text]
 # Text processing options (word replacements, spoken punctuation)
