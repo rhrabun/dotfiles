@@ -22,7 +22,7 @@
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono', 'Cascadia Mono', 'Fira Mono'",
   "window.customTitleBarVisibility": "auto",
-  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.colorTheme": "Tokyo Night Storm",
   "workbench.iconTheme": "material-icon-theme",
   "material-icon-theme.hidesExplorerArrows": true,
   "oneDarkPro.italic": false,

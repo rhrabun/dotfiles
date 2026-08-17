@@ -10,8 +10,10 @@ filetype indent on
 " Turn syntax highlighting on
 syntax on
 
-" Use system clipboard
-set clipboard=unnamed
+" Use system clipboard (both directions: yank -> clipboard, clipboard -> paste).
+" unnamedplus uses the + register (Ctrl+C/V clipboard); unnamed uses primary
+" selection which is a dead end under Wayland.
+set clipboard=unnamedplus
 
 " Relative numbers
 set number

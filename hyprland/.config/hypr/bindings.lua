@@ -33,6 +33,12 @@ hl.unbind("SUPER + SHIFT + S")        -- Google Maps
 o.bind("MOD3 + G", "Ghostty", { omarchy = "terminal" })
 o.bind("MOD3 + B", "Browser", { omarchy = "browser" })
 
+-- Workspace assignments.
+-- Verify class names with `hyprctl clients` if a rule doesn't apply.
+o.window("(Chromium|helium)", { workspace = "4" })
+o.window("(code|Code)", { workspace = "3" })
+o.window("com.mitchellh.ghostty", { workspace = "1" })
+
 -- Logitech MX Keys examples:
 -- o.bind("SUPER + SHIFT + S", nil, "omarchy-capture-screenshot")
 -- o.bind("SUPER + H", nil, "voxtype record toggle")

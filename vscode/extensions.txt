@@ -1,8 +1,8 @@
 astral-sh.ty
 charliermarsh.ruff
 docker.docker
+enkia.tokyo-night
 fanaticpythoner.better-todo-tree
-github.copilot-chat
 golang.go
 hashicorp.hcl
 hashicorp.terraform

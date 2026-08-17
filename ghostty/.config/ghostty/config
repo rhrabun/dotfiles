@@ -2,7 +2,7 @@
 # ghostty +list-keybinds --default
 # ghostty +show-config --default --docs
 
-theme = Atom
+theme = TokyoNight Storm
 
 font-size = 15
 font-family="FiraCode Nerd Font Mono"
@@ -15,13 +15,17 @@ background-opacity = 0.95
 confirm-close-surface=false
 
 # Keybinds
-keybind = cmd+u=toggle_background_opacity
+keybind = super+u=toggle_background_opacity
 
-# Navigate splits
-keybind = ctrl+h=goto_split:left
-keybind = ctrl+j=goto_split:bottom
-keybind = ctrl+k=goto_split:top
-keybind = ctrl+l=goto_split:right
+# Create splits (mirror macOS cmd+d on Linux)
+keybind = super+d=new_split:right
+keybind = super+shift+d=new_split:down
+
+# Navigate splits (vim-style prefix: ctrl+w, then h/j/k/l)
+keybind = ctrl+w>h=goto_split:left
+keybind = ctrl+w>j=goto_split:bottom
+keybind = ctrl+w>k=goto_split:top
+keybind = ctrl+w>l=goto_split:right
 
 # Scroll
 keybind = ctrl+alt+arrow_up=scroll_page_lines:-5
