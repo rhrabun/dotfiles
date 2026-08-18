@@ -1,5 +1,7 @@
 [tools]
-codex = "latest"
 gh = "latest"
-node = "26.7.0"
+go = "latest"
+uv = "latest"
+codex = "latest"
 opencode = "latest"
+pre-commit = "latest"
