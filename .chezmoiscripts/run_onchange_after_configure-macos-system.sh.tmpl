@@ -3,15 +3,24 @@
 # Configure system-wide preferences (screenshots, quarantine, trackpad).
 set -euo pipefail
 
+# Ensure the Screenshots folder exists
 mkdir -p "$HOME/Pictures/Screenshots"
 
+# Disable the "Are you sure you want to open this application?" dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
+# Enable Resume system-wide (reopen windows when logging back in)
 defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool true
+# Trackpad: enable tap to click for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+# Save screenshots to ~/Pictures/Screenshots
 defaults write com.apple.screencapture location -string "$HOME/Pictures/Screenshots"
+# Save screenshots in JPG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "JPG"
+# Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
+# Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+# Avoid creating .DS_Store files on USB volumes
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 killall SystemUIServer >/dev/null 2>&1 || true
