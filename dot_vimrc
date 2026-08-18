@@ -11,9 +11,7 @@ filetype indent on
 syntax on
 
 " Use system clipboard (both directions: yank -> clipboard, clipboard -> paste).
-" unnamedplus uses the + register (Ctrl+C/V clipboard); unnamed uses primary
-" selection which is a dead end under Wayland.
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " Relative numbers
 set number
