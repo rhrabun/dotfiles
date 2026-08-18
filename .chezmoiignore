@@ -7,11 +7,11 @@ README.md
 # macOS only
 {{- if ne .chezmoi.os "darwin" }}
 Library
+*aerospace*
 {{- end }}
 
 # Linux only
 {{- if ne .chezmoi.os "linux" }}
-*aerospace*
 .config/hypr
 .config/Code
 {{- end }}
