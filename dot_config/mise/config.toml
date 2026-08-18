@@ -2,6 +2,5 @@
 gh = "latest"
 go = "latest"
 uv = "latest"
-codex = "latest"
 opencode = "latest"
 pre-commit = "latest"

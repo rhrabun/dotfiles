@@ -1,0 +1,42 @@
+{{- if or (eq .chezmoi.os "darwin") (eq .chezmoi.os "linux") -}}
+#!/usr/bin/env bash
+# Install VS Code extensions listed in extensions.txt (install-only sync).
+# Re-runs when the list changes (see the checksum comment below).
+# Extensions checksum: {{ include ".chezmoitemplates/vscode/extensions.txt" | sha256sum }}
+
+set -euo pipefail
+
+# Locate the `code` CLI. `code` is intentionally kept off PATH (otherwise it
+# would be dumped into the Brewfile), so prefer absolute app paths and fall
+# back to PATH-based detection.
+{{ if eq .chezmoi.os "darwin" }}
+code_bin="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
+{{ else }}
+code_bin="/usr/share/code/bin/code"
+{{ end }}
+if [[ ! -x "$code_bin" ]]; then
+    code_bin="$(command -v code || true)"
+fi
+if [[ -z "${code_bin:-}" ]]; then
+    printf '%s\n' "VS Code CLI not found; skipping extension sync." >&2
+    exit 0
+fi
+
+{{ if eq .chezmoi.os "darwin" }}
+list="$HOME/Library/Application Support/Code/User/extensions.txt"
+{{ else }}
+list="$HOME/.config/Code/User/extensions.txt"
+{{ end }}
+
+[[ -f "$list" ]] || exit 0
+
+current="$("$code_bin" --list-extensions 2>/dev/null || true)"
+
+while IFS= read -r ext; do
+    [[ -z "$ext" ]] && continue
+    if ! grep -qx "$ext" <<<"$current"; then
+        printf 'Installing extension: %s\n' "$ext"
+        "$code_bin" --install-extension "$ext" --force
+    fi
+done < "$list"
+{{- end -}}

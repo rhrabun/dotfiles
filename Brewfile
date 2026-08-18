@@ -22,8 +22,6 @@ brew "mas"
 brew "mise"
 # Deep clean and optimize your Mac
 brew "mole"
-# AI coding agent, built for the terminal
-brew "opencode"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
 # Modern and pretty fancy file manager for the terminal
