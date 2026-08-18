@@ -129,6 +129,10 @@
     "key": "ctrl+alt+y",
     "command": "github.copilot.completions.toggle"
   },
+  {
+    "key": "ctrl+alt+f",
+    "command": "workbench.action.chat.attachFile"
+  },
   // EXTRA
   {
     "key": "ctrl+w",

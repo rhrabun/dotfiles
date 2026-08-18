@@ -1,12 +1,16 @@
+# Repo-internal files (not deployed to $HOME)
+Makefile
 README.md
+.gitignore
+.pre-commit-config.yaml
 
-# MacOs-specific
-{{- if ne .chezmoi.os "darwin"}}
+# macOS only
+{{- if ne .chezmoi.os "darwin" }}
 Library
 {{- end }}
 
-# Linux-specific
-{{- if ne .chezmoi.os "linux"}}
+# Linux only
+{{- if ne .chezmoi.os "linux" }}
 *aerospace*
 .config/hypr
 .config/Code
