@@ -1,11 +1,25 @@
-# General
+# System
 alias ls="ls --color"
-alias oc="opencode"
-alias cm="chezmoi"
 alias zinitupgrade="zinit self-update && zinit update --all && zinit cclear && zinit delete --clean"
+
 {{- if eq .chezmoi.os "darwin" }}
 alias macupgrade="brew update && brew upgrade --greedy && brew autoremove && brew cleanup --prune=30 -s && brew doctor && mas update && mas upgrade"
 {{- end }}
+
+# Tools
+alias oc="opencode"
+alias lg="lazygit"
+alias ld="lazydocker"
+
+# Chezmoi
+alias cm="chezmoi"
+alias cma="chezmoi add"
+alias cmd="chezmoi diff"
+alias cms="chezmoi status"
+alias cmu="chezmoi update"
+alias cmcd="chezmoi cd"
+alias cmap="chezmoi apply"
+alias cmra="chezmoi re-add"
 
 # Git
 alias ga="git add"
@@ -16,12 +30,10 @@ alias gst="git status"
 alias gco="git checkout"
 alias grb="git fetch --prune && git rebase --autostash"
 
-alias lg="lazygit"
-
 # Terraform
 alias tfi="terraform init"
 alias tfp="terraform plan"
 alias tfa="terraform apply"
 alias tfd="terraform destroy"
 alias tff="terraform fmt -recursive"
-alias tfv="terraform fmt -recursive && terraform validate"
+alias tfv="terraform validate"
