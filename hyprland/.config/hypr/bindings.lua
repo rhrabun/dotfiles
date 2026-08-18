@@ -23,11 +23,6 @@
 -- Disable a default binding without replacing it.
 -- hl.unbind("SUPER + SHIFT + B")
 
--- Unbind preinstalled Google web app bindings
-hl.unbind("SUPER + SHIFT + CTRL + G") -- Google Messages
-hl.unbind("SUPER + SHIFT + P")        -- Google Photos
-hl.unbind("SUPER + SHIFT + S")        -- Google Maps
-
 -- Hyper key (Caps Lock) shortcuts. Caps Lock is configured as Mod3 in
 -- input.lua, so bind with MOD3.
 o.bind("MOD3 + V", "VSCode", { focus = "code", launch = "code" })
