@@ -2,8 +2,11 @@
   "$schema": "https://opencode.ai/tui.json",
   "theme": "tokyonight",
   "diff_style": "auto",
+  "mouse": false,
   "cursor": {
-    "style": "block",
-    "blinking": true
+    "style": "default"
+  },
+  "keybinds": {
+    "diff_open": "ctrl+shift+d"
   }
 }
