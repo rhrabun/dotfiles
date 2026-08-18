@@ -1,0 +1,15 @@
+{{- if eq .chezmoi.os "linux" -}}
+#!/bin/sh
+# Install apt/pacman packages from .chezmoidata/packages.yaml.
+# Re-runs when that file changes (its contents are embedded below).
+set -e
+
+if command -v apt-get >/dev/null 2>&1; then
+    sudo apt-get update
+    sudo apt-get install -y {{ range .linux.common }}{{ . }} {{ end }}{{ range .linux.apt }}{{ . }} {{ end }}
+    sudo apt-get autoremove -y
+elif command -v pacman >/dev/null 2>&1; then
+    sudo pacman -Sy --needed --noconfirm {{ range .linux.common }}{{ . }} {{ end }}{{ range .linux.pacman }}{{ . }} {{ end }}
+    sudo pacman -Rns --noconfirm "$(pacman -Qdtq)" >/dev/null 2>&1 || true
+fi
+{{- end -}}

@@ -3,14 +3,18 @@
 Configuration files for my local machine, managed with [chezmoi](https://www.chezmoi.io/).
 
 ## Prerequisites
+
 * git
 * chezmoi
+* Homebrew (macOS only) — needed by the brew-bundle provisioning script
 
 ## Setup on a new machine
 ```sh
 chezmoi init --apply https://github.com/rhrabun/dotfiles.git
 ```
 Clones the repo, computes the source → home diffs, and applies them.
+
+> Note: place the age key at `~/.ssh/chezmoi-age-key.txt` (mode 600); it's needed to manage encrypted files.
 
 ## Day-to-day commands
 | Command | What it does |
