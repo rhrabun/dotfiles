@@ -4,7 +4,7 @@
   "diff_style": "auto",
   "mouse": false,
   "cursor": {
-    "style": "default"
+    "style": "line"
   },
   "keybinds": {
     "diff_open": "ctrl+shift+d"
