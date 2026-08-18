@@ -1,6 +1,11 @@
 # Prevent execution in non-interactive shells
 [[ -o interactive ]] || return
 
+# Activate mise (adds shims to PATH)
+if command -v mise >/dev/null 2>&1; then
+  eval "$(mise activate zsh)"
+fi
+
 # Set zinit directory
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
