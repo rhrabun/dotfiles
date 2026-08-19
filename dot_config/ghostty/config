@@ -2,7 +2,7 @@
 # ghostty +list-keybinds --default
 # ghostty +show-config --default --docs
 
-theme = TokyoNight Storm
+theme = Catppuccin Frappe
 
 font-size = 15
 font-family="FiraCode Nerd Font Mono"

@@ -22,11 +22,11 @@
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono', 'Cascadia Mono', 'Fira Mono'",
   "window.customTitleBarVisibility": "auto",
-  "workbench.colorTheme": "Tokyo Night Storm",
-  "workbench.iconTheme": "material-icon-theme",
-  "material-icon-theme.hidesExplorerArrows": true,
-  "oneDarkPro.italic": false,
-  "oneDarkPro.bold": false,
+  "workbench.colorTheme": "Catppuccin Frappé",
+  "workbench.iconTheme": "catppuccin-frappe",
+  "catppuccin-icons.hidesExplorerArrows": true,
+  "catppuccin.italicKeywords": false,
+  "catppuccin.bracketMode": "dimmed",
   "editor.minimap.enabled": false,
   "workbench.sideBar.location": "right",
   "workbench.editor.enablePreview": false,
@@ -81,6 +81,7 @@
     "*.tpl": "jsonc",
     "*.template": "yaml",
     "*Dockerfile*": "dockerfile",
+    "*.sh.tmpl": "shellscript"
   },
   "[terraform]": {
     "editor.tabSize": 2,
@@ -99,13 +100,6 @@
   },
   "files.exclude": {
     "**/__pycache__": true
-  },
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter-notebook"
-  },
-  "notebook.cellToolbarLocation": {
-    "default": "right",
-    "jupyter-notebook": "left"
   },
   "yaml.customTags": [
     "!Equals sequence",
