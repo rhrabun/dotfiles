@@ -7,6 +7,11 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "buffer_font_fallbacks": [
+    "Cascadia Code",
+    "Fira Code"
+  ],
+  "line_ending": "prefer_lf",
   "outline_panel": {
     "dock": "left"
   },
@@ -14,15 +19,23 @@
     "diagnostics": false,
     "metrics": false,
   },
+  // Extensions & themes (auto-installed on startup; false = never install)
+  "auto_install_extensions": {
+    "toml": true,
+    "terraform": true,
+    "dockerfile": true,
+    "catppuccin": true,
+    "catppuccin-icons": true,
+  },
   // Docks & Panels
   "project_panel": {
     "dock": "right",
-    "auto_reveal_entries": false,
-    "auto_fold_dirs": false,
-    "git_status": true,
     "indent_guides": {
       "show": "always",
     },
+    "git_status": true,
+    "auto_fold_dirs": false,
+    "auto_reveal_entries": false,
   },
   "git_panel": {
     "dock": "bottom",
@@ -38,6 +51,11 @@
   },
   // Editor
   "vim_mode": true,
+  "vim": {
+    // Mirror VSCode vim extension settings
+    "use_system_clipboard": "always",
+    "use_smartcase_find": false,
+  },
   "auto_signature_help": false,
   "gutter": {
     "line_numbers": true,
@@ -75,10 +93,15 @@
   "ui_font_family": "FiraCode Nerd Font",
   "ui_font_size": 15,
   "terminal": {
+    "font_fallbacks": [
+      "Cascadia Mono",
+      "Fira Mono"
+    ],
+    "font_size": 15.0,
     "font_family": "FiraCode Nerd Font Mono",
   },
-  "icon_theme": "Material Icon Theme",
-  "theme": "One Dark Pro",
+  "icon_theme": "Catppuccin Frappé",
+  "theme": "Catppuccin Frappé",
   "preview_tabs": {
     "enabled": false,
   },
@@ -95,6 +118,21 @@
   "show_wrap_guides": true,
   // FILE DETECTION RULES
   "file_types": {
+    "jsonc": [
+      "*.tpl"
+    ],
+    "html": [
+      "*.vue"
+    ],
+    "dockerfile": [
+      "*Dockerfile*"
+    ],
+    "yaml": [
+      "*.template"
+    ],
+    "shellscript": [
+      "*.sh.tmpl"
+    ],
     "Ansible": [
       "**.ansible.yml",
       "**.ansible.yaml",

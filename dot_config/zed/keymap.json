@@ -16,6 +16,11 @@
       // Zen mode
       "ctrl-z": "workspace::ToggleCenteredLayout",
       "ctrl-alt-y": "editor::ToggleEditPrediction",
+      // New terminal
+      "ctrl-alt-n": "workspace::NewTerminal",
+      // Resize active dock
+      "ctrl-alt-.": "workspace::IncreaseActiveDockSize",
+      "ctrl-alt-,": "workspace::DecreaseActiveDockSize",
       "space f s": "zed::OpenSettingsFile",
       "space f k": "zed::OpenKeymapFile",
     },
@@ -61,6 +66,7 @@
       "alt-j": "vim::Down",
       "alt-k": "vim::Up",
       "j k": "vim::NormalBefore",
+      "k j": "vim::NormalBefore",
       "ctrl-space": "editor::ShowCompletions",
     },
   },
@@ -107,6 +113,13 @@
       "q": "git_panel::Close",
     },
   },
+  // Terminal
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-alt-r": "terminal::RenameTerminal",
+    },
+  },
   // Empty pane, set of keybindings that are available when there is no active editor
   {
     "context": "EmptyPane || SharedScreen",
@@ -131,6 +144,8 @@
       "space s r": "buffer_search::DeployReplace",
       // Git
       "space g g": "git_panel::ToggleFocus",
+      "space g c": "git_panel::ToggleFocus",
+      "space g s": "git_panel::ToggleFocus",
       "space g h d": "editor::ExpandAllDiffHunks",
       "space g h D": "git::Diff",
       "space g h r": "git::Restore",
@@ -144,6 +159,18 @@
       "space m P": "markdown::OpenPreviewToTheSide",
       // Open recent project
       "space f p": "projects::OpenRecent",
+      // Extensions (lazy)
+      "space l": "zed::Extensions",
+      // Terminal
+      "space f t": "workspace::NewTerminal",
+      "space f T": "workspace::NewTerminal",
+      // Pin / unpin tab
+      "space b p": "pane::TogglePinTab",
+      "space b u": "pane::TogglePinTab",
+      // Command palette
+      "space s C": "command_palette::Toggle",
+      // Theme selector
+      "space u C": "theme_selector::Toggle",
       // Search word under cursor in current pane
       "space s w": "buffer_search::Deploy",
       // Search word under cursor in all panes
