@@ -76,7 +76,7 @@ eval "$(zoxide init zsh --cmd cd)"
 bindkey -e
 
 # Aliases
-source ~/.zsh_aliases
+source ~/.aliases
 
 # Keybindings
 # Search cmd history with ctrl-p and ctrl-n

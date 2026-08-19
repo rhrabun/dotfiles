@@ -2,7 +2,10 @@
   "$schema": "https://opencode.ai/tui.json",
   "theme": "tokyonight",
   "diff_style": "auto",
-  "mouse": false,
+  "mouse": true,
+  "scroll_acceleration": {
+    "enabled": true
+  },
   "cursor": {
     "style": "line"
   },

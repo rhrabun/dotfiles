@@ -16,3 +16,9 @@ Library
 .config/hypr
 .config/Code
 {{- end }}
+
+# Windows only
+{{- if ne .chezmoi.os "windows" }}
+.bashrc
+.AppData
+{{- end }}
