@@ -1,4 +1,3 @@
-# Minimal .bashrc for Git Bash on Windows
 
-# Shared aliases (installed by chezmoi)
+# Aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
