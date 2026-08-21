@@ -30,6 +30,8 @@ brew "superfile"
 brew "tlrc"
 # Terminal multiplexer
 brew "tmux"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
 # Vi 'workalike' with many additional features
 brew "vim"
 # Shell extension to navigate your filesystem faster
@@ -63,6 +65,8 @@ cask "google-drive"
 cask "homerow"
 # Tool for multi-language users
 cask "input-source-pro"
+# Keyboard customiser
+cask "karabiner-elements"
 # Software for Logitech devices
 cask "logi-options+"
 # Open-source firewall to block unknown outgoing connections
@@ -97,7 +101,10 @@ cask "todoist-app"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
+# Multiplayer code editor
+cask "zed"
 # Gecko based web browser
 cask "zen"
 mas "AdGuard Mini", id: 1440147259
+mas "Numbers", id: 409203825
 mas "UpNote", id: 1398373917
