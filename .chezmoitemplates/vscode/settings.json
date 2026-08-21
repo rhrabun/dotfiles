@@ -59,6 +59,7 @@
   "chat.agentSkillsLocations": {
     "~/.agents/skills": true
   },
+  "chat.tips.enabled": false,
   // Extensions
   "extensions.ignoreRecommendations": true,
   "markdown-preview-enhanced.liveUpdate": true,
