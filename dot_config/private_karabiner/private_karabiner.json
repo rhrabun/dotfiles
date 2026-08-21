@@ -1,5 +1,7 @@
 {
-  "global": { "check_for_updates": false },
+  "global": {
+    "check_for_updates": false
+  },
   "profiles": [
     {
       "complex_modifications": {
@@ -8,14 +10,21 @@
             "description": "CapsLock = Hyper (held) / CapsLock toggle (tap)",
             "manipulators": [
               {
-                "conditions": [ ],
+                "conditions": [],
                 "from": {
                   "key_code": "caps_lock",
-                  "modifiers": { "optional": [ "any" ] }
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
                 },
                 "to": [
                   {
-                    "set_variable": { "name": "hyper", "value": 1 }
+                    "set_variable": {
+                      "name": "hyper",
+                      "value": 1
+                    }
                   }
                 ],
                 "to_if_alone": [
@@ -26,7 +35,10 @@
                 ],
                 "to_after_key_up": [
                   {
-                    "set_variable": { "name": "hyper", "value": 0 }
+                    "set_variable": {
+                      "name": "hyper",
+                      "value": 0
+                    }
                   }
                 ],
                 "type": "basic"
@@ -51,7 +63,11 @@
                 ],
                 "from": {
                   "key_code": "u",
-                  "modifiers": { "optional": [ "any" ] }
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
                 },
                 "to": [
                   {
@@ -78,10 +94,20 @@
                 ],
                 "from": {
                   "key_code": "n",
-                  "modifiers": { "optional": [ "any" ] }
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
                 },
                 "to": [
-                  { "key_code": "n", "modifiers": [ "left_command", "left_option" ] },
+                  {
+                    "key_code": "n",
+                    "modifiers": [
+                      "left_command",
+                      "left_option"
+                    ]
+                  },
                   {
                     "set_variable": {
                       "name": "upnote_layer",
@@ -106,10 +132,20 @@
                 ],
                 "from": {
                   "key_code": "f",
-                  "modifiers": { "optional": [ "any" ] }
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
                 },
                 "to": [
-                  { "key_code": "g", "modifiers": [ "left_command", "left_option" ] },
+                  {
+                    "key_code": "g",
+                    "modifiers": [
+                      "left_command",
+                      "left_option"
+                    ]
+                  },
                   {
                     "set_variable": {
                       "name": "upnote_layer",
@@ -139,7 +175,11 @@
                 ],
                 "from": {
                   "key_code": "t",
-                  "modifiers": { "optional": [ "any" ] }
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
                 },
                 "to": [
                   {
@@ -166,10 +206,16 @@
                 ],
                 "from": {
                   "key_code": "n",
-                  "modifiers": { "optional": [ "any" ] }
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
                 },
                 "to": [
-                  { "shell_command": "open 'todoist://openquickadd'" },
+                  {
+                    "shell_command": "open 'todoist://openquickadd'"
+                  },
                   {
                     "set_variable": {
                       "name": "todoist_layer",
@@ -194,10 +240,16 @@
                 ],
                 "from": {
                   "key_code": "i",
-                  "modifiers": { "optional": [ "any" ] }
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
                 },
                 "to": [
-                  { "shell_command": "open todoist://inbox" },
+                  {
+                    "shell_command": "open todoist://inbox"
+                  },
                   {
                     "set_variable": {
                       "name": "todoist_layer",
@@ -222,10 +274,16 @@
                 ],
                 "from": {
                   "key_code": "u",
-                  "modifiers": { "optional": [ "any" ] }
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
                 },
                 "to": [
-                  { "shell_command": "open todoist://upcoming" },
+                  {
+                    "shell_command": "open todoist://upcoming"
+                  },
                   {
                     "set_variable": {
                       "name": "todoist_layer",
@@ -250,10 +308,16 @@
                 ],
                 "from": {
                   "key_code": "p",
-                  "modifiers": { "optional": [ "any" ] }
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
                 },
                 "to": [
-                  { "shell_command": "open 'todoist://project?id=6fgr4jp897f4j3x6'" },
+                  {
+                    "shell_command": "open 'todoist://project?id=6fgr4jp897f4j3x6'"
+                  },
                   {
                     "set_variable": {
                       "name": "todoist_layer",
@@ -278,15 +342,627 @@
                 ],
                 "from": {
                   "key_code": "t",
-                  "modifiers": { "optional": [ "any" ] }
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
                 },
                 "to": [
-                  { "shell_command": "open todoist://today" },
+                  {
+                    "shell_command": "open todoist://today"
+                  },
                   {
                     "set_variable": {
                       "name": "todoist_layer",
                       "value": 0
                     }
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Hyper+O: arm Apps layer",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  },
+                  {
+                    "name": "apps_layer",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
+                "from": {
+                  "key_code": "o",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "apps_layer",
+                      "value": 1
+                    }
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Apps layer: G = Ghostty",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "apps_layer",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "g",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Ghostty'"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "apps_layer",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Apps layer: B = Browser (Zen)",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "apps_layer",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "b",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Zen'"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "apps_layer",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Apps layer: E = Editor (Zed)",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "apps_layer",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "e",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Zed'"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "apps_layer",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Apps layer: V = VS Code",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "apps_layer",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "v",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Visual Studio Code'"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "apps_layer",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Apps layer: S = Safari",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "apps_layer",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "s",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Safari'"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "apps_layer",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Apps layer: M = Music (Spotify)",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "apps_layer",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "m",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Spotify'"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "apps_layer",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Apps layer: P = Proton Mail",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "apps_layer",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "p",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Proton Mail'"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "apps_layer",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Apps layer: F = Finder",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "apps_layer",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "f",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Finder'"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "apps_layer",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Apps layer: N = Notes",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "apps_layer",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "n",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Notes'"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "apps_layer",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Apps layer: U = UpNote",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "apps_layer",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "u",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'UpNote'"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "apps_layer",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Apps layer: T = Todoist",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "apps_layer",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "t",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Todoist'"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "apps_layer",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Hyper+Left: Window Left Half",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "left_arrow",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -g 'raycast://extensions/raycast/window-management/left-half'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Hyper+Right: Window Right Half",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "right_arrow",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -g 'raycast://extensions/raycast/window-management/right-half'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Hyper+Up: Window Larger",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "up_arrow",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -g 'raycast://extensions/raycast/window-management/make-larger'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Hyper+Down: Window Smaller",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "down_arrow",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -g 'raycast://extensions/raycast/window-management/make-smaller'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Hyper+Space: Maximize Window",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "spacebar",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -g 'raycast://extensions/raycast/window-management/maximize'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Hyper+Enter: Center Window",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "return_or_enter",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -g 'raycast://extensions/raycast/window-management/center'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Hyper+Backspace: Restore Window",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "hyper",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "delete_or_backspace",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -g 'raycast://extensions/raycast/window-management/restore'"
                   }
                 ],
                 "type": "basic"
@@ -308,7 +984,9 @@
       ],
       "name": "Default profile",
       "selected": true,
-      "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+      "virtual_hid_keyboard": {
+        "keyboard_type_v2": "ansi"
+      }
     }
   ]
 }
