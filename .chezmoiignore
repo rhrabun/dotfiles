@@ -9,6 +9,7 @@ Brewfile
 {{- if ne .chezmoi.os "darwin" }}
 Library
 *aerospace*
+.config/karabiner
 {{- end }}
 
 # Linux only
