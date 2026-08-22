@@ -81,8 +81,8 @@
     "*.vue": "html",
     "*.tpl": "jsonc",
     "*.template": "yaml",
-    "*Dockerfile*": "dockerfile",
-    "*.sh.tmpl": "shellscript"
+    "*.sh.tmpl": "shellscript",
+    "*Dockerfile*": "dockerfile"
   },
   "[terraform]": {
     "editor.tabSize": 2,

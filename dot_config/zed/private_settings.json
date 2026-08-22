@@ -72,15 +72,22 @@
   // AI
   "disable_ai": false,
   "agent": {
+    "favorite_models": [
+      {
+        "provider": "openrouter",
+        "model": "~deepseek/deepseek-v4-flash-latest",
+        "enable_thinking": true
+      }
+    ],
     "notify_when_agent_waiting": "never",
     "default_profile": "ask",
     "dock": "left",
     "default_model": {
       "provider": "openrouter",
-      "model": "x-ai/grok-code-fast-1",
-      "enable_thinking": false,
+      "model": "~deepseek/deepseek-v4-flash-latest",
+      "enable_thinking": true,
     },
-    "default_width": 648.0,
+    "default_width": 700.0,
     "model_parameters": [],
   },
   // Appearance
@@ -131,7 +138,9 @@
       "*.template"
     ],
     "shellscript": [
-      "*.sh.tmpl"
+      "*.sh.tmpl",
+      "*zshrc",
+      ""
     ],
     "Ansible": [
       "**.ansible.yml",
