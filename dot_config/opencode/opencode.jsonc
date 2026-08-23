@@ -4,7 +4,7 @@
     "~/.agents/AGENTS.md",
     "~/.agents/instructions/*.md"
   ],
-  "model": "opencode/deepseek-v4-flash-free",
+  "model": "~deepseek/deepseek-v4-flash-latest",
   "autoupdate": false,
   "references": {
     "omarchy": {
