@@ -6,7 +6,6 @@ Configuration files for my local machine, managed with [chezmoi](https://www.che
 
 * git
 * chezmoi
-* Homebrew (macOS only) — needed by the brew-bundle provisioning script
 
 ## Setup on a new machine
 ```sh

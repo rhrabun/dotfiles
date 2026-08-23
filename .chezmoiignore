@@ -3,7 +3,6 @@ Makefile
 README.md
 .gitignore
 .pre-commit-config.yaml
-Brewfile
 
 # macOS only
 {{- if ne .chezmoi.os "darwin" }}
