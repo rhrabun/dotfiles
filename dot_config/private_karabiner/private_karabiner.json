@@ -228,7 +228,7 @@
             ]
           },
           {
-            "description": "Todoist layer: I = Inbox view",
+            "description": "Todoist layer: B = Inbox view",
             "manipulators": [
               {
                 "conditions": [
@@ -239,7 +239,7 @@
                   }
                 ],
                 "from": {
-                  "key_code": "i",
+                  "key_code": "b",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -296,7 +296,7 @@
             ]
           },
           {
-            "description": "Todoist layer: P = Project ideas",
+            "description": "Todoist layer: I = Ideas project",
             "manipulators": [
               {
                 "conditions": [
@@ -307,7 +307,7 @@
                   }
                 ],
                 "from": {
-                  "key_code": "p",
+                  "key_code": "i",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -364,7 +364,7 @@
             ]
           },
           {
-            "description": "Hyper+O: arm Apps layer",
+            "description": "Hyper+A: arm Apps layer",
             "manipulators": [
               {
                 "conditions": [
@@ -380,7 +380,7 @@
                   }
                 ],
                 "from": {
-                  "key_code": "o",
+                  "key_code": "a",
                   "modifiers": {
                     "optional": [
                       "any"
