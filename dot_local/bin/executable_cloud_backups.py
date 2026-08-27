@@ -7,7 +7,7 @@
 
 # Metadata for Raycast
 # @raycast.schemaVersion 1
-# @raycast.title Backups to Cloud
+# @raycast.title Cloud Backups
 # @raycast.mode fullOutput
 # @raycast.packageName dotfiles
 

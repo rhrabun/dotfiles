@@ -10,6 +10,7 @@
     "style": "line"
   },
   "keybinds": {
-    "diff_open": "ctrl+shift+d"
+    "diff_open": "ctrl+shift+d",
+    "model_list": "ctrl+shift+m"
   }
 }
