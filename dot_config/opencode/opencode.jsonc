@@ -20,6 +20,14 @@
       "headers": {
         "Authorization": "Bearer {file:~/.executor/server-control/token}"
       }
+      // Local stdio alternative — no token. Bridges to whatever daemon owns
+      // the data dir (starts one in the background if none is running).
+      // Requires bun via mise; EXECUTOR_DATA_DIR must match `make run`.
+      // "executor-local": {
+      //   "type": "local",
+      //   "command": ["mise", "exec", "--", "bun", "run", "/Users/roman/code/executor/apps/cli/src/main.ts", "mcp"],
+      //   "environment": { "EXECUTOR_DATA_DIR": "/Users/roman/.executor" }
+      // }
     }
   }
 }
