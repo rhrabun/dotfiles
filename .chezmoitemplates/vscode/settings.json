@@ -174,12 +174,28 @@
       "commands": [ "workbench.action.openGlobalKeybindingsFile" ]
     },
     {
+      // Format Document
+      "before": [ "<leader>", "c", "f" ],
+      "commands": [ "editor.action.formatDocument" ],
+      "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+    },
+    {
+      // New File
+      "before": [ "<leader>", "f", "n" ],
+      "commands": [ "workbench.action.files.newUntitledFile" ]
+    },
+    {
+      // Quit all
+      "before": [ "<leader>", "q", "q" ],
+      "commands": [ "workbench.action.quit" ]
+    },
+    {
       // Go to left split
       "before": [ "<C-h>" ],
       "after": [ "<C-W>", "h" ]
     },
     {
-      // Go to lower split
+      // Go to lower split 
       "before": [ "<C-j>" ],
       "after": [ "<C-W>", "j" ]
     },
@@ -204,72 +220,9 @@
       "commands": [ ":bnext" ]
     },
     {
-      // Prev buffer
-      "before": [ "[", "b" ],
-      "commands": [ ":bprev" ]
-    },
-    {
-      // Next buffer
-      "before": [ "]", "b" ],
-      "commands": [ ":bnext" ]
-    },
-    {
+      // Search word under cursor
       "before": [ "g", "w" ],
       "after": [ "*" ]
-    },
-    // {
-    //   // Next search result
-    //   "before": ["n"],
-    //   "commands": ["N/A - current VSCode behaviour"]
-    // },
-    // {
-    //   // Prev search result
-    //   "before": ["N"],
-    //   "commands": ["N/A - current VSCode behaviour"]
-    // },
-    // {
-    //   // Save file
-    //   "before": ["<C-s"],
-    //   "commands": ["N/A - current VSCode behaviour"]
-    // },
-    {
-      // Lazy
-      "before": [ "<leader>", "l" ],
-      "commands": [ "workbench.view.extensions" ]
-    },
-    {
-      // New File
-      "before": [ "<leader>", "f", "n" ],
-      "commands": [ "workbench.action.files.newUntitledFile" ]
-    },
-    {
-      // Lazygit (root dir)
-      "before": [ "<leader>", "g", "g" ],
-      "commands": [ "workbench.view.scm" ],
-      "when": "workbench.scm.active"
-    },
-    {
-      // Lazygit (cwd)
-      "before": [ "<leader>", "g", "G" ],
-      "commands": [ "workbench.view.scm" ],
-      "when": "workbench.scm.active"
-    },
-    {
-      // Quit all
-      "before": [ "<leader>", "q", "q" ],
-      "commands": [ "workbench.action.quit" ]
-    },
-    {
-      // Terminal (root dir)
-      "before": [ "<leader>", "f", "t" ],
-      "commands": [ "workbench.action.createTerminalEditor" ],
-      "when": "terminal.active"
-    },
-    {
-      // Terminal (cwd)
-      "before": [ "<leader>", "f", "T" ],
-      "commands": [ "workbench.action.createTerminalEditor" ],
-      "when": "terminal.active"
     },
     // LSP
     {
@@ -279,7 +232,7 @@
       "when": "workbench.panel.output.active"
     },
     {
-      // LSP info
+      // Toggle Output
       "before": [ "<leader>", "c", "l" ],
       "commands": [ "workbench.action.output.toggleOutput" ]
     },
@@ -320,12 +273,6 @@
       "when": "editorHasSignatureHelpProvider && editorTextFocus"
     },
     {
-      // Signature Help
-      "before": [ "<C-k>" ],
-      "commands": [ "editor.action.triggerParameterHints" ],
-      "when": "editorHasSignatureHelpProvider && editorTextFocus"
-    },
-    {
       // Next Diagnostic
       "before": [ "]", "d" ],
       "commands": [ "editor.action.marker.next" ],
@@ -362,20 +309,8 @@
       "when": "editorFocus"
     },
     {
-      // Format Document
-      "before": [ "<leader>", "c", "f" ],
-      "commands": [ "editor.action.formatDocument" ],
-      "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
-    },
-    {
       // Code Action
       "before": [ "<leader>", "c", "a" ],
-      "commands": [ "editor.action.quickFix" ],
-      "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
-    },
-    {
-      // Source Action
-      "before": [ "<leader>", "c", "A" ],
       "commands": [ "editor.action.quickFix" ],
       "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
     },
@@ -401,7 +336,7 @@
     },
     {
       // Delete non-pinned buffers
-      "before": [ "<leader>", "b", "P" ],
+      "before": [ "<leader>", "b", "D" ],
       "commands": [ "workbench.action.closeAllEditors" ]
     },
     // NVIM-SPECTRE
@@ -413,99 +348,40 @@
     },
     // TELESCOPE.NVIM
     {
-      // Grep (root dir)
+      // Search in files
       "before": [ "<leader>", "/" ],
       "commands": [ "workbench.action.findInFiles" ]
     },
     {
-      // Find Files (root dir)
+      // Open File
       "before": [ "<leader>", "<space>" ],
       "commands": [ "workbench.action.quickOpen" ]
     },
     {
-      // Buffers
+      // Buffers (file finder on open editors)
       "before": [ "<leader>", "f", "b" ],
-      "commands": [ "workbench.action.quickOpen" ]
+      "commands": [ "workbench.action.showAllEditors" ]
     },
     {
-      // Find Files (root dir)
+      // Open File 
       "before": [ "<leader>", "f", "f" ],
       "commands": [ "workbench.action.quickOpen" ]
     },
     {
-      // Find Files (cwd)
-      "before": [ "<leader>", "f", "F" ],
-      "commands": [ "workbench.action.quickOpen" ]
-    },
-    {
-      // Recent
+      // Open file from Recent
       "before": [ "<leader>", "f", "r" ],
-      "commands": [ "workbench.action.quickOpen" ]
+      "commands": [ "workbench.action.openRecent" ]
     },
     {
-      // Recent (cwd)
-      "before": [ "<leader>", "f", "R" ],
-      "commands": [ "workbench.action.quickOpen" ]
-    },
-    {
-      // commits
-      "before": [ "<leader>", "g", "c" ],
-      "commands": [ "workbench.view.scm" ],
-      "when": "workbench.scm.active"
-    },
-    {
-      // status
-      "before": [ "<leader>", "g", "s" ],
-      "commands": [ "workbench.view.scm" ],
-      "when": "workbench.scm.active"
-    },
-    {
-      // Buffer
-      "before": [ "<leader>", "s", "b" ],
-      "commands": [ "editor.action.startFindReplaceAction" ],
-      "when": "editorFocus || editorIsOpen"
-    },
-    {
-      // Commands
-      "before": [ "<leader>", "s", "C" ],
+      // Command Palette
+      "before": [ "<leader>", "s", "c" ],
       "commands": [ "workbench.action.showCommands" ]
     },
     {
-      // Document diagnostics
+      // Document diagnostics (Problems tab)
       "before": [ "<leader>", "s", "d" ],
       "commands": [ "workbench.actions.view.problems" ],
       "when": "workbench.panel.markers.view.active"
     },
-    {
-      // Workspace diagnostics
-      "before": [ "<leader>", "s", "D" ],
-      "commands": [ "workbench.actions.view.problems" ],
-      "when": "workbench.panel.markers.view.active"
-    },
-    {
-      // Grep (root dir)
-      "before": [ "<leader>", "s", "g" ],
-      "commands": [ "workbench.action.findInFiles" ]
-    },
-    {
-      // Grep (cwd)
-      "before": [ "<leader>", "s", "G" ],
-      "commands": [ "workbench.action.findInFiles" ]
-    },
-    {
-      // Help Pages
-      "before": [ "<leader>", "s", "h" ],
-      "commands": [ "workbench.action.openDocumentationUrl" ]
-    },
-    {
-      // Key Maps
-      "before": [ "<leader>", "s", "k" ],
-      "commands": [ "workbench.action.showCommands" ]
-    },
-    {
-      // Colorscheme with preview
-      "before": [ "<leader>", "u", "C" ],
-      "commands": [ "workbench.action.selectTheme" ]
-    }
-  ]
+  ],
 }

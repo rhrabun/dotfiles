@@ -165,9 +165,17 @@
     "command": "workbench.action.decreaseViewWidth",
   },
   {
+    // Toggle maximize editor group (e.g. when working with splits)
     "key": "ctrl+alt+m",
     // "command": "workbench.action.toggleMaximizeEditorGroup",
     "command": "workbench.action.toggleEditorWidths",
     "when": "editorTextFocus"
+  },
+  {
+    // Toggle maximize auxiliary bar (e.g. when working with chat)
+    "key": "ctrl+alt+m",
+    "command": "workbench.action.toggleMaximizedAuxiliaryBar",
+    "when": "auxiliaryBarVisible"
   }
 ]
+
