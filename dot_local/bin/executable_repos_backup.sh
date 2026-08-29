@@ -3,7 +3,7 @@
 
 # Metadata for Raycast
 # @raycast.schemaVersion 1
-# @raycast.title Repos Backup 
+# @raycast.title Repos Backup
 # @raycast.mode fullOutput
 # @raycast.packageName dotfiles
 

@@ -195,7 +195,7 @@
       "after": [ "<C-W>", "h" ]
     },
     {
-      // Go to lower split 
+      // Go to lower split
       "before": [ "<C-j>" ],
       "after": [ "<C-W>", "j" ]
     },
@@ -363,7 +363,7 @@
       "commands": [ "workbench.action.showAllEditors" ]
     },
     {
-      // Open File 
+      // Open File
       "before": [ "<leader>", "f", "f" ],
       "commands": [ "workbench.action.quickOpen" ]
     },
