@@ -468,7 +468,7 @@
             ]
           },
           {
-            "description": "Apps layer: E = Editor (Zed)",
+            "description": "Apps layer: E = Editor (VS Code)",
             "manipulators": [
               {
                 "conditions": [
@@ -480,40 +480,6 @@
                 ],
                 "from": {
                   "key_code": "e",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "open -a 'Zed'"
-                  },
-                  {
-                    "set_variable": {
-                      "name": "apps_layer",
-                      "value": 0
-                    }
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Apps layer: V = VS Code",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "name": "apps_layer",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "from": {
-                  "key_code": "v",
                   "modifiers": {
                     "optional": [
                       "any"

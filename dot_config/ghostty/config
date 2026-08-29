@@ -14,8 +14,6 @@ background-opacity = 0.95
 
 # Ignore special symbols on Alt + letter
 macos-option-as-alt = true
-keybind = alt+left=unbind
-keybind = alt+right=unbind
 
 confirm-close-surface=false
 

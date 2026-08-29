@@ -1,4 +1,3 @@
-// LazyVim-like config with some custom tweaks
 {
   // Per-environment settings
   "amazonQ.telemetry": false,
@@ -42,6 +41,16 @@
   "explorer.confirmDelete": false,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "files.eol": "\n",
+  "files.exclude": {
+    "**/__pycache__": true
+  },
+  "files.associations": {
+    "*.vue": "html",
+    "*.tpl": "jsonc",
+    "*.template": "yaml",
+    "*.sh.tmpl": "shellscript",
+    "*Dockerfile*": "dockerfile"
+  },
   // AI / Copilot
   "github.copilot.enable": {
     "*": true,
@@ -77,17 +86,13 @@
   "[go]": {
     "editor.defaultFormatter": "golang.go",
   },
-  "files.associations": {
-    "*.vue": "html",
-    "*.tpl": "jsonc",
-    "*.template": "yaml",
-    "*.sh.tmpl": "shellscript",
-    "*Dockerfile*": "dockerfile"
-  },
   "[terraform]": {
     "editor.tabSize": 2,
     "editor.defaultFormatter": "hashicorp.terraform"
   },
+  "ansible.lightspeed.enabled": false,
+  "ansible.validation.lint.enabled": false,
+  "ansible.lightspeed.suggestions.enabled": false,
   "[yaml]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
@@ -98,9 +103,6 @@
       "strings": true
     },
     "editor.defaultFormatter": "redhat.vscode-yaml"
-  },
-  "files.exclude": {
-    "**/__pycache__": true
   },
   "yaml.customTags": [
     "!Equals sequence",
