@@ -364,7 +364,7 @@
             ]
           },
           {
-            "description": "Hyper+A: arm Apps layer",
+            "description": "Hyper+G: arm Apps layer",
             "manipulators": [
               {
                 "conditions": [
@@ -380,7 +380,7 @@
                   }
                 ],
                 "from": {
-                  "key_code": "a",
+                  "key_code": "g",
                   "modifiers": {
                     "optional": [
                       "any"
