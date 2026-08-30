@@ -706,7 +706,7 @@
             ]
           },
           {
-            "description": "Apps layer: T = Todoist",
+            "description": "Apps layer: T = Telegram",
             "manipulators": [
               {
                 "conditions": [
@@ -718,40 +718,6 @@
                 ],
                 "from": {
                   "key_code": "t",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "open -a 'Todoist'"
-                  },
-                  {
-                    "set_variable": {
-                      "name": "apps_layer",
-                      "value": 0
-                    }
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Apps layer: C = Telegram",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "name": "apps_layer",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "from": {
-                  "key_code": "c",
                   "modifiers": {
                     "optional": [
                       "any"
