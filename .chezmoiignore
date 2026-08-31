@@ -10,12 +10,14 @@ README.md
 Library
 *aerospace*
 .config/karabiner
+.local/bin
 {{- end }}
 
 # Linux only
 {{- if ne .chezmoi.os "linux" }}
 .config/hypr
 .config/Code
+.config/voxtype
 {{- end }}
 
 # Windows only

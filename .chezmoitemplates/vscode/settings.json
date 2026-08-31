@@ -93,6 +93,7 @@
   "ansible.lightspeed.enabled": false,
   "ansible.validation.lint.enabled": false,
   "ansible.lightspeed.suggestions.enabled": false,
+  "docker.extension.enableComposeLanguageServer": false,
   "[yaml]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
