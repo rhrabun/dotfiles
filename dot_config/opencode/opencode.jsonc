@@ -7,9 +7,5 @@
   "model": "~deepseek/deepseek-v4-flash-latest",
   "autoupdate": false,
   "references": {
-    "omarchy": {
-      "repository": "basecamp/omarchy",
-      "description": "Use for Omarchy config and manual details"
-    }
   }
 }
