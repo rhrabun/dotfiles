@@ -88,3 +88,10 @@ autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
+
+# Resolve Delete key correctly
+bindkey '^[[3~'  delete-char
+# Opt+Delete
+bindkey '^[[3;3~' kill-word
+# Cmd+Delete
+bindkey '^[[3;9~' kill-line
