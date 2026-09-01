@@ -3,7 +3,6 @@ Makefile
 README.md
 .gitignore
 .pre-commit-config.yaml
-.ssh
 
 # macOS only
 {{- if ne .chezmoi.os "darwin" }}
@@ -11,6 +10,7 @@ Library
 *aerospace*
 .config/karabiner
 .local/bin
+.ssh
 {{- end }}
 
 # Linux only
