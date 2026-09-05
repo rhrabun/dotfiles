@@ -91,10 +91,10 @@ keybinds clear-defaults=true {
         bind "tab" { MovePane; }
     }
     scroll {
-        bind "Alt Shift left" { GoToPreviousTab; SwitchToMode "normal"; }
-        bind "Alt Shift down" { GoToNextTab; SwitchToMode "normal"; }
-        bind "Alt Shift up" { GoToPreviousTab; SwitchToMode "normal"; }
-        bind "Alt Shift right" { GoToNextTab; SwitchToMode "normal"; }
+        bind "Ctrl Shift left" { GoToPreviousTab; SwitchToMode "normal"; }
+        bind "Ctrl Shift down" { GoToNextTab; SwitchToMode "normal"; }
+        bind "Ctrl Shift up" { GoToPreviousTab; SwitchToMode "normal"; }
+        bind "Ctrl Shift right" { GoToNextTab; SwitchToMode "normal"; }
         bind "c" { CopyLastCommandOutput; SwitchToMode "normal"; }
         bind "e" { EditScrollback; SwitchToMode "normal"; }
         bind "Alt h" { MoveFocus "left"; SwitchToMode "normal"; }
@@ -180,10 +180,10 @@ keybinds clear-defaults=true {
         bind "Ctrl o" { SwitchToMode "session"; }
     }
     shared_except "locked" "scroll" {
-        bind "Alt Shift left" { GoToPreviousTab; }
-        bind "Alt Shift down" { GoToNextTab; }
-        bind "Alt Shift up" { GoToPreviousTab; }
-        bind "Alt Shift right" { GoToNextTab; }
+        bind "Ctrl Shift left" { GoToPreviousTab; }
+        bind "Ctrl Shift down" { GoToNextTab; }
+        bind "Ctrl Shift up" { GoToPreviousTab; }
+        bind "Ctrl Shift right" { GoToNextTab; }
         bind "Alt h" { MoveFocus "left"; }
         bind "Alt j" { MoveFocus "down"; }
         bind "Alt k" { MoveFocus "up"; }
