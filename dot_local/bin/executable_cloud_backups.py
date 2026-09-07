@@ -2,7 +2,7 @@
 #
 # /// script
 # requires-python = ">=3.12"
-# dependencies = ["dirsync", "keyring"]
+# dependencies = ["keyring==25.7.0"]
 # ///
 
 # Metadata for Raycast
@@ -15,16 +15,25 @@
 
 Scripts syncs local backup folder to cloud storage providers (iCloud, ProtonDrive, Google Drive).
 Email names are used in Cloud Providers folder names and are stored in keyring to keep outside of code.
+
+UpNote stores each note's content once at the space root and represents notebook
+placement with relative symlinks, so moving a note between notebooks is just a
+symlink move — no content rewrites, no extra disk usage.
+
+Symlinks in the source (UpNote backup format) are dereferenced into real files, because
+cloud providers (ProtonDrive, iCloud) do not sync symlinks.
 """
 
 import logging
+import subprocess
 from pathlib import Path
 
-from dirsync import sync
 from keyring import get_password, set_password
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)
+
+RSYNC_OK_CODES = (0, 24)  # 24 = files vanished during transfer, harmless for backups
 
 
 def get_emails() -> tuple[str, str]:
@@ -63,51 +72,70 @@ def get_emails() -> tuple[str, str]:
     return proton_email, google_email
 
 
-def sync_dir(source_path: Path, target_path: Path, options: dict[str, object]) -> None:
-    """Sync a source folder to a target folder.
+def rsync_dir(source_path: Path, target_path: Path, options: list[str]) -> None:
+    """Sync source to target with rsync, dereferencing symlinks into real files.
 
     Args:
         source_path (Path): Local source directory to sync.
         target_path (Path): Remote or mounted target directory to sync into.
-        options (dict[str, object]): Additional options passed to dirsync.sync.
+        options (list[str]): Extra rsync options (e.g. include/exclude filters).
     """
-    if not source_path.exists():
-        log.error(f"Source path {source_path} does not exist. Skipping sync.")
+    if not source_path.is_dir():
         raise FileNotFoundError(f"Source path {source_path} does not exist.")
-    elif not target_path.exists():
-        log.error(f"Target path {target_path} does not exist. Skipping sync.")
+    if not target_path.is_dir():
         raise FileNotFoundError(f"Target path {target_path} does not exist.")
-    else:
-        sync(source_path, target_path, "sync", **options)
+
+    cmd = [
+        "rsync", "-rlt", "--copy-links", "--delete", "--stats",
+        *options,
+        f"{source_path}/",
+        f"{target_path}/",
+    ]
+    proc = subprocess.run(cmd, capture_output=True, text=True)
+
+    for line in proc.stdout.splitlines():
+        log.info(line)
+    if proc.returncode not in RSYNC_OK_CODES:
+        log.error("rsync to %s failed (rc=%d): %s",
+                  target_path, proc.returncode, proc.stderr.strip())
+        raise subprocess.CalledProcessError(proc.returncode, "rsync")
 
 
 def main() -> None:
     log.info("Starting backup sync")
     proton_email, google_email = get_emails()
 
-    default_sync_options = {"logger": log, "purge": True, "verbose": False}
     SRC_PATH = Path("~/Backups").expanduser()
     TARGETS = {
         "icloud": {
             "target": "~/Library/Mobile Documents/com~apple~CloudDocs/[98] Backups",
-            "options": {},
+            "options": [],
         },
         "proton": {
             "target": f"~/Library/CloudStorage/ProtonDrive-{proton_email}-folder/[98] Backups",
-            "options": {},
+            "options": [],
         },
         "google": {
             "target": f"~/Library/CloudStorage/GoogleDrive-{google_email}/My Drive/[98] Backups/",
-            "options": {"only": (r".*BackupsVault.*",)},
+            "options": ["--include=*/", "--include=*BackupsVault*", "--exclude=*"],
         },
     }
 
+    failed = []
     for target_name, config in TARGETS.items():
         target_path = Path(config["target"]).expanduser()
-        options = {**default_sync_options, **config.get("options", {})}
-
+        log.info("")
+        log.info("#" * 25)
         log.info(f"Syncing to {target_name.capitalize()}")
-        sync_dir(SRC_PATH, target_path, options)
+        try:
+            rsync_dir(SRC_PATH, target_path, config["options"])
+        except (FileNotFoundError, subprocess.CalledProcessError) as e:
+            log.error("Sync to %s failed: %s", target_name, e)
+            failed.append(target_name)
+
+    if failed:
+        log.error("Backups sync finished with failures: %s", ", ".join(failed))
+        raise SystemExit(1)
 
     log.info("Backups sync done")
 
