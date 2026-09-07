@@ -11,6 +11,7 @@
   },
   "keybinds": {
     "diff_open": "ctrl+shift+d",
-    "model_list": "ctrl+shift+m"
+    "model_list": "ctrl+shift+m",
+    "prompt_skills": "ctrl+shift+s"
   }
 }
