@@ -13,5 +13,8 @@ HISTFILESIZE=2000
 # Update window size after resize
 shopt -s checkwinsize
 
+# Use zoxide instead of cd
+eval "$(zoxide init bash --cmd cd)"
+
 # Aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
