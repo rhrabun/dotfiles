@@ -1,3 +1,17 @@
+# Prevent execution in non-interactive shells
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# History configuration
+HISTCONTROL=ignoreboth
+shopt -s histappend
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# Update window size after resize
+shopt -s checkwinsize
 
 # Aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
