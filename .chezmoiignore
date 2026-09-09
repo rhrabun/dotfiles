@@ -15,7 +15,6 @@ Library
 
 # Linux only
 {{- if ne .chezmoi.os "linux" }}
-.bashrc
 .config/hypr
 .config/Code
 .config/voxtype
@@ -23,6 +22,5 @@ Library
 
 # Windows only
 {{- if ne .chezmoi.os "windows" }}
-.bashrc
 .AppData
 {{- end }}
