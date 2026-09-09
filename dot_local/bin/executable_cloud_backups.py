@@ -86,7 +86,11 @@ def rsync_dir(source_path: Path, target_path: Path, options: list[str]) -> None:
         raise FileNotFoundError(f"Target path {target_path} does not exist.")
 
     cmd = [
-        "rsync", "-rlt", "--copy-links", "--delete", "--stats",
+        "rsync",
+        "-rlt",
+        "--copy-links",
+        "--delete",
+        "--stats",
         *options,
         f"{source_path}/",
         f"{target_path}/",
@@ -96,8 +100,12 @@ def rsync_dir(source_path: Path, target_path: Path, options: list[str]) -> None:
     for line in proc.stdout.splitlines():
         log.info(line)
     if proc.returncode not in RSYNC_OK_CODES:
-        log.error("rsync to %s failed (rc=%d): %s",
-                  target_path, proc.returncode, proc.stderr.strip())
+        log.error(
+            "rsync to %s failed (rc=%d): %s",
+            target_path,
+            proc.returncode,
+            proc.stderr.strip(),
+        )
         raise subprocess.CalledProcessError(proc.returncode, "rsync")
 
 
