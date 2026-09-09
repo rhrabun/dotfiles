@@ -10,16 +10,24 @@ status_indicators = "symbols"
 enabled = true
 
 [keys]
-focus_pane_left = ["prefix+h", "alt+h"]
-focus_pane_down = ["prefix+j", "alt+j"]
-focus_pane_up = ["prefix+k", "alt+k"]
-focus_pane_right = ["prefix+l", "alt+l"]
-previous_tab = ["prefix+p", "ctrl+shift+left"]
-next_tab = ["prefix+n", "ctrl+shift+right"]
-previous_workspace = "ctrl+shift+up"
-next_workspace = "ctrl+shift+down"
+# Vim-style navigation
+focus_pane_left = "alt+h"
+focus_pane_down = "alt+j"
+focus_pane_up = "alt+k"
+focus_pane_right = "alt+l"
+
+next_tab = ["prefix+n", "ctrl+alt+l"]
+previous_tab = ["prefix+p", "ctrl+alt+h"]
+
+next_workspace = "ctrl+alt+j"
+previous_workspace = "ctrl+alt+k"
+
+# rebind horizontal split instead of pane focus
+split_horizontal = ["prefix+minus", "prefix+h"]
+
 toggle_sidebar = ["prefix+b", "cmd+shift+s"]
 
 [keys.indexed]
 tabs = "alt"
 workspaces = "ctrl"
+agents = "ctrl+alt"
