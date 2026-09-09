@@ -1,0 +1,25 @@
+onboarding = false
+
+[ui.toast]
+delivery = "herdr"
+
+[ui]
+status_indicators = "symbols"
+
+[ui.sound]
+enabled = true
+
+[keys]
+focus_pane_left = ["prefix+h", "alt+h"]
+focus_pane_down = ["prefix+j", "alt+j"]
+focus_pane_up = ["prefix+k", "alt+k"]
+focus_pane_right = ["prefix+l", "alt+l"]
+previous_tab = ["prefix+p", "ctrl+shift+left"]
+next_tab = ["prefix+n", "ctrl+shift+right"]
+previous_workspace = "ctrl+shift+up"
+next_workspace = "ctrl+shift+down"
+toggle_sidebar = ["prefix+b", "cmd+shift+s"]
+
+[keys.indexed]
+tabs = "alt"
+workspaces = "ctrl"
