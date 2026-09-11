@@ -1,0 +1,3 @@
+[tools]
+herdr = "latest"
+terraform = "1.16"
