@@ -2,6 +2,12 @@ default_stages: [pre-commit]
 fail_fast: false
 
 repos:
+  # Check for secret leaks
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.24.2
+    hooks:
+      - id: gitleaks
+
   # General file fixers
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
