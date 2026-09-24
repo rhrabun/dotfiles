@@ -65,7 +65,7 @@ def get_emails() -> tuple[str, str]:
     # If still missing, fail early so caller can handle it
     if not proton_email or not google_email:
         log.error("Failed to store or retrieve email credentials from keyring.")
-        raise EnvironmentError("Missing required email credentials in keyring.")
+        raise OSError("Missing required email credentials in keyring.")
 
     log.info("Retrieved emails from keyring.")
 
@@ -95,7 +95,7 @@ def rsync_dir(source_path: Path, target_path: Path, options: list[str]) -> None:
         f"{source_path}/",
         f"{target_path}/",
     ]
-    proc = subprocess.run(cmd, capture_output=True, text=True)
+    proc = subprocess.run(cmd, capture_output=True, text=True, check=False)
 
     for line in proc.stdout.splitlines():
         log.info(line)
