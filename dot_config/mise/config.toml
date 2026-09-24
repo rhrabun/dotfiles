@@ -1,4 +1,5 @@
 [tools]
 go = "latest"
+ruff = "latest"
 awscli = "latest"
 terraform = "1.16"
