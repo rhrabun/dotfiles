@@ -11,21 +11,24 @@
 # @raycast.mode fullOutput
 # @raycast.packageName dotfiles
 
-"""Backups sync script.
+"""Backups snapshot script.
 
-Scripts syncs local backup folder to cloud storage providers (iCloud, ProtonDrive, Google Drive).
-Email names are used in Cloud Providers folder names and are stored in keyring to keep outside of code.
+Copies ~/Backups into a dated snapshot folder (YYYY-MM-DD) on each cloud
+provider (iCloud, ProtonDrive, Google Drive), then verifies the snapshot with a
+checksum comparison.
 
-UpNote stores each note's content once at the space root and represents notebook
-placement with relative symlinks, so moving a note between notebooks is just a
-symlink move — no content rewrites, no extra disk usage.
+Snapshots are never pruned; delete old ones manually.
 
-Symlinks in the source (UpNote backup format) are dereferenced into real files, because
-cloud providers (ProtonDrive, iCloud) do not sync symlinks.
+Email names are used in Cloud Providers folder names and are stored in keyring
+to keep outside of code.
+
+Symlinks in the source (UpNote backup format) are dereferenced into real files,
+because cloud providers (ProtonDrive, iCloud) do not sync symlinks.
 """
 
 import logging
 import subprocess
+import time
 from pathlib import Path
 
 from keyring import get_password, set_password
@@ -72,45 +75,62 @@ def get_emails() -> tuple[str, str]:
     return proton_email, google_email
 
 
-def rsync_dir(source_path: Path, target_path: Path, options: list[str]) -> None:
-    """Sync source to target with rsync, dereferencing symlinks into real files.
+def rsync(
+    source_path: Path, target_path: Path, options: list[str], verify: bool
+) -> subprocess.CompletedProcess:
+    """Run rsync from source into an existing target directory.
 
-    Args:
-        source_path (Path): Local source directory to sync.
-        target_path (Path): Remote or mounted target directory to sync into.
-        options (list[str]): Extra rsync options (e.g. include/exclude filters).
+    verify=False copies into the target (``--delete --stats``).
+    verify=True does a checksum dry-run (``--checksum --itemize-changes
+    --dry-run``); any stdout line means the target differs from the source.
     """
     if not source_path.is_dir():
         raise FileNotFoundError(f"Source path {source_path} does not exist.")
-    if not target_path.is_dir():
-        raise FileNotFoundError(f"Target path {target_path} does not exist.")
 
-    cmd = [
-        "rsync",
-        "-rlt",
-        "--copy-links",
-        "--delete",
-        "--stats",
-        *options,
-        f"{source_path}/",
-        f"{target_path}/",
-    ]
-    proc = subprocess.run(cmd, capture_output=True, text=True, check=False)
+    cmd = ["rsync", "-rlt", "--copy-links", "--delete"]
+    cmd += ["--dry-run", "--checksum", "--itemize-changes"] if verify else ["--stats"]
+    cmd += [*options, f"{source_path}/", f"{target_path}/"]
+    return subprocess.run(cmd, capture_output=True, text=True, check=False)
 
-    for line in proc.stdout.splitlines():
+
+def sync_snapshot(source_path: Path, base_path: Path, options: list[str]) -> Path:
+    """Copy source into ``<base>/<today>/`` and verify the copy.
+
+    Args:
+        source_path (Path): Local source directory to snapshot.
+        base_path (Path): Mounted cloud snapshot root (e.g. ``[98] Backups``).
+        options (list[str]): Extra rsync options (e.g. include/exclude filters).
+
+    Returns:
+        Path: The created snapshot directory.
+    """
+    if not base_path.is_dir():
+        raise FileNotFoundError(f"Target path {base_path} does not exist.")
+
+    snapshot = base_path / time.strftime("%Y-%m-%d")
+    snapshot.mkdir(parents=True, exist_ok=True)
+
+    copy = rsync(source_path, snapshot, options, verify=False)
+    for line in copy.stdout.splitlines():
         log.info(line)
-    if proc.returncode not in RSYNC_OK_CODES:
-        log.error(
-            "rsync to %s failed (rc=%d): %s",
-            target_path,
-            proc.returncode,
-            proc.stderr.strip(),
+    if copy.returncode not in RSYNC_OK_CODES:
+        raise subprocess.CalledProcessError(
+            copy.returncode, "rsync", copy.stderr.strip()
         )
-        raise subprocess.CalledProcessError(proc.returncode, "rsync")
+
+    check = rsync(source_path, snapshot, options, verify=True)
+    diffs = [line for line in check.stdout.splitlines() if line.strip()]
+    if check.returncode not in RSYNC_OK_CODES or diffs:
+        raise OSError(
+            f"integrity check failed for {snapshot}: {diffs or check.stderr.strip()}"
+        )
+
+    log.info("Verified %s", snapshot)
+    return snapshot
 
 
 def main() -> None:
-    log.info("Starting backup sync")
+    log.info("Starting backup snapshot")
     proton_email, google_email = get_emails()
 
     SRC_PATH = Path("~/Backups").expanduser()
@@ -131,21 +151,21 @@ def main() -> None:
 
     failed = []
     for target_name, config in TARGETS.items():
-        target_path = Path(config["target"]).expanduser()
+        base_path = Path(config["target"]).expanduser()
         log.info("")
         log.info("#" * 25)
-        log.info(f"Syncing to {target_name.capitalize()}")
+        log.info("Syncing to %s", target_name.capitalize())
         try:
-            rsync_dir(SRC_PATH, target_path, config["options"])
-        except (FileNotFoundError, subprocess.CalledProcessError) as e:
+            sync_snapshot(SRC_PATH, base_path, config["options"])
+        except (FileNotFoundError, subprocess.CalledProcessError, OSError) as e:
             log.error("Sync to %s failed: %s", target_name, e)
             failed.append(target_name)
 
     if failed:
-        log.error("Backups sync finished with failures: %s", ", ".join(failed))
+        log.error("Backup snapshot finished with failures: %s", ", ".join(failed))
         raise SystemExit(1)
 
-    log.info("Backups sync done")
+    log.info("Backup snapshot done")
 
 
 if __name__ == "__main__":
