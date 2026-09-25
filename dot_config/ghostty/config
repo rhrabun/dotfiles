@@ -16,6 +16,7 @@ background-opacity = 0.95
 macos-option-as-alt = true
 
 confirm-close-surface=false
+quit-after-last-window-closed = true
 
 # Keybinds
 keybind = super+u=toggle_background_opacity
