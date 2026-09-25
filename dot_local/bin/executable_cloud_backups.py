@@ -17,8 +17,6 @@ Copies ~/Backups into a dated snapshot folder (YYYY-MM-DD) on each cloud
 provider (iCloud, ProtonDrive, Google Drive), then verifies the snapshot with a
 checksum comparison.
 
-Snapshots are never pruned; delete old ones manually.
-
 Email names are used in Cloud Providers folder names and are stored in keyring
 to keep outside of code.
 
@@ -27,6 +25,7 @@ because cloud providers (ProtonDrive, iCloud) do not sync symlinks.
 """
 
 import logging
+import shutil
 import subprocess
 import time
 from pathlib import Path
@@ -37,6 +36,29 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 log = logging.getLogger(__name__)
 
 RSYNC_OK_CODES = (0, 24)  # 24 = files vanished during transfer, harmless for backups
+
+
+def resolve_rsync() -> str:
+    """Return the GNU rsync binary path, rejecting macOS openrsync.
+
+    openrsync's ``hash_file_by_path`` fails on symlinks when combined with
+    ``--copy-links --checksum``, which breaks the snapshot verification.
+    """
+    rsync_bin = shutil.which("rsync", path="/opt/homebrew/bin:/usr/local/bin:/usr/bin")
+    if not rsync_bin:
+        raise FileNotFoundError("rsync not found; install with: brew install rsync")
+
+    version = subprocess.run(
+        [rsync_bin, "--version"], capture_output=True, text=True, check=False
+    ).stdout
+    if "openrsync" in version:
+        raise OSError(
+            f"GNU rsync required, found openrsync at {rsync_bin}; "
+            "install with: brew install rsync"
+        )
+
+    log.info("Using rsync at %s", rsync_bin)
+    return rsync_bin
 
 
 def get_emails() -> tuple[str, str]:
@@ -76,7 +98,11 @@ def get_emails() -> tuple[str, str]:
 
 
 def rsync(
-    source_path: Path, target_path: Path, options: list[str], verify: bool
+    rsync_bin: str,
+    source_path: Path,
+    target_path: Path,
+    options: list[str],
+    verify: bool,
 ) -> subprocess.CompletedProcess:
     """Run rsync from source into an existing target directory.
 
@@ -87,13 +113,15 @@ def rsync(
     if not source_path.is_dir():
         raise FileNotFoundError(f"Source path {source_path} does not exist.")
 
-    cmd = ["rsync", "-rlt", "--copy-links", "--delete"]
+    cmd = [rsync_bin, "-rlt", "--copy-links", "--delete", "--omit-dir-times"]
     cmd += ["--dry-run", "--checksum", "--itemize-changes"] if verify else ["--stats"]
     cmd += [*options, f"{source_path}/", f"{target_path}/"]
     return subprocess.run(cmd, capture_output=True, text=True, check=False)
 
 
-def sync_snapshot(source_path: Path, base_path: Path, options: list[str]) -> Path:
+def sync_snapshot(
+    rsync_bin: str, source_path: Path, base_path: Path, options: list[str]
+) -> Path:
     """Copy source into ``<base>/<today>/`` and verify the copy.
 
     Args:
@@ -110,7 +138,7 @@ def sync_snapshot(source_path: Path, base_path: Path, options: list[str]) -> Pat
     snapshot = base_path / time.strftime("%Y-%m-%d")
     snapshot.mkdir(parents=True, exist_ok=True)
 
-    copy = rsync(source_path, snapshot, options, verify=False)
+    copy = rsync(rsync_bin, source_path, snapshot, options, verify=False)
     for line in copy.stdout.splitlines():
         log.info(line)
     if copy.returncode not in RSYNC_OK_CODES:
@@ -118,7 +146,7 @@ def sync_snapshot(source_path: Path, base_path: Path, options: list[str]) -> Pat
             copy.returncode, "rsync", copy.stderr.strip()
         )
 
-    check = rsync(source_path, snapshot, options, verify=True)
+    check = rsync(rsync_bin, source_path, snapshot, options, verify=True)
     diffs = [line for line in check.stdout.splitlines() if line.strip()]
     if check.returncode not in RSYNC_OK_CODES or diffs:
         raise OSError(
@@ -131,6 +159,7 @@ def sync_snapshot(source_path: Path, base_path: Path, options: list[str]) -> Pat
 
 def main() -> None:
     log.info("Starting backup snapshot")
+    rsync_bin = resolve_rsync()
     proton_email, google_email = get_emails()
 
     SRC_PATH = Path("~/Backups").expanduser()
@@ -145,7 +174,7 @@ def main() -> None:
         },
         "google": {
             "target": f"~/Library/CloudStorage/GoogleDrive-{google_email}/My Drive/[98] Backups/",
-            "options": ["--include=*/", "--include=*BackupsVault*", "--exclude=*"],
+            "options": ["--include=BackupsVault/***", "--exclude=*"],
         },
     }
 
@@ -156,7 +185,7 @@ def main() -> None:
         log.info("#" * 25)
         log.info("Syncing to %s", target_name.capitalize())
         try:
-            sync_snapshot(SRC_PATH, base_path, config["options"])
+            sync_snapshot(rsync_bin, SRC_PATH, base_path, config["options"])
         except (FileNotFoundError, subprocess.CalledProcessError, OSError) as e:
             log.error("Sync to %s failed: %s", target_name, e)
             failed.append(target_name)
