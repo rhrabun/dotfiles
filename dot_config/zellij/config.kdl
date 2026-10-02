@@ -383,7 +383,7 @@ pane_frames false
 //   - full
 //   - titles (default)
 //
-// pane_frame_style "titles"
+pane_frame_style "titles"
 
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)
