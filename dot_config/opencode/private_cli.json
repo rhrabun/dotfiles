@@ -1,0 +1,28 @@
+{
+  "$schema": "https://opencode.ai/v2/cli.json",
+  "theme": {
+    "name": "catppuccin-frappe"
+  },
+  "keybinds": {
+    "agent.cycle": "tab",
+    "diff.open": "ctrl+shift+d",
+    "model.list": "ctrl+shift+m",
+    "prompt.skills": "ctrl+shift+s"
+  },
+  "scroll": {
+    "acceleration": true
+  },
+  "diffs": {
+    "wrap": "word"
+  },
+  "session": {
+    "sidebar": "auto",
+    "scrollbar": false,
+    "thinking": "hide"
+  },
+  "animations": true,
+  "mouse": true,
+  "cursor": {
+    "style": "line"
+  }
+}
