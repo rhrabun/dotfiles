@@ -13,6 +13,16 @@ HISTFILESIZE=2000
 # Update window size after resize
 shopt -s checkwinsize
 
+# Colored prompt
+if [ -n "$BASH_VERSION" ]; then
+    PS1='\[\e[01;32m\]\u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00m\]\$ '
+fi
+
+# Enable colorized ls/grep output
+if command -v dircolors >/dev/null 2>&1; then
+    eval "$(dircolors -b)"
+fi
+
 # Use zoxide instead of cd
 eval "$(zoxide init bash --cmd cd)"
 
