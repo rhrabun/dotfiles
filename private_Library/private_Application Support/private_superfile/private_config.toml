@@ -16,7 +16,7 @@
 editor = ""
 
 #-- Directory Editor
-# 
+#
 dir_editor = ""
 
 #-- Auto check for update
@@ -24,7 +24,7 @@ auto_check_update = true
 
 #-- cd on quit
 # Should we cd the shell to the last directory open in superfile when the
-# program exits? 
+# program exits?
 cd_on_quit = false
 
 #-- File Preview
