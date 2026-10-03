@@ -99,7 +99,7 @@ theme = "catppuccin-frappe"
 
 #-- Code Previewer
 # Whether to use the builtin syntax highlighting with chroma or use bat. Values: "" for builtin chroma, "bat" for bat
-code_previewer = "bat"
+code_previewer = ""
 
 #-- Nerd Fonts Support
 # Whether to enable support for Nerd Fonts symbols.
