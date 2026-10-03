@@ -24,5 +24,6 @@
   "mouse": true,
   "cursor": {
     "style": "line"
-  }
+  },
+  "plugins": ["./herdr-opencode"]
 }
