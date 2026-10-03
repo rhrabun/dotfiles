@@ -16,16 +16,16 @@
 editor = ""
 
 #-- Directory Editor
-#
+# 
 dir_editor = ""
 
 #-- Auto check for update
-auto_check_update = true
+auto_check_update = false
 
 #-- cd on quit
 # Should we cd the shell to the last directory open in superfile when the
-# program exits?
-cd_on_quit = false
+# program exits? 
+cd_on_quit = true
 
 #-- File Preview
 # Should we open a file preview by default whenever selection-hovering over a
@@ -95,11 +95,11 @@ file_panel_name_percent = 50
 
 #-- Theme
 # Put your theme's name here!
-theme = "catppuccin-mocha"
+theme = "catppuccin-frappe"
 
 #-- Code Previewer
 # Whether to use the builtin syntax highlighting with chroma or use bat. Values: "" for builtin chroma, "bat" for bat
-code_previewer = ""
+code_previewer = "bat"
 
 #-- Nerd Fonts Support
 # Whether to enable support for Nerd Fonts symbols.
@@ -168,7 +168,7 @@ enable_md5_checksum = false
 #
 #-- Zoxide Support - Smart directory navigation!
 # Requires: zoxide
-zoxide_support = false
+zoxide_support = true
 
 #-- File opening rules
 # Map file extensions to commands used to open them.
