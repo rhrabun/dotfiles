@@ -672,6 +672,40 @@
                         ]
                     },
                     {
+                        "description": "Apps layer: R = Reminders",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "apps_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'Reminders'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "apps_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Apps layer: U = UpNote",
                         "manipulators": [
                             {
