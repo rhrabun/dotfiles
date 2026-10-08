@@ -11,11 +11,10 @@
 # @raycast.mode fullOutput
 # @raycast.packageName dotfiles
 
-"""Backups snapshot script.
+"""Backups sync script.
 
-Copies ~/Backups into a dated snapshot folder (YYYY-MM-DD) on each cloud
-provider (iCloud, ProtonDrive, Google Drive), then verifies the snapshot with a
-checksum comparison.
+Mirrors ~/Backups into each cloud provider folder (iCloud, ProtonDrive, Google
+Drive), then verifies the copy with a checksum comparison.
 
 Email names are used in Cloud Providers folder names and are stored in keyring
 to keep outside of code.
@@ -27,7 +26,6 @@ because cloud providers (ProtonDrive, iCloud) do not sync symlinks.
 import logging
 import shutil
 import subprocess
-import time
 from pathlib import Path
 
 from keyring import get_password, set_password
@@ -42,7 +40,7 @@ def resolve_rsync() -> str:
     """Return the GNU rsync binary path, rejecting macOS openrsync.
 
     openrsync's ``hash_file_by_path`` fails on symlinks when combined with
-    ``--copy-links --checksum``, which breaks the snapshot verification.
+    ``--copy-links --checksum``, which breaks the copy verification.
     """
     rsync_bin = shutil.which("rsync", path="/opt/homebrew/bin:/usr/local/bin:/usr/bin")
     if not rsync_bin:
@@ -119,26 +117,20 @@ def rsync(
     return subprocess.run(cmd, capture_output=True, text=True, check=False)
 
 
-def sync_snapshot(
+def sync(
     rsync_bin: str, source_path: Path, base_path: Path, options: list[str]
-) -> Path:
-    """Copy source into ``<base>/<today>/`` and verify the copy.
+) -> None:
+    """Mirror source into base_path and verify the copy.
 
     Args:
-        source_path (Path): Local source directory to snapshot.
-        base_path (Path): Mounted cloud snapshot root (e.g. ``[98] Backups``).
+        source_path (Path): Local source directory to sync.
+        base_path (Path): Mounted cloud target root (e.g. ``[98] Backups``).
         options (list[str]): Extra rsync options (e.g. include/exclude filters).
-
-    Returns:
-        Path: The created snapshot directory.
     """
     if not base_path.is_dir():
         raise FileNotFoundError(f"Target path {base_path} does not exist.")
 
-    snapshot = base_path / time.strftime("%Y-%m-%d")
-    snapshot.mkdir(parents=True, exist_ok=True)
-
-    copy = rsync(rsync_bin, source_path, snapshot, options, verify=False)
+    copy = rsync(rsync_bin, source_path, base_path, options, verify=False)
     for line in copy.stdout.splitlines():
         log.info(line)
     if copy.returncode not in RSYNC_OK_CODES:
@@ -146,19 +138,18 @@ def sync_snapshot(
             copy.returncode, "rsync", copy.stderr.strip()
         )
 
-    check = rsync(rsync_bin, source_path, snapshot, options, verify=True)
+    check = rsync(rsync_bin, source_path, base_path, options, verify=True)
     diffs = [line for line in check.stdout.splitlines() if line.strip()]
     if check.returncode not in RSYNC_OK_CODES or diffs:
         raise OSError(
-            f"integrity check failed for {snapshot}: {diffs or check.stderr.strip()}"
+            f"integrity check failed for {base_path}: {diffs or check.stderr.strip()}"
         )
 
-    log.info("Verified %s", snapshot)
-    return snapshot
+    log.info("Verified %s", base_path)
 
 
 def main() -> None:
-    log.info("Starting backup snapshot")
+    log.info("Starting backup sync")
     rsync_bin = resolve_rsync()
     proton_email, google_email = get_emails()
 
@@ -185,16 +176,16 @@ def main() -> None:
         log.info("#" * 25)
         log.info("Syncing to %s", target_name.capitalize())
         try:
-            sync_snapshot(rsync_bin, SRC_PATH, base_path, config["options"])
+            sync(rsync_bin, SRC_PATH, base_path, config["options"])
         except (FileNotFoundError, subprocess.CalledProcessError, OSError) as e:
             log.error("Sync to %s failed: %s", target_name, e)
             failed.append(target_name)
 
     if failed:
-        log.error("Backup snapshot finished with failures: %s", ", ".join(failed))
+        log.error("Backup sync finished with failures: %s", ", ".join(failed))
         raise SystemExit(1)
 
-    log.info("Backup snapshot done")
+    log.info("Backup sync done")
 
 
 if __name__ == "__main__":
