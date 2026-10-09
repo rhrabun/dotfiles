@@ -107,8 +107,16 @@
     "font_size": 15.0,
     "font_family": "FiraCode Nerd Font Mono",
   },
-  "icon_theme": "Catppuccin Frappé",
-  "theme": "Catppuccin Frappé",
+  "icon_theme": {
+    "mode": "system",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Frappé",
+  },
+  "theme": {
+    "mode": "system",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Frappé",
+  },
   "preview_tabs": {
     "enabled": false,
   },
