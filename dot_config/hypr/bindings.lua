@@ -27,7 +27,7 @@
 -- input.lua, so bind with MOD3.
 o.bind("MOD3 + V", "VSCode", { focus = "code", launch = "code" })
 o.bind("MOD3 + G", "Ghostty", { focus = "ghostty", launch = "ghostty" })
-o.bind("MOD3 + B", "Browser", { focus = "chromium", launch = "chromium" })
+o.bind("MOD3 + B", "Browser", { focus = "helium-browser", launch = "helium-browser" })
 
 -- Workspace assignments.
 -- Verify class names with `hyprctl clients` if a rule doesn't apply.
