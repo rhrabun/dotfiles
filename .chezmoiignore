@@ -18,6 +18,7 @@ Library
 .config/hypr
 .config/Code
 .config/voxtype
+.config/opencode/tui.json
 {{- end }}
 
 # Windows only

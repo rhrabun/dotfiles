@@ -1,0 +1,23 @@
+{
+  // Temporary opencode v1 (1.18.x) TUI config. v1 reads tui.json, v2 reads
+  // cli.json. Delete this file once every machine runs opencode2. Settings are
+  // mirrored from cli.json where v1 has an equivalent; theme.mode, diffs.wrap,
+  // session.sidebar/scrollbar/thinking and animations have no v1 config key.
+  "$schema": "https://opencode.ai/tui.json",
+  "theme": "catppuccin",
+  "mouse": true,
+  "scroll_acceleration": {
+    "enabled": true
+  },
+  "diff_style": "auto",
+  "cursor": {
+    "style": "line"
+  },
+  "keybinds": {
+    "agent_cycle": "tab",
+    "diff_open": "ctrl+shift+d",
+    "model_list": "ctrl+shift+m",
+    "prompt_skills": "ctrl+shift+s"
+  },
+  "plugin": ["./herdr-opencode"]
+}

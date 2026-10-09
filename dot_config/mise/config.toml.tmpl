@@ -8,3 +8,6 @@ lazygit = "latest"
 terraform = "1.16"
 lazydocker = "latest"
 pre-commit = "latest"
+{{- if eq .chezmoi.os "linux" }}
+opencode = "latest"
+{{- end }}
