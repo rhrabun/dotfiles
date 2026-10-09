@@ -29,6 +29,34 @@ o.bind("MOD3 + V", "VSCode", { focus = "code", launch = "code" })
 o.bind("MOD3 + G", "Ghostty", { focus = "ghostty", launch = "ghostty" })
 o.bind("MOD3 + B", "Browser", { focus = "helium-browser", launch = "helium-browser" })
 
+-- Dictation (voxtype): press Ctrl+Space to toggle listening on/off. voxtype's
+-- own evdev hotkey only accepts a single KEY_*, so this modifier combo lives in
+-- Hyprland. (F9 stays push-to-talk from Omarchy's defaults.)
+o.bind("CTRL + SPACE", "Toggle dictation", "voxtype record toggle")
+
+-- While recording, voxtype's pre_recording_command switches Hyprland into the
+-- voxtype_recording submap, so Escape cancels the dictation without hijacking
+-- Escape globally, and Ctrl+Space still stops it. voxtype_suppress swallows
+-- modifier presses while the transcription is being typed, so they don't
+-- disturb wtype.
+local function voxtype_cancel()
+  hl.dispatch(hl.dsp.exec_cmd("voxtype record cancel"))
+  hl.dispatch(hl.dsp.submap("reset"))
+end
+
+hl.define_submap("voxtype_recording", function()
+  hl.bind("ESCAPE", voxtype_cancel)
+  hl.bind("F12", voxtype_cancel)
+  hl.bind("CTRL + SPACE", hl.dsp.exec_cmd("voxtype record toggle"))
+end)
+
+hl.define_submap("voxtype_suppress", function()
+  for _, key in ipairs({ "SUPER_L", "SUPER_R", "CONTROL_L", "CONTROL_R", "ALT_L", "ALT_R", "SHIFT_L", "SHIFT_R" }) do
+    hl.bind(key, hl.dsp.no_op())
+  end
+  hl.bind("F12", hl.dsp.submap("reset"))
+end)
+
 -- Workspace assignments.
 -- Verify class names with `hyprctl clients` if a rule doesn't apply.
 o.window("(?i)(chromium|helium)", { workspace = "4" })

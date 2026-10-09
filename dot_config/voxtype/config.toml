@@ -13,10 +13,9 @@ engine = "parakeet"
 
 [hotkey]
 # Hotkey is configured in Hyprland. Default is Super + Ctrl + X
-enabled = true
-key = "F5"
-mode = "push_to_talk"
-cancel_key = "ESC"
+# voxtype's own evdev hotkey accepts only a single KEY_* name (F13, SCROLLLOCK,
+# ...), so a modifier combo like Ctrl+Space is bound in Hyprland instead.
+enabled = false
 
 [audio]
 # Audio input device ("default" uses system default)
@@ -52,6 +51,12 @@ streaming = false
 # - type: Simulates keyboard input at cursor position (requires ydotool)
 # - clipboard: Copies text to clipboard (requires wl-copy)
 mode = "type"
+
+# Compositor integration hooks (modifier key fix). Omarchy drives Hyprland from
+# Lua, so submaps switch via the Lua dispatch form (plain "submap NAME" fails).
+pre_recording_command = "hyprctl dispatch 'hl.dsp.submap(\"voxtype_recording\")'"
+pre_output_command = "hyprctl dispatch 'hl.dsp.submap(\"voxtype_suppress\")'"
+post_output_command = "hyprctl dispatch 'hl.dsp.submap(\"reset\")'"
 
 # Fall back to clipboard if typing fails
 fallback_to_clipboard = true
@@ -112,6 +117,15 @@ waveform_gain = 10.0
 
 [status]
 icon_theme = "emoji"
+
+[whisper]
+model = "base.en"
+mode = "local"
+language = "auto"
+translate = false
+flash_attention = false
+on_demand_loading = false
+gpu_isolation = false
 
 # [text]
 # Text processing options (word replacements, spoken punctuation)
