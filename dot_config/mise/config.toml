@@ -1,5 +1,10 @@
 [tools]
+gh = "latest"
+uv = "latest"
 go = "latest"
 ruff = "latest"
 awscli = "latest"
+lazygit = "latest"
 terraform = "1.16"
+lazydocker = "latest"
+pre-commit = "latest"
