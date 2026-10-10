@@ -1,0 +1,838 @@
+[
+  {
+    "id": "049e08a3-615d-4039-a943-23ca914dc74d",
+    "category": "Apple Intelligence",
+    "title": "List writing tools",
+    "keys": "F1",
+    "tags": [
+      "ai",
+      "raycast"
+    ]
+  },
+  {
+    "id": "d92ec68b-228a-4bb4-a870-f8ec3bae5fd7",
+    "category": "Apple Intelligence",
+    "title": "Rewrite",
+    "keys": "F2",
+    "tags": [
+      "ai",
+      "raycast"
+    ]
+  },
+  {
+    "id": "cb6c4147-76cd-445e-a756-4cf8e485c3f2",
+    "category": "Raycast",
+    "title": "Search Bitwarden vault",
+    "keys": "Cmd + Ctrl + P",
+    "tags": [
+      "raycast"
+    ]
+  },
+  {
+    "id": "1dbde4a6-66f3-4b22-a7c4-f85e90372355",
+    "category": "Raycast",
+    "title": "Clipboard history",
+    "keys": "Cmd + Ctrl + V",
+    "tags": [
+      "raycast"
+    ]
+  },
+  {
+    "id": "9cf6662c-4b82-4adb-b9d8-89d4f842ca90",
+    "category": "Raycast",
+    "title": "Caffeinate While",
+    "keys": "Cmd + Ctrl + C",
+    "tags": [
+      "raycast"
+    ]
+  },
+  {
+    "id": "a43a16b4-dfdb-4d78-a282-175d405b9ed6",
+    "category": "Raycast",
+    "title": "Search emoji",
+    "keys": "Cmd + .",
+    "tags": [
+      "raycast"
+    ]
+  },
+  {
+    "id": "6513b4d9-87a7-4886-a5d9-e26b3b0b689b",
+    "category": "Raycast",
+    "title": "Quick translate",
+    "keys": "Cmd + Ctrl + T",
+    "tags": [
+      "raycast"
+    ]
+  },
+  {
+    "id": "27ef0e09-8084-48f5-9e49-789df24bd661",
+    "category": "Raycast",
+    "title": "Search shortcuts",
+    "keys": "Cmd + Ctrl + S",
+    "tags": [
+      "raycast"
+    ]
+  },
+  {
+    "id": "a76536b2-2958-41db-a14e-18e5f86501cd",
+    "category": "Raycast",
+    "title": "Open Downloads",
+    "keys": "Opt + D",
+    "tags": [
+      "raycast"
+    ]
+  },
+  {
+    "id": "544d5b27-eada-4beb-b599-64e504f6b9c5",
+    "category": "Raycast",
+    "title": "Lock screen",
+    "keys": "Cmd + Ctrl + L",
+    "tags": [
+      "raycast"
+    ]
+  },
+  {
+    "id": "e742e33e-f4e8-4726-a569-30502fe0f1cb",
+    "category": "Audio Output",
+    "title": "Set output to AirPods",
+    "keys": "Cmd + Ctrl + 3",
+    "tags": [
+      "audio",
+      "raycast"
+    ]
+  },
+  {
+    "id": "4c298bd7-4c2c-4d01-847e-f3e6489b3fd9",
+    "category": "Audio Output",
+    "title": "Set output to MacBook speakers",
+    "keys": "Cmd + Ctrl + 4",
+    "tags": [
+      "audio",
+      "raycast"
+    ]
+  },
+  {
+    "id": "cf3859ac-7e67-4763-96bf-9a9aeb9a8ef8",
+    "category": "Audio Output",
+    "title": "Set output to Logitech headphones",
+    "keys": "Cmd + Ctrl + 5",
+    "tags": [
+      "audio",
+      "raycast"
+    ]
+  },
+  {
+    "id": "9f72fc6c-ba9e-4496-a5c6-ae4a67ae3c84",
+    "category": "Audio Input",
+    "title": "Set input to Logitech microphone",
+    "keys": "Cmd + Ctrl + 6",
+    "tags": [
+      "audio",
+      "raycast"
+    ]
+  },
+  {
+    "id": "79e23c02-3bdd-4f6b-b78b-db9a1491a61c",
+    "category": "Audio Input",
+    "title": "Set input to MacBook microphone",
+    "keys": "Cmd + Ctrl + 7",
+    "tags": [
+      "audio",
+      "raycast"
+    ]
+  },
+  {
+    "id": "c9bceedb-08f8-4adc-a629-3b6a46d5bbb8",
+    "category": "Audio Input",
+    "title": "Set input to AirPods",
+    "keys": "Cmd + Ctrl + 8",
+    "tags": [
+      "audio",
+      "raycast"
+    ]
+  },
+  {
+    "id": "9a2b8ef9-1d52-4b86-8ee9-42c8ea2036a6",
+    "category": "Karabiner Apps",
+    "title": "Ghostty",
+    "keys": "Hyper + G, G",
+    "tags": [
+      "app"
+    ]
+  },
+  {
+    "id": "69008492-6495-4f24-abef-d5cfab749807",
+    "category": "Karabiner Apps",
+    "title": "Browser (Zen)",
+    "keys": "Hyper + G, B",
+    "tags": [
+      "app"
+    ]
+  },
+  {
+    "id": "7c6a3134-5a2d-47a2-af80-690262ec5c10",
+    "category": "Karabiner Apps",
+    "title": "Editor (VS Code)",
+    "keys": "Hyper + G, E",
+    "tags": [
+      "app"
+    ]
+  },
+  {
+    "id": "7682b673-f008-456b-9c17-3f27267f2636",
+    "category": "Karabiner Apps",
+    "title": "Safari",
+    "keys": "Hyper + G, S",
+    "tags": [
+      "app"
+    ]
+  },
+  {
+    "id": "83769a78-afb8-40f2-b4e7-8e114fd72cb4",
+    "category": "Karabiner Apps",
+    "title": "Spotify",
+    "keys": "Hyper + G, M",
+    "tags": [
+      "app"
+    ]
+  },
+  {
+    "id": "885259ae-86d9-446a-82a5-fa3b79171b5e",
+    "category": "Karabiner Apps",
+    "title": "Proton Mail",
+    "keys": "Hyper + G, P",
+    "tags": [
+      "app"
+    ]
+  },
+  {
+    "id": "a7d95dd0-d46a-47a0-8adc-5fbb9e098183",
+    "category": "Karabiner Apps",
+    "title": "Finder",
+    "keys": "Hyper + G, F",
+    "tags": [
+      "app"
+    ]
+  },
+  {
+    "id": "aaa337ed-f636-44e7-be38-cea377eda842",
+    "category": "Karabiner Apps",
+    "title": "Notes",
+    "keys": "Hyper + G, N",
+    "tags": [
+      "app"
+    ]
+  },
+  {
+    "id": "e7c4b168-79ac-4b2f-b1c7-9da8e688ac48",
+    "category": "Karabiner Apps",
+    "title": "Telegram",
+    "keys": "Hyper + G, T",
+    "tags": [
+      "app"
+    ]
+  },
+  {
+    "id": "1e014ba3-a03a-4d7a-a0bd-21c07599ba93",
+    "category": "Karabiner Todoist",
+    "title": "New task",
+    "keys": "Hyper + T, N",
+    "tags": [
+      "app"
+    ]
+  },
+  {
+    "id": "273f604c-4560-45cf-a27b-530941dc62f4",
+    "category": "Karabiner Todoist",
+    "title": "Inbox view",
+    "keys": "Hyper + T, B",
+    "tags": [
+      "app"
+    ]
+  },
+  {
+    "id": "cbc77740-8a85-4efb-8abb-9db0d5c35719",
+    "category": "Karabiner Todoist",
+    "title": "Upcoming view",
+    "keys": "Hyper + T, U",
+    "tags": [
+      "app"
+    ]
+  },
+  {
+    "id": "5e8d964b-fffb-44f2-b71c-48597bb02a1e",
+    "category": "Karabiner Todoist",
+    "title": "Project ideas",
+    "keys": "Hyper + T, I",
+    "tags": [
+      "app"
+    ]
+  },
+  {
+    "id": "9d1d0365-46f1-46a6-a753-2cafd9d34b44",
+    "category": "Karabiner Todoist",
+    "title": "Today view",
+    "keys": "Hyper + T, T",
+    "tags": [
+      "app"
+    ]
+  },
+  {
+    "id": "fd31237a-5d3f-4dd9-b8c6-25dfa4a6ae01",
+    "category": "Window Management",
+    "title": "Window left half",
+    "keys": "Hyper + Left",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "14878bb3-8c13-404e-8b64-6bdd6cd8e02d",
+    "category": "Window Management",
+    "title": "Window right half",
+    "keys": "Hyper + Right",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "69662572-cc00-42c5-81a8-3573ce9d4a3c",
+    "category": "Window Management",
+    "title": "Window larger",
+    "keys": "Hyper + Up",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "7dd056e5-0d3f-4192-be8c-b78af2f28fa8",
+    "category": "Window Management",
+    "title": "Window smaller",
+    "keys": "Hyper + Down",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "5a59766a-b587-46f2-85c7-2e0bdebd50a6",
+    "category": "Window Management",
+    "title": "Maximize window",
+    "keys": "Hyper + Space",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "fed49c66-51f6-454b-a3dd-f45efd6a8559",
+    "category": "Window Management",
+    "title": "Center window",
+    "keys": "Hyper + Return",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "88fc56fd-6dfa-4f3d-b4dd-3f32ce8843d4",
+    "category": "Window Management",
+    "title": "Restore window",
+    "keys": "Hyper + Backspace",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "249ef14d-ae62-4a00-84cd-4b8440e7ecba",
+    "category": "VS Code",
+    "title": "Toggle file explorer",
+    "keys": "Ctrl + E",
+    "tags": [
+      "vscode"
+    ]
+  },
+  {
+    "id": "20345331-bf7a-4988-832e-9dd3a89d8e43",
+    "category": "VS Code",
+    "title": "Toggle terminal",
+    "keys": "Ctrl + Alt + J",
+    "tags": [
+      "vscode"
+    ]
+  },
+  {
+    "id": "2c6e0c35-0dde-4fc4-a41c-4e2da06c7977",
+    "category": "VS Code",
+    "title": "New terminal (VS Code)",
+    "keys": "Ctrl + Alt + N",
+    "tags": [
+      "vscode"
+    ]
+  },
+  {
+    "id": "3878033f-e551-41ea-9084-ee3a53ec85f7",
+    "category": "VS Code",
+    "title": "Rename terminal (VS Code)",
+    "keys": "Ctrl + Alt + R",
+    "tags": [
+      "vscode"
+    ]
+  },
+  {
+    "id": "3264ab45-8303-4569-b346-2fe4d8e562b7",
+    "category": "VS Code",
+    "title": "Focus previous terminal",
+    "keys": "Ctrl + Alt + P",
+    "tags": [
+      "vscode"
+    ]
+  },
+  {
+    "id": "bd005ff5-60b9-45ca-80c6-400339452ea5",
+    "category": "VS Code",
+    "title": "Focus next terminal",
+    "keys": "Ctrl + Alt + O",
+    "tags": [
+      "vscode"
+    ]
+  },
+  {
+    "id": "b0a8b98b-0b5e-4a6e-ae58-6416ef1763f1",
+    "category": "VS Code",
+    "title": "Attach file to chat",
+    "keys": "Ctrl + Alt + F",
+    "tags": [
+      "vscode"
+    ]
+  },
+  {
+    "id": "81be801b-4d6f-446d-91e2-26a6f37da2cc",
+    "category": "VS Code",
+    "title": "Toggle Copilot completions",
+    "keys": "Ctrl + Alt + Y",
+    "tags": [
+      "vscode"
+    ]
+  },
+  {
+    "id": "787feb94-477b-4a27-ab49-04d660447b60",
+    "category": "VS Code",
+    "title": "Open Copilot chat",
+    "keys": "Ctrl + Alt + H",
+    "tags": [
+      "vscode"
+    ]
+  },
+  {
+    "id": "30be39fe-5faf-4db0-86ba-ff39e94bb257",
+    "category": "VS Code",
+    "title": "Toggle zen mode",
+    "keys": "Ctrl + Alt + Z",
+    "tags": [
+      "vscode"
+    ]
+  },
+  {
+    "id": "8feecd7d-96b4-43b9-9df5-27ecef29d2c0",
+    "category": "VS Code",
+    "title": "Move line down (VS Code)",
+    "keys": "Shift + Alt + J",
+    "tags": [
+      "vscode"
+    ]
+  },
+  {
+    "id": "494f0f75-0401-4e3f-83b4-900b7845ec71",
+    "category": "VS Code",
+    "title": "Move line up (VS Code)",
+    "keys": "Shift + Alt + K",
+    "tags": [
+      "vscode"
+    ]
+  },
+  {
+    "id": "f9673b89-02b3-454b-8390-4e2493edaa5d",
+    "category": "VS Code",
+    "title": "Close active editor",
+    "keys": "Ctrl + W",
+    "tags": [
+      "vscode"
+    ]
+  },
+  {
+    "id": "cd226e2e-4ef0-4bd6-841b-f97d63d40c5c",
+    "category": "VS Code",
+    "title": "Increase editor width",
+    "keys": "Ctrl + Alt + .",
+    "tags": [
+      "vscode"
+    ]
+  },
+  {
+    "id": "0104bb2a-19e8-47e0-b27a-66afe5353695",
+    "category": "VS Code",
+    "title": "Decrease editor width",
+    "keys": "Ctrl + Alt + ,",
+    "tags": [
+      "vscode"
+    ]
+  },
+  {
+    "id": "355261a3-a582-4ba0-9ca3-5d4ef9e60ece",
+    "category": "AeroSpace",
+    "title": "New terminal window",
+    "keys": "Opt + Return",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "65162d83-eccc-4ab5-b437-acad3bdf952f",
+    "category": "AeroSpace",
+    "title": "Focus window left",
+    "keys": "Opt + J",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "c515bcb6-4ec7-4eb4-a462-86dfdf0d1747",
+    "category": "AeroSpace",
+    "title": "Focus window down",
+    "keys": "Opt + K",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "b69f5cf5-b6f3-42ee-88c7-24b856f0376b",
+    "category": "AeroSpace",
+    "title": "Focus window up",
+    "keys": "Opt + L",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "6cbc0541-8336-4dff-8158-2ec66f8942b8",
+    "category": "AeroSpace",
+    "title": "Focus window right",
+    "keys": "Opt + ;",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "b395b6ce-9b95-40b7-81ae-8eedeb65e30e",
+    "category": "AeroSpace",
+    "title": "Move window left",
+    "keys": "Opt + Shift + J",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "0bf9ac29-1556-443f-a27d-f017e190a83b",
+    "category": "AeroSpace",
+    "title": "Move window down",
+    "keys": "Opt + Shift + K",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "78aa0502-61a9-4967-8dc9-2f3da69ffbc3",
+    "category": "AeroSpace",
+    "title": "Move window up",
+    "keys": "Opt + Shift + L",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "24315a45-b702-482c-9e83-bcff9bf0d689",
+    "category": "AeroSpace",
+    "title": "Move window right",
+    "keys": "Opt + Shift + ;",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "88707a8f-8440-48a8-89cf-1f6ac4d41338",
+    "category": "AeroSpace",
+    "title": "Split horizontal",
+    "keys": "Opt + H",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "f3bc0a50-820a-42ee-924a-2cbac953863d",
+    "category": "AeroSpace",
+    "title": "Split vertical",
+    "keys": "Opt + V",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "dc00048c-5893-4c82-a158-f35b1eceea16",
+    "category": "AeroSpace",
+    "title": "Toggle fullscreen",
+    "keys": "Opt + F",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "3d3446cf-23d4-4442-aa1c-81517e14aa0b",
+    "category": "AeroSpace",
+    "title": "Toggle floating",
+    "keys": "Opt + Shift + Space",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "256ec282-f7c6-4a50-a721-df14eca5d0a9",
+    "category": "AeroSpace",
+    "title": "Stack vertical accordion",
+    "keys": "Opt + S",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "46923f91-e6f4-4fd1-8f7d-8a713392b2fd",
+    "category": "AeroSpace",
+    "title": "Layout stack (tabbed)",
+    "keys": "Opt + W",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "11f134fe-a4da-4efc-9454-10341e2850c8",
+    "category": "AeroSpace",
+    "title": "Enter resize mode",
+    "keys": "Opt + R",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "d87ee609-35ae-46e1-aae6-a9ae13151eb3",
+    "category": "AeroSpace",
+    "title": "Focus workspace 1",
+    "keys": "Opt + 1",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "c4211614-4f39-4380-a631-b70500e96554",
+    "category": "AeroSpace",
+    "title": "Focus workspace 2",
+    "keys": "Opt + 2",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "73fcad73-f5c2-4d84-a59e-565ec11a6e19",
+    "category": "AeroSpace",
+    "title": "Focus workspace 3",
+    "keys": "Opt + 3",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "6e01f716-8311-4ae3-8b0b-59bba25de1ef",
+    "category": "AeroSpace",
+    "title": "Focus workspace 4",
+    "keys": "Opt + 4",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "2e74004b-14ec-44df-84a1-cf08e637c1f8",
+    "category": "Ghostty",
+    "title": "Toggle background opacity",
+    "keys": "Super + U",
+    "tags": [
+      "ghostty"
+    ]
+  },
+  {
+    "id": "5d5e9960-a138-4f61-9b22-fc4fe318002b",
+    "category": "Ghostty",
+    "title": "New split right",
+    "keys": "Super + D",
+    "tags": [
+      "ghostty"
+    ]
+  },
+  {
+    "id": "4a7355ca-f5d4-45b5-a60a-597b5c9a0597",
+    "category": "Ghostty",
+    "title": "New split down",
+    "keys": "Super + Shift + D",
+    "tags": [
+      "ghostty"
+    ]
+  },
+  {
+    "id": "02603300-79c8-4830-97ae-48e9c320355b",
+    "category": "Ghostty",
+    "title": "Goto split left",
+    "keys": "Ctrl + W, H",
+    "tags": [
+      "ghostty"
+    ]
+  },
+  {
+    "id": "fef7d786-d287-4c52-96c3-4d4a927b31ff",
+    "category": "Ghostty",
+    "title": "Goto split down",
+    "keys": "Ctrl + W, J",
+    "tags": [
+      "ghostty"
+    ]
+  },
+  {
+    "id": "65120f27-3197-4ad7-90d3-2155451392d6",
+    "category": "Ghostty",
+    "title": "Goto split up",
+    "keys": "Ctrl + W, K",
+    "tags": [
+      "ghostty"
+    ]
+  },
+  {
+    "id": "00de0862-67cc-494c-8426-16973da602b2",
+    "category": "Ghostty",
+    "title": "Goto split right",
+    "keys": "Ctrl + W, L",
+    "tags": [
+      "ghostty"
+    ]
+  },
+  {
+    "id": "df6f8ed0-fdd6-4e37-a057-59472e7f8ab7",
+    "category": "Hyprland",
+    "title": "Focus && apps VS Code",
+    "keys": "Hyper + V",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "77e073c9-45ef-45fa-95ec-a8c9ec76212e",
+    "category": "Hyprland",
+    "title": "Focus && apps Ghostty",
+    "keys": "Hyper + G",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "14ffcbc6-dbf2-4c6b-8465-40c34577d9c0",
+    "category": "Hyprland",
+    "title": "Focus && apps Browser",
+    "keys": "Hyper + B",
+    "tags": [
+      "window-manager",
+      "raycast"
+    ]
+  },
+  {
+    "id": "b74ffeb4-cd06-4337-bb5a-9dbedc7e59b4",
+    "category": "Obsidian",
+    "title": "Search notes",
+    "keys": "Hyper + O, F",
+    "tags": [
+      "app"
+    ]
+  },
+  {
+    "id": "374fdb5d-df10-4f3a-89ec-3030785b9121",
+    "category": "Obsidian",
+    "title": "New note",
+    "keys": "Hyper + O, N",
+    "tags": [
+      "app"
+    ]
+  },
+  {
+    "id": "0856b3f9-e095-4f0e-9e12-bdaca495ffe1",
+    "category": "Obsidian",
+    "title": "Daily note",
+    "keys": "Hyper + O, D",
+    "tags": [
+      "app"
+    ]
+  },
+  {
+    "id": "281f94a8-eb8e-4287-bd27-815502240fa2",
+    "category": "Obsidian",
+    "title": "Open vault",
+    "keys": "Hyper + O, O",
+    "tags": [
+      "app"
+    ]
+  },
+  {
+    "id": "534967ca-72f6-477b-8890-af8c825d1f2c",
+    "category": "Obsidian",
+    "title": "Toggle bookmarks",
+    "keys": "Ctrl + B",
+    "tags": [
+      "app"
+    ]
+  },
+  {
+    "id": "534967ca-72f6-477b-8890-af9c825d1f2c",
+    "category": "Obsidian",
+    "title": "Random Note",
+    "keys": "Ctrl + R",
+    "tags": [
+      "app"
+    ]
+  },
+  {
+    "id": "fd96a572-2fb6-463e-be9a-68542c52e77d",
+    "category": "Audio Input",
+    "title": "Dictation",
+    "keys": "Ctrl + Space"
+  }
+]

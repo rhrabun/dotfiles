@@ -4,6 +4,8 @@ README.md
 .gitignore
 .pre-commit-config.yaml
 
+.config/raycast/extensions/shortcut-library
+
 # macOS only
 {{- if ne .chezmoi.os "darwin" }}
 Library
