@@ -1,3 +1,8 @@
+[settings]
+minimum_release_age = "7d"
+tool_update.global_auto = true
+locked_verify_provenance = true
+
 [tools]
 gh = "latest"
 uv = "latest"
@@ -8,6 +13,7 @@ lazygit = "latest"
 terraform = "1.16"
 lazydocker = "latest"
 pre-commit = "latest"
+
 {{- if eq .chezmoi.os "linux" }}
 opencode = "latest"
 {{- end }}
