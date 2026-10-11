@@ -7,6 +7,30 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Shift+CapsLock = CapsLock toggle",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "caps_lock"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "CapsLock = Hyper (held) / CapsLock toggle (tap)",
                         "manipulators": [
                             {
@@ -25,12 +49,6 @@
                                             "name": "hyper",
                                             "value": 1
                                         }
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "caps_lock",
-                                        "hold_down_milliseconds": 100
                                     }
                                 ],
                                 "to_after_key_up": [
