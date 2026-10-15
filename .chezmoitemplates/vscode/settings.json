@@ -35,6 +35,7 @@
   "workbench.editor.enablePreview": false,
   "explorer.autoReveal": false,
   "files.autoSave": "afterDelay",
+  "workbench.experimental.modernUI": false,
   // Editor
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tree.renderIndentGuides": "always",
