@@ -1,0 +1,88 @@
+# https://starship.rs/config/
+
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+command_timeout = 1000
+palette = "catppuccin_frappe"
+
+format = """
+$directory$git_branch$git_status$fill$all
+$character"""
+
+# ------------------------------ left ------------------------------
+
+[directory]
+truncation_length = 5
+truncation_symbol = "…/"
+truncate_to_repo = false
+
+# ------------------------------ right -----------------------------
+
+[package]
+disabled = true
+
+[aws]
+format = '[$symbol($profile )(\($region\) )]($style)'
+force_display = false
+
+[terraform]
+format = '[$symbol]($style) '
+#format = '[$symbol$workspace]($style) '
+
+[kubernetes]
+symbol = '☸ '
+format = '[$symbol$context( \($namespace\))]($style) '
+
+[docker_context]
+format = '[$symbol$context]($style) '
+
+[golang]
+format = '[$symbol$version]($style) '
+
+[python]
+format = '[$symbol($virtualenv )]($style) '
+
+[status]
+disabled = false
+format = '[$symbol$status]($style) '
+
+[cmd_duration]
+min_time = 3_000
+format = 'took [$duration]($style) '
+
+[fill]
+symbol = " "
+
+[line_break]
+disabled = true
+
+# ---------------------------- palette -----------------------------
+
+[palettes.catppuccin_frappe]
+rosewater = "#f2d5cf"
+flamingo = "#eebebe"
+pink = "#f4b8e4"
+mauve = "#ca9ee6"
+red = "#e78284"
+maroon = "#ea999c"
+peach = "#ef9f76"
+yellow = "#e5c890"
+green = "#a6d189"
+teal = "#81c8be"
+sky = "#99d1db"
+sapphire = "#85c1dc"
+blue = "#8caaee"
+lavender = "#babbf1"
+text = "#c6d0f5"
+subtext1 = "#b5bfe2"
+subtext0 = "#a5adce"
+overlay2 = "#949cbb"
+overlay1 = "#838ba7"
+overlay0 = "#737994"
+surface2 = "#626880"
+surface1 = "#51576d"
+surface0 = "#414559"
+base = "#303446"
+mantle = "#292c3c"
+crust = "#232634"
