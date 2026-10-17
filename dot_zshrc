@@ -19,9 +19,9 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Theme
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+# zinit ice depth=1; zinit light romkatv/powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # ZSH plugins
 zinit light Aloxaf/fzf-tab
@@ -95,3 +95,6 @@ bindkey '^[[3~'  delete-char
 bindkey '^[[3;3~' kill-word
 # Cmd+Delete
 bindkey '^[[3;9~' kill-line
+
+# Activate Starship
+eval "$(starship init zsh)"
