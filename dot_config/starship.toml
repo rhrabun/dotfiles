@@ -10,6 +10,12 @@ format = """
 $directory$git_branch$git_status$fill$all
 $character"""
 
+[fill]
+symbol = " "
+
+[line_break]
+disabled = true
+
 # ------------------------------ left ------------------------------
 
 [directory]
@@ -17,14 +23,39 @@ truncation_length = 5
 truncation_symbol = "…/"
 truncate_to_repo = false
 
-# ------------------------------ right -----------------------------
+# git status: counts as in p10k's my_git_formatter, per-state colors from the palette
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "none"
+conflicted = "[~$count ](red)"
+stashed    = "[*$count ](green)"
+deleted    = "[✘$count ](yellow)"
+renamed    = "[»$count ](yellow)"
+modified   = "[!$count ](yellow)"
+staged     = "[+$count ](yellow)"
+untracked  = "[?$count ](blue)"
+ahead      = "[⇡$count ](green)"
+behind     = "[⇣$count ](green)"
+diverged   = "[⇣$behind_count⇡$ahead_count ](green)"
 
-[package]
-disabled = true
+# ------------------------------ right -----------------------------
 
 [aws]
 format = '[$symbol($profile )(\($region\) )]($style)'
 force_display = false
+
+[package]
+disabled = true
+
+[golang]
+format = '[$symbol$version]($style) '
+
+[python]
+format = '[$symbol($virtualenv )]($style) '
+
+[status]
+disabled = false
+format = '[$symbol$status]($style) '
 
 [terraform]
 format = '[$symbol]($style) '
@@ -37,25 +68,9 @@ format = '[$symbol$context( \($namespace\))]($style) '
 [docker_context]
 format = '[$symbol$context]($style) '
 
-[golang]
-format = '[$symbol$version]($style) '
-
-[python]
-format = '[$symbol($virtualenv )]($style) '
-
-[status]
-disabled = false
-format = '[$symbol$status]($style) '
-
 [cmd_duration]
 min_time = 3_000
 format = 'took [$duration]($style) '
-
-[fill]
-symbol = " "
-
-[line_break]
-disabled = true
 
 # ---------------------------- palette -----------------------------
 
