@@ -19,14 +19,11 @@ disabled = true
 # ------------------------------ left ------------------------------
 
 [directory]
-truncation_length = 5
-truncation_symbol = "…/"
-truncate_to_repo = false
+truncation_length = 0
+truncate_to_repo = true
 
-# git status: counts as in p10k's my_git_formatter, per-state colors from the palette
 [git_status]
-format = '([\[$all_status$ahead_behind\]]($style) )'
-style = "none"
+format = '$all_status$ahead_behind'
 conflicted = "[~$count ](red)"
 stashed    = "[*$count ](green)"
 deleted    = "[✘$count ](yellow)"
