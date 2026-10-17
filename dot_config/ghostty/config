@@ -15,6 +15,8 @@ background-opacity = 0.95
 # Ignore special symbols on Alt + letter
 macos-option-as-alt = true
 
+mouse-hide-while-typing = true
+
 confirm-close-surface=false
 quit-after-last-window-closed = true
 
