@@ -19,6 +19,7 @@
     "diagnostics": false,
     "metrics": false,
   },
+  "auto_update": false,
   // Extensions & themes (auto-installed on startup; false = never install)
   "auto_install_extensions": {
     "toml": true,
@@ -52,9 +53,8 @@
   // Editor
   "vim_mode": true,
   "vim": {
-    // Mirror VSCode vim extension settings
     "use_system_clipboard": "always",
-    "use_smartcase_find": false,
+    "use_smartcase_find": true,
   },
   "auto_signature_help": false,
   "gutter": {
@@ -63,30 +63,19 @@
   "relative_line_numbers": "enabled",
   "base_keymap": "VSCode",
   "ensure_final_newline_on_save": true,
-  "soft_wrap": "editor_width",
+  "remove_trailing_whitespace_on_save": true,
+  "soft_wrap": "none",
   "autosave": {
     "after_delay": {
       "milliseconds": 1000,
     },
   },
   // AI
-  "disable_ai": false,
+  "disable_ai": true,
   "agent": {
-    "favorite_models": [
-      {
-        "provider": "openrouter",
-        "model": "~deepseek/deepseek-v4-flash-latest",
-        "enable_thinking": true
-      }
-    ],
     "notify_when_agent_waiting": "never",
     "default_profile": "ask",
     "dock": "left",
-    "default_model": {
-      "provider": "openrouter",
-      "model": "~deepseek/deepseek-v4-flash-latest",
-      "enable_thinking": true,
-    },
     "default_width": 700.0,
     "model_parameters": [],
   },
@@ -130,7 +119,41 @@
     "enabled": true,
     "coloring": "indent_aware",
   },
-  "show_wrap_guides": true,
+  "show_wrap_guides": false,
+  "edit_predictions": {
+    "disabled_globs": [
+      "...",
+      "**/*.md",
+      "**/*.mdx",
+      "**/*.txt",
+    ],
+  },
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/.jj",
+    "**/.sl",
+    "**/.repo",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings",
+    "**/__pycache__",
+  ],
+  // Language overrides
+  "languages": {
+    "YAML": {
+      "tab_size": 2,
+      "hard_tabs": false,
+      "auto_indent": "preserve_indent",
+    },
+    "Terraform": {
+      "tab_size": 2,
+      "hard_tabs": false,
+    },
+  },
   // FILE DETECTION RULES
   "file_types": {
     "jsonc": [
