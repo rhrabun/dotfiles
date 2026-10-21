@@ -11,16 +11,18 @@
       // Open and close panels
       "ctrl-e": "project_panel::Toggle",
       "ctrl-alt-j": "terminal_panel::Toggle",
-      "ctrl-alt-l": "git_panel::Toggle",
-      "ctrl-alt-h": "agent::Toggle",
-      // Zen mode
-      "ctrl-z": "workspace::ToggleCenteredLayout",
+      "alt-shift-l": "git_panel::Toggle",
+      "alt-shift-h": "agent::Toggle",
       "ctrl-alt-y": "editor::ToggleEditPrediction",
+      // Zen mode
+      "ctrl-alt-z": "workspace::ToggleCenteredLayout",
+      // Maximize editor group
+      "ctrl-alt-m": "workspace::ToggleEditorZoom",
       // New terminal
       "ctrl-alt-n": "workspace::NewTerminal",
-      // Resize active dock
-      "ctrl-alt-.": "workspace::IncreaseActiveDockSize",
-      "ctrl-alt-,": "workspace::DecreaseActiveDockSize",
+      // Resize active pane width
+      "ctrl-alt-.": "vim::ResizePaneRight",
+      "ctrl-alt-,": "vim::ResizePaneLeft",
       "space f s": "zed::OpenSettingsFile",
       "space f k": "zed::OpenKeymapFile",
     },
@@ -38,7 +40,8 @@
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-g": "editor::ShowCompletions",
+      // Focus file explorer; elsewhere ctrl-e toggles the panel
+      "ctrl-e": "project_panel::ToggleFocus",
     },
   },
   {
@@ -47,10 +50,12 @@
       "space c f": "editor::Format",
       // Panes splits
       "space r": "pane::SplitRight",
-      "space v": "workspace::NewFileSplitVertical",
-      "space h": "workspace::NewFileSplitHorizontal",
+      "space v": "pane::SplitRight",
+      "space h": "pane::SplitDown",
       "] b": "pane::ActivateNextItem",
       "[ b": "pane::ActivatePreviousItem",
+      "ctrl-alt-h": "pane::ActivatePreviousItem",
+      "ctrl-alt-l": "pane::ActivateNextItem",
       "space ,": "tab_switcher::Toggle",
       // Nice to have
       "space w": "workspace::SaveWithoutFormat",
@@ -61,31 +66,19 @@
   {
     "context": "Editor && vim_mode == insert",
     "bindings": {
-      "alt-h": "vim::Left",
-      "alt-l": "vim::Right",
-      "alt-j": "vim::Down",
-      "alt-k": "vim::Up",
       "j k": "vim::NormalBefore",
       "k j": "vim::NormalBefore",
       "ctrl-space": "editor::ShowCompletions",
     },
   },
   {
-    // Fix the annoying issue of not being able to skip completion suggestion and go to newline without exiting insert mode
-    "context": "Editor && (showing_code_actions || showing_completions || copilot_suggestion || edit_prediction)",
+    "context": "Editor && (showing_completions || edit_prediction)",
     "bindings": {
       "enter": "editor::Newline",
       "escape": "editor::Cancel",
     },
   },
   // Move lines
-  {
-    "context": "Editor && vim_mode == visual",
-    "bindings": {
-      "shift-j": "editor::MoveLineDown",
-      "shift-k": "editor::MoveLineUp",
-    },
-  },
   {
     "context": "Editor && !readonly",
     "bindings": {
@@ -102,7 +95,7 @@
       "x": "project_panel::Cut",
       "c": "project_panel::Copy",
       "p": "project_panel::Paste",
-      "d": "project_panel::Delete",
+      "d": "project_panel::Trash",
       "shift-n": "project_panel::NewDirectory",
     },
   },
@@ -140,12 +133,10 @@
     "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
       // Refactoring
-      "space c r ": "editor::Rename",
-      "space s r": "buffer_search::DeployReplace",
+      "space c r": "editor::Rename",
+      "space s r": ["pane::DeploySearch", { "replace_enabled": true }],
       // Git
       "space g g": "git_panel::ToggleFocus",
-      "space g c": "git_panel::ToggleFocus",
-      "space g s": "git_panel::ToggleFocus",
       "space g h d": "editor::ExpandAllDiffHunks",
       "space g h D": "git::Diff",
       "space g h r": "git::Restore",
@@ -157,35 +148,17 @@
       // Open markdown preview
       "space m p": "markdown::OpenPreview",
       "space m P": "markdown::OpenPreviewToTheSide",
-      // Open recent project
-      "space f p": "projects::OpenRecent",
       // Extensions (lazy)
       "space l": "zed::Extensions",
-      // Terminal
-      "space f t": "workspace::NewTerminal",
-      "space f T": "workspace::NewTerminal",
       // Pin / unpin tab
       "space b p": "pane::TogglePinTab",
       "space b u": "pane::TogglePinTab",
-      // Command palette
-      "space s C": "command_palette::Toggle",
       // Theme selector
       "space u C": "theme_selector::Toggle",
       // Search word under cursor in current pane
       "space s w": "buffer_search::Deploy",
       // Search word under cursor in all panes
       "space s W": "pane::DeploySearch",
-      // Tab things. Almost as good as harpoon.
-      "space 1": ["pane::ActivateItem", 0],
-      "space 2": ["pane::ActivateItem", 1],
-      "space 3": ["pane::ActivateItem", 2],
-      "space 4": ["pane::ActivateItem", 3],
-      "space 5": ["pane::ActivateItem", 4],
-      "space 6": ["pane::ActivateItem", 5],
-      "space 7": ["pane::ActivateItem", 6],
-      "space 8": ["pane::ActivateItem", 7],
-      "space 9": ["pane::ActivateItem", 8],
-      "space 0": "pane::ActivateLastItem",
       "] b": "pane::ActivateNextItem",
       "[ b": "pane::ActivatePreviousItem",
       "space ,": "tab_switcher::Toggle",
@@ -195,6 +168,8 @@
       "space b d": "pane::CloseActiveItem",
       // Close inactive buffers
       "space b q": "pane::CloseOtherItems",
+      // Close all buffers
+      "space b D": ["pane::CloseAllItems", { "close_pinned": false }],
       // New file
       "space f n": "workspace::NewFile",
       // Search in the current buffer
@@ -214,8 +189,10 @@
       "g D": "editor::GoToDeclaration",
       "g I": "editor::GoToImplementation",
       "g y": "editor::GoToTypeDefinition",
+      // Search word under cursor
+      "g w": ["workspace::SendKeystrokes", "*"],
       "K": "editor::Hover",
-      "g K": "editor::ToggleInlayHints",
+      "g K": "editor::ShowSignatureHelp",
       // Format
       "space c f": "editor::Format",
       // Telescope
@@ -230,8 +207,10 @@
       // Jump to diagnostic
       "] d": "editor::GoToDiagnostic",
       "[ d": "editor::GoToPreviousDiagnostic",
-      "] e": "editor::GoToDiagnostic",
-      "[ e": "editor::GoToPreviousDiagnostic",
+      "] e": ["editor::GoToDiagnostic", { "severity": { "min": "error", "max": "error" } }],
+      "[ e": ["editor::GoToPreviousDiagnostic", { "severity": { "min": "error", "max": "error" } }],
+      "] w": ["editor::GoToDiagnostic", { "severity": { "min": "warning", "max": "warning" } }],
+      "[ w": ["editor::GoToPreviousDiagnostic", { "severity": { "min": "warning", "max": "warning" } }],
       // Excerpts
       "] q": "editor::MoveToStartOfNextExcerpt",
       "[ q": "editor::MoveToStartOfExcerpt",
