@@ -40,6 +40,7 @@
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tree.renderIndentGuides": "always",
   "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
   "explorer.decorations.colors": false,
   "editor.accessibilitySupport": "off",
   "explorer.compactFolders": false,
@@ -158,7 +159,7 @@
     { "before": [ "leader", "w", "q" ], "commands": [ ":wq!" ] },
     // Splits
     { "before": [ "leader", "v" ], "commands": [ ":vsplit" ] },
-    { "before": [ "leader", "s" ], "commands": [ ":split" ] },
+    { "before": [ "leader", "h" ], "commands": [ ":split" ] },
     // FLASH.NVIM
     {
       // Flash
@@ -216,16 +217,6 @@
       // Go to right split
       "before": [ "<C-l>" ],
       "after": [ "<C-W>", "l" ]
-    },
-    {
-      // Prev buffer
-      "before": [ "<S-h>" ],
-      "commands": [ ":bprev" ]
-    },
-    {
-      // Next buffer
-      "before": [ "<S-l>" ],
-      "commands": [ ":bnext" ]
     },
     {
       // Search word under cursor
@@ -364,26 +355,6 @@
       // Open File
       "before": [ "<leader>", "<space>" ],
       "commands": [ "workbench.action.quickOpen" ]
-    },
-    {
-      // Buffers (file finder on open editors)
-      "before": [ "<leader>", "f", "b" ],
-      "commands": [ "workbench.action.showAllEditors" ]
-    },
-    {
-      // Open File
-      "before": [ "<leader>", "f", "f" ],
-      "commands": [ "workbench.action.quickOpen" ]
-    },
-    {
-      // Open file from Recent
-      "before": [ "<leader>", "f", "r" ],
-      "commands": [ "workbench.action.openRecent" ]
-    },
-    {
-      // Command Palette
-      "before": [ "<leader>", "s", "c" ],
-      "commands": [ "workbench.action.showCommands" ]
     },
     {
       // Document diagnostics (Problems tab)

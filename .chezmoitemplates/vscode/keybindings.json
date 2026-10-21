@@ -41,6 +41,17 @@
     "key": "ctrl+9",
     "command": "workbench.action.openEditorAtIndex9"
   },
+  // Buffer navigation
+  {
+    "key": "ctrl+alt+h",
+    "command": "workbench.action.previousEditor",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "workbench.action.nextEditor",
+    "when": "editorTextFocus"
+  },
   // SUGGESTIONS
   {
     // Go to the new line instead of accepting suggestions
@@ -117,11 +128,11 @@
   },
   // COPILOT
   {
-    "key": "ctrl+alt+h",
+    "key": "alt+shift+h",
     "command": "workbench.action.chat.open",
     "when": "!chatSetupDisabledInWorkspace && !chatSetupHidden" },
   {
-    "key": "ctrl+alt+h",
+    "key": "alt+shift+h",
     "command": "workbench.action.closeAuxiliaryBar",
     "when": "!editorFocus"
   },
