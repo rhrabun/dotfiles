@@ -4,6 +4,11 @@ case $- in
       *) return;;
 esac
 
+# Activate mise (adds tools to PATH)
+if command -v mise >/dev/null 2>&1; then
+  eval "$(mise activate bash)"
+fi
+
 # History configuration
 HISTCONTROL=ignoreboth
 shopt -s histappend
