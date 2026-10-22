@@ -13,6 +13,6 @@ lazygit = "latest"
 terraform = "1.16"
 lazydocker = "latest"
 
-{{- if eq .chezmoi.os "linux" }}
-opencode = "latest"
-{{- end }}
+herdr = { version = "latest", os = ["linux"] }
+zellij = { version = "latest", os = ["linux"] }
+opencode = { version = "latest", os = ["linux"] }
