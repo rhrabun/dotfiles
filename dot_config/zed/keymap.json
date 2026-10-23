@@ -10,10 +10,10 @@
     "bindings": {
       // Open and close panels
       "ctrl-e": "project_panel::Toggle",
-      "ctrl-alt-j": "terminal_panel::Toggle",
+      "ctrl-alt-u": "terminal_panel::Toggle",
       "alt-shift-l": "git_panel::Toggle",
-      "alt-shift-h": "agent::Toggle",
-      "ctrl-alt-y": "editor::ToggleEditPrediction",
+      "ctrl-alt-y": "agent::Toggle",
+      "ctrl-alt-p": "editor::ToggleEditPrediction",
       // Zen mode
       "ctrl-alt-z": "workspace::ToggleCenteredLayout",
       // Maximize editor group
@@ -29,12 +29,20 @@
   },
   // Panes navigation
   {
-    "context": "Dock || Terminal || Editor",
+    "context": "Dock || Terminal || (Editor && vim_mode != insert)",
     "bindings": {
-      "ctrl-h": "workspace::ActivatePaneLeft",
-      "ctrl-l": "workspace::ActivatePaneRight",
-      "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown",
+      "alt-h": "workspace::ActivatePaneLeft",
+      "alt-l": "workspace::ActivatePaneRight",
+      "alt-k": "workspace::ActivatePaneUp",
+      "alt-j": "workspace::ActivatePaneDown",
+    },
+  },
+  // Terminal tab navigation
+  {
+    "context": "TerminalPanel || Terminal",
+    "bindings": {
+      "ctrl-alt-j": "pane::ActivateNextItem",
+      "ctrl-alt-k": "pane::ActivatePreviousItem",
     },
   },
   {
