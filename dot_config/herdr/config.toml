@@ -28,6 +28,6 @@ split_horizontal = ["prefix+minus", "prefix+h"]
 toggle_sidebar = ["prefix+b", "cmd+shift+s"]
 
 [keys.indexed]
-tabs = "alt"
-workspaces = "ctrl"
+tabs = "ctrl"
+workspaces = "alt"
 agents = "ctrl+alt"
