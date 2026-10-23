@@ -41,6 +41,27 @@
     "key": "ctrl+9",
     "command": "workbench.action.openEditorAtIndex9"
   },
+  // Pane navigation
+  {
+    "key": "alt+h",
+    "command": "workbench.action.focusLeftGroup",
+    "when": "editorTextFocus && (!vim.active || vim.mode != 'Insert')"
+  },
+  {
+    "key": "alt+l",
+    "command": "workbench.action.focusRightGroup",
+    "when": "editorTextFocus && (!vim.active || vim.mode != 'Insert')"
+  },
+  {
+    "key": "alt+k",
+    "command": "workbench.action.focusAboveGroup",
+    "when": "editorTextFocus && (!vim.active || vim.mode != 'Insert')"
+  },
+  {
+    "key": "alt+j",
+    "command": "workbench.action.focusBelowGroup",
+    "when": "editorTextFocus && (!vim.active || vim.mode != 'Insert')"
+  },
   // Buffer navigation
   {
     "key": "ctrl+alt+h",
@@ -104,7 +125,7 @@
   },
   // TERMINAL
   {
-    "key": "ctrl+alt+j",
+    "key": "ctrl+alt+u",
     "command": "workbench.action.terminal.toggleTerminal"
   },
   {
@@ -112,13 +133,13 @@
     "command": "workbench.action.terminal.new"
   },
   {
-    "key": "ctrl+alt+p",
-    "command": "workbench.action.terminal.focusPrevious",
+    "key": "ctrl+alt+j",
+    "command": "workbench.action.terminal.focusNext",
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+alt+o",
-    "command": "workbench.action.terminal.focusNext",
+    "key": "ctrl+alt+k",
+    "command": "workbench.action.terminal.focusPrevious",
     "when": "terminalFocus"
   },
   {
@@ -128,16 +149,16 @@
   },
   // COPILOT
   {
-    "key": "alt+shift+h",
+    "key": "ctrl+alt+y",
     "command": "workbench.action.chat.open",
     "when": "!chatSetupDisabledInWorkspace && !chatSetupHidden" },
   {
-    "key": "alt+shift+h",
+    "key": "ctrl+alt+y",
     "command": "workbench.action.closeAuxiliaryBar",
     "when": "!editorFocus"
   },
   {
-    "key": "ctrl+alt+y",
+    "key": "ctrl+alt+p",
     "command": "github.copilot.completions.toggle"
   },
   {
