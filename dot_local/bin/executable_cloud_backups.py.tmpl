@@ -14,7 +14,7 @@
 """Backups sync script.
 
 Mirrors ~/Backups into each cloud provider folder (iCloud, ProtonDrive, Google
-Drive), then verifies the copy with a checksum comparison.
+Drive). Pass ``--check`` to also verify the copy with a checksum comparison.
 
 Email names are used in Cloud Providers folder names and are stored in keyring
 to keep outside of code.
@@ -23,6 +23,7 @@ Symlinks in the source (UpNote backup format) are dereferenced into real files,
 because cloud providers (ProtonDrive, iCloud) do not sync symlinks.
 """
 
+import argparse
 import logging
 import shutil
 import subprocess
@@ -118,14 +119,19 @@ def rsync(
 
 
 def sync(
-    rsync_bin: str, source_path: Path, base_path: Path, options: list[str]
+    rsync_bin: str,
+    source_path: Path,
+    base_path: Path,
+    options: list[str],
+    check: bool,
 ) -> None:
-    """Mirror source into base_path and verify the copy.
+    """Mirror source into base_path and optionally verify the copy.
 
     Args:
         source_path (Path): Local source directory to sync.
         base_path (Path): Mounted cloud target root (e.g. ``[98] Backups``).
         options (list[str]): Extra rsync options (e.g. include/exclude filters).
+        check (bool): Verify the copy with a checksum dry-run afterwards.
     """
     if not base_path.is_dir():
         raise FileNotFoundError(f"Target path {base_path} does not exist.")
@@ -138,17 +144,29 @@ def sync(
             copy.returncode, "rsync", copy.stderr.strip()
         )
 
-    check = rsync(rsync_bin, source_path, base_path, options, verify=True)
-    diffs = [line for line in check.stdout.splitlines() if line.strip()]
-    if check.returncode not in RSYNC_OK_CODES or diffs:
+    if not check:
+        return
+
+    log.info("Verifying %s", base_path)
+    verify = rsync(rsync_bin, source_path, base_path, options, verify=True)
+    diffs = [line for line in verify.stdout.splitlines() if line.strip()]
+    if verify.returncode not in RSYNC_OK_CODES or diffs:
         raise OSError(
-            f"integrity check failed for {base_path}: {diffs or check.stderr.strip()}"
+            f"integrity check failed for {base_path}: {diffs or verify.stderr.strip()}"
         )
 
     log.info("Verified %s", base_path)
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Mirror ~/Backups to cloud folders.")
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="verify each copy with a checksum dry-run (slower on cloud folders)",
+    )
+    args = parser.parse_args()
+
     log.info("Starting backup sync")
     rsync_bin = resolve_rsync()
     proton_email, google_email = get_emails()
@@ -176,7 +194,7 @@ def main() -> None:
         log.info("#" * 25)
         log.info("Syncing to %s", target_name.capitalize())
         try:
-            sync(rsync_bin, SRC_PATH, base_path, config["options"])
+            sync(rsync_bin, SRC_PATH, base_path, config["options"], args.check)
         except (FileNotFoundError, subprocess.CalledProcessError, OSError) as e:
             log.error("Sync to %s failed: %s", target_name, e)
             failed.append(target_name)
