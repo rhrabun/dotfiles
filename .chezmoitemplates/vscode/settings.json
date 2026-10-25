@@ -53,6 +53,7 @@
   "files.associations": {
     "*.vue": "html",
     "*.tpl": "jsonc",
+    "*.hujson": "jsonc",
     "*.template": "yaml",
     "*.sh.tmpl": "shellscript",
     "*Dockerfile*": "dockerfile"
