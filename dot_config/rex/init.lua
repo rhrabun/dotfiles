@@ -1,3 +1,6 @@
+-- General
+rex.bind("cmd+alt+p", "pane.insert_path")
+
 -- Panes
 rex.bind("alt+h", "pane.focus.left")
 rex.bind("alt+j", "pane.focus.down")
