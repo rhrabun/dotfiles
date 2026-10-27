@@ -13,7 +13,7 @@ chezmoi init --apply https://github.com/rhrabun/dotfiles.git
 ```
 Clones the repo, computes the source → home diffs, and applies them.
 
-> Note: place the age key at `~/.ssh/chezmoi-age-key.txt` (mode 600); it's needed to manage encrypted files.
+> Note: place the age key at `~/.config/chezmoi/key.txt` (mode 600); it's needed to manage encrypted files.
 
 ## Day-to-day commands
 | Command | What it does |
