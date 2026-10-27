@@ -51,6 +51,16 @@ set showcmd
 " Show the mode you are on the last line
 set showmode
 
+" Cursor style: bar in Insert, block in Normal
+set ttimeout ttimeoutlen=10
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+" Vim never sends t_EI on startup, so do it once
+augroup CursorShape
+  autocmd!
+  autocmd VimEnter * call echoraw(&t_EI)
+augroup END
+
 " Enable mouse support in All modes
 set mouse=a
 
