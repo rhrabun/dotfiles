@@ -54,6 +54,7 @@ rex.bind("pane/r", "then_exit", { action = "pane.split", args = { direction = "r
 rex.bind("pane/x", "then_exit", { action = "pane.close" })
 rex.bind("pane/f", "then_exit", { action = "pane.zoom" })
 rex.bind("pane/w", "then_exit", { action = "pane.float" })
+rex.bind("pane/b", "then_exit", { action = "pane.move_to_new_tab" })
 
 -- Tab mode
 rex.bind("tab/n", "then_exit", { action = "client.tab.new" })
