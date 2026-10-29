@@ -4,10 +4,10 @@ case $- in
       *) return;;
 esac
 
-# Activate mise (adds tools to PATH)
-if command -v mise >/dev/null 2>&1; then
-  eval "$(mise activate bash)"
-fi
+export EDITOR=vim
+
+# Aliases
+[[ -f ~/.aliases ]] && source ~/.aliases
 
 # History configuration
 HISTCONTROL=ignoreboth
@@ -28,15 +28,11 @@ if command -v dircolors >/dev/null 2>&1; then
     eval "$(dircolors -b)"
 fi
 
+# Activate mise (adds tools to PATH)
+if command -v mise >/dev/null 2>&1; then
+  eval "$(mise activate bash)"
+fi
+
 # Use zoxide instead of cd
 eval "$(zoxide init bash --cmd cd)"
 
-# Activate Starship
-if command -v starship >/dev/null 2>&1; then
-  eval "$(starship init bash)"
-fi
-
-# Aliases
-[[ -f ~/.aliases ]] && source ~/.aliases
-
-export EDITOR=vim
