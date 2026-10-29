@@ -31,5 +31,12 @@ fi
 # Use zoxide instead of cd
 eval "$(zoxide init bash --cmd cd)"
 
+# Activate Starship
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init bash)"
+fi
+
 # Aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+
+export EDITOR=vim
