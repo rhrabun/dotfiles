@@ -31,10 +31,9 @@
                         ]
                     },
                     {
-                        "description": "CapsLock = Hyper (held) / CapsLock toggle (tap)",
+                        "description": "CapsLock (held) = Hyper, tap = nothing",
                         "manipulators": [
                             {
-                                "conditions": [],
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": {
@@ -64,6 +63,116 @@
                         ]
                     },
                     {
+                        "description": "Esc: cancel armed layer",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "todoist_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "escape"
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "todoist_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "apps_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "escape"
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "apps_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "obsidian_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "escape"
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "obsidian_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "files_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "escape"
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "files_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "apple_intelligence_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "escape"
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "apple_intelligence_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Hyper+T: arm Todoist layer",
                         "manipulators": [
                             {
@@ -75,6 +184,26 @@
                                     },
                                     {
                                         "name": "todoist_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "apps_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "obsidian_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "files_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "apple_intelligence_layer",
                                         "type": "variable_if",
                                         "value": 0
                                     }
@@ -92,6 +221,114 @@
                                         "set_variable": {
                                             "name": "todoist_layer",
                                             "value": 1
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Todoist layer: Shift+I = Ideas project",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "todoist_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open 'todoist://project?id=6fgr4jp897f4j3x6'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "todoist_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Todoist layer: Shift+T = Tech Ideas project",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "todoist_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open 'todoist://project?id=6hj9VQJCfrGRRrGJ'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "todoist_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Todoist layer: I = Inbox view",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "todoist_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open todoist://inbox"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "todoist_layer",
+                                            "value": 0
                                         }
                                     }
                                 ],
@@ -121,108 +358,6 @@
                                 "to": [
                                     {
                                         "shell_command": "open 'todoist://openquickadd'"
-                                    },
-                                    {
-                                        "set_variable": {
-                                            "name": "todoist_layer",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Todoist layer: B = Inbox view",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "todoist_layer",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "b",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open todoist://inbox"
-                                    },
-                                    {
-                                        "set_variable": {
-                                            "name": "todoist_layer",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Todoist layer: U = Upcoming view",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "todoist_layer",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "u",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open todoist://upcoming"
-                                    },
-                                    {
-                                        "set_variable": {
-                                            "name": "todoist_layer",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Todoist layer: I = Ideas project",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "todoist_layer",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "i",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open 'todoist://project?id=6fgr4jp897f4j3x6'"
                                     },
                                     {
                                         "set_variable": {
@@ -270,6 +405,40 @@
                         ]
                     },
                     {
+                        "description": "Todoist layer: U = Upcoming view",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "todoist_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "u",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open todoist://upcoming"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "todoist_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Hyper+G: arm Apps layer",
                         "manipulators": [
                             {
@@ -280,7 +449,27 @@
                                         "value": 1
                                     },
                                     {
+                                        "name": "todoist_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
                                         "name": "apps_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "obsidian_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "files_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "apple_intelligence_layer",
                                         "type": "variable_if",
                                         "value": 0
                                     }
@@ -306,7 +495,7 @@
                         ]
                     },
                     {
-                        "description": "Apps layer: G = Ghostty",
+                        "description": "Apps layer: Shift+G = Ghostty",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -319,6 +508,9 @@
                                 "from": {
                                     "key_code": "g",
                                     "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -340,7 +532,44 @@
                         ]
                     },
                     {
-                        "description": "Apps layer: B = Browser (Zen)",
+                        "description": "Apps layer: Shift+T = Todoist",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "apps_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'Todoist'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "apps_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Apps layer: B = Zen",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -374,7 +603,7 @@
                         ]
                     },
                     {
-                        "description": "Apps layer: E = Editor (VS Code)",
+                        "description": "Apps layer: E = VS Code",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -395,108 +624,6 @@
                                 "to": [
                                     {
                                         "shell_command": "open -a 'Visual Studio Code'"
-                                    },
-                                    {
-                                        "set_variable": {
-                                            "name": "apps_layer",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Apps layer: S = Safari",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "apps_layer",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "s",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Safari'"
-                                    },
-                                    {
-                                        "set_variable": {
-                                            "name": "apps_layer",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Apps layer: M = Music (Spotify)",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "apps_layer",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "m",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Spotify'"
-                                    },
-                                    {
-                                        "set_variable": {
-                                            "name": "apps_layer",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Apps layer: P = Proton Mail",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "apps_layer",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "p",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Proton Mail'"
                                     },
                                     {
                                         "set_variable": {
@@ -544,7 +671,7 @@
                         ]
                     },
                     {
-                        "description": "Apps layer: N = Notes",
+                        "description": "Apps layer: G = Rex",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -555,7 +682,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "n",
+                                    "key_code": "g",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -564,41 +691,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Notes'"
-                                    },
-                                    {
-                                        "set_variable": {
-                                            "name": "apps_layer",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Apps layer: R = Reminders",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "apps_layer",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "r",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Reminders'"
+                                        "shell_command": "open -a 'Rex Beta'"
                                     },
                                     {
                                         "set_variable": {
@@ -646,6 +739,210 @@
                         ]
                     },
                     {
+                        "description": "Apps layer: M = Spotify",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "apps_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'Spotify'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "apps_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Apps layer: N = Notes",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "apps_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'Notes'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "apps_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Apps layer: O = Obsidian",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "apps_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'Obsidian'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "apps_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Apps layer: P = Proton Mail",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "apps_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'Proton Mail'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "apps_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Apps layer: R = Rex",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "apps_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'Rex Beta'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "apps_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Apps layer: S = Safari",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "apps_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'Safari'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "apps_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Apps layer: T = Telegram",
                         "manipulators": [
                             {
@@ -671,6 +968,872 @@
                                     {
                                         "set_variable": {
                                             "name": "apps_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Hyper+O: arm Obsidian layer",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "todoist_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "apps_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "obsidian_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "files_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "apple_intelligence_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "obsidian_layer",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Obsidian layer: D = Daily note",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "obsidian_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open 'obsidian://daily'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "obsidian_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Obsidian layer: F = Search notes",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "obsidian_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open 'obsidian://search'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "obsidian_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Obsidian layer: N = New note",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "obsidian_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open 'obsidian://new'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "obsidian_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Obsidian layer: O = Open vault",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "obsidian_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open 'obsidian://open'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "obsidian_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Hyper+D: arm Files / Directories layer",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "todoist_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "apps_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "obsidian_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "files_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "apple_intelligence_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "files_layer",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Files / Directories layer: Shift+P = Pictures",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "files_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open '/Users/roman/Pictures'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "files_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Files / Directories layer: D = Downloads",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "files_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open '/Users/roman/Downloads'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "files_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Files / Directories layer: G = Google Drive",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "files_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open '/Users/roman/My Drive'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "files_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Files / Directories layer: I = iCloud Drive",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "files_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open '/Users/roman/Library/Mobile Documents/com~apple~CloudDocs/'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "files_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Files / Directories layer: P = Proton Drive",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "files_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open ~/Library/CloudStorage/ProtonDrive-*"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "files_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Hyper+A: arm Apple Intelligence layer",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "todoist_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "apps_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "obsidian_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "files_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "apple_intelligence_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "apple_intelligence_layer",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Apple Intelligence layer: Shift+C = Make Concise",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "apple_intelligence_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -g 'raycast://extensions/EvanZhouDev/raycast-apple-intelligence/make-concise'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "apple_intelligence_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Apple Intelligence layer: Shift+F = Make Friendly",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "apple_intelligence_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -g 'raycast://extensions/EvanZhouDev/raycast-apple-intelligence/make-friendly'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "apple_intelligence_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Apple Intelligence layer: Shift+K = Make Key Points",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "apple_intelligence_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -g 'raycast://extensions/EvanZhouDev/raycast-apple-intelligence/create-key-points'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "apple_intelligence_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Apple Intelligence layer: Shift+P = Make Professional",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "apple_intelligence_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -g 'raycast://extensions/EvanZhouDev/raycast-apple-intelligence/make-professional'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "apple_intelligence_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Apple Intelligence layer: Shift+T = Make Table",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "apple_intelligence_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -g 'raycast://extensions/EvanZhouDev/raycast-apple-intelligence/make-table'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "apple_intelligence_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Apple Intelligence layer: C = Compose",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "apple_intelligence_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -g 'raycast://extensions/EvanZhouDev/raycast-apple-intelligence/compose'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "apple_intelligence_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Apple Intelligence layer: F = Quick Fix / Proofread",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "apple_intelligence_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -g 'raycast://extensions/EvanZhouDev/raycast-apple-intelligence/proofread'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "apple_intelligence_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Apple Intelligence layer: I = Create Image",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "apple_intelligence_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -g 'raycast://extensions/EvanZhouDev/raycast-apple-intelligence/create-image'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "apple_intelligence_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Apple Intelligence layer: L = List Writing Tools",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "apple_intelligence_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -g 'raycast://extensions/EvanZhouDev/raycast-apple-intelligence/list-writing-tools'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "apple_intelligence_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Apple Intelligence layer: R = Rewrite",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "apple_intelligence_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -g 'raycast://extensions/EvanZhouDev/raycast-apple-intelligence/rewrite'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "apple_intelligence_layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Apple Intelligence layer: S = Summarize",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "apple_intelligence_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -g 'raycast://extensions/EvanZhouDev/raycast-apple-intelligence/summarize'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "apple_intelligence_layer",
                                             "value": 0
                                         }
                                     }
@@ -869,212 +2032,6 @@
                                 "to": [
                                     {
                                         "shell_command": "open -g 'raycast://extensions/raycast/window-management/restore'"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Hyper+O: arm Obsidian layer",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "hyper",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    },
-                                    {
-                                        "name": "obsidian_layer",
-                                        "type": "variable_if",
-                                        "value": 0
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "o",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "obsidian_layer",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Obsidian layer: F = Search notes",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "obsidian_layer",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "f",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open 'obsidian://search'"
-                                    },
-                                    {
-                                        "set_variable": {
-                                            "name": "obsidian_layer",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Obsidian layer: N = New note",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "obsidian_layer",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "n",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open 'obsidian://new'"
-                                    },
-                                    {
-                                        "set_variable": {
-                                            "name": "obsidian_layer",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Obsidian layer: D = Daily note",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "obsidian_layer",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "d",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open 'obsidian://daily'"
-                                    },
-                                    {
-                                        "set_variable": {
-                                            "name": "obsidian_layer",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Obsidian layer: O = Open vault",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "obsidian_layer",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "o",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open 'obsidian://open'"
-                                    },
-                                    {
-                                        "set_variable": {
-                                            "name": "obsidian_layer",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Apps layer: O = Obsidian",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "apps_layer",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "o",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Obsidian'"
-                                    },
-                                    {
-                                        "set_variable": {
-                                            "name": "apps_layer",
-                                            "value": 0
-                                        }
                                     }
                                 ],
                                 "type": "basic"
