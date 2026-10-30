@@ -1,7 +1,18 @@
 {
     "global": {
         "check_for_updates": false,
-        "notification_window_position": "top_right"
+        "notification_window_position": "top_right",
+        "notification_window_font_size": 15,
+        "notification_window_colors": {
+            "light": {
+                "background_color": "#303446f2",
+                "text_color": "#c6d0f5"
+            },
+            "dark": {
+                "background_color": "#303446f2",
+                "text_color": "#c6d0f5"
+            }
+        }
     },
     "profiles": [
         {
