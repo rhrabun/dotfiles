@@ -83,6 +83,12 @@
                                             "name": "todoist_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -103,6 +109,12 @@
                                         "set_variable": {
                                             "name": "apps_layer",
                                             "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
                                         }
                                     }
                                 ],
@@ -125,6 +137,12 @@
                                             "name": "obsidian_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -146,6 +164,12 @@
                                             "name": "files_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -166,6 +190,12 @@
                                         "set_variable": {
                                             "name": "apple_intelligence_layer",
                                             "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
                                         }
                                     }
                                 ],
@@ -220,7 +250,6 @@
                                 "to": [
                                     {
                                         "set_notification_message": {
-                                            "duration_milliseconds": 800,
                                             "id": "layer",
                                             "text": "Todoist"
                                         }
@@ -267,6 +296,12 @@
                                             "name": "todoist_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -304,6 +339,12 @@
                                             "name": "todoist_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -337,6 +378,12 @@
                                         "set_variable": {
                                             "name": "todoist_layer",
                                             "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
                                         }
                                     }
                                 ],
@@ -372,6 +419,12 @@
                                             "name": "todoist_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -406,6 +459,12 @@
                                             "name": "todoist_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -439,6 +498,12 @@
                                         "set_variable": {
                                             "name": "todoist_layer",
                                             "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
                                         }
                                     }
                                 ],
@@ -493,7 +558,6 @@
                                 "to": [
                                     {
                                         "set_notification_message": {
-                                            "duration_milliseconds": 800,
                                             "id": "layer",
                                             "text": "Apps"
                                         }
@@ -540,6 +604,12 @@
                                             "name": "apps_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -577,6 +647,12 @@
                                             "name": "apps_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -610,6 +686,12 @@
                                         "set_variable": {
                                             "name": "apps_layer",
                                             "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
                                         }
                                     }
                                 ],
@@ -645,6 +727,12 @@
                                             "name": "apps_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -678,6 +766,12 @@
                                         "set_variable": {
                                             "name": "apps_layer",
                                             "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
                                         }
                                     }
                                 ],
@@ -713,6 +807,12 @@
                                             "name": "apps_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -746,6 +846,12 @@
                                         "set_variable": {
                                             "name": "apps_layer",
                                             "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
                                         }
                                     }
                                 ],
@@ -781,6 +887,12 @@
                                             "name": "apps_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -814,6 +926,12 @@
                                         "set_variable": {
                                             "name": "apps_layer",
                                             "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
                                         }
                                     }
                                 ],
@@ -849,6 +967,12 @@
                                             "name": "apps_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -882,6 +1006,12 @@
                                         "set_variable": {
                                             "name": "apps_layer",
                                             "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
                                         }
                                     }
                                 ],
@@ -917,6 +1047,12 @@
                                             "name": "apps_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -950,6 +1086,12 @@
                                         "set_variable": {
                                             "name": "apps_layer",
                                             "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
                                         }
                                     }
                                 ],
@@ -985,6 +1127,12 @@
                                             "name": "apps_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -1018,6 +1166,12 @@
                                         "set_variable": {
                                             "name": "apps_layer",
                                             "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
                                         }
                                     }
                                 ],
@@ -1072,7 +1226,6 @@
                                 "to": [
                                     {
                                         "set_notification_message": {
-                                            "duration_milliseconds": 800,
                                             "id": "layer",
                                             "text": "Obsidian"
                                         }
@@ -1116,6 +1269,12 @@
                                             "name": "obsidian_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -1149,6 +1308,12 @@
                                         "set_variable": {
                                             "name": "obsidian_layer",
                                             "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
                                         }
                                     }
                                 ],
@@ -1184,6 +1349,12 @@
                                             "name": "obsidian_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -1217,6 +1388,12 @@
                                         "set_variable": {
                                             "name": "obsidian_layer",
                                             "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
                                         }
                                     }
                                 ],
@@ -1271,7 +1448,6 @@
                                 "to": [
                                     {
                                         "set_notification_message": {
-                                            "duration_milliseconds": 800,
                                             "id": "layer",
                                             "text": "Files"
                                         }
@@ -1318,6 +1494,12 @@
                                             "name": "files_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -1351,6 +1533,12 @@
                                         "set_variable": {
                                             "name": "files_layer",
                                             "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
                                         }
                                     }
                                 ],
@@ -1386,6 +1574,12 @@
                                             "name": "files_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -1420,6 +1614,12 @@
                                             "name": "files_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -1453,6 +1653,12 @@
                                         "set_variable": {
                                             "name": "files_layer",
                                             "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
                                         }
                                     }
                                 ],
@@ -1507,7 +1713,6 @@
                                 "to": [
                                     {
                                         "set_notification_message": {
-                                            "duration_milliseconds": 800,
                                             "id": "layer",
                                             "text": "Apple Intelligence"
                                         }
@@ -1554,6 +1759,12 @@
                                             "name": "apple_intelligence_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -1590,6 +1801,12 @@
                                         "set_variable": {
                                             "name": "apple_intelligence_layer",
                                             "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
                                         }
                                     }
                                 ],
@@ -1628,6 +1845,12 @@
                                             "name": "apple_intelligence_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -1664,6 +1887,12 @@
                                         "set_variable": {
                                             "name": "apple_intelligence_layer",
                                             "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
                                         }
                                     }
                                 ],
@@ -1702,6 +1931,12 @@
                                             "name": "apple_intelligence_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -1735,6 +1970,12 @@
                                         "set_variable": {
                                             "name": "apple_intelligence_layer",
                                             "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
                                         }
                                     }
                                 ],
@@ -1770,6 +2011,12 @@
                                             "name": "apple_intelligence_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -1803,6 +2050,12 @@
                                         "set_variable": {
                                             "name": "apple_intelligence_layer",
                                             "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
                                         }
                                     }
                                 ],
@@ -1838,6 +2091,12 @@
                                             "name": "apple_intelligence_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -1872,6 +2131,12 @@
                                             "name": "apple_intelligence_layer",
                                             "value": 0
                                         }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -1905,6 +2170,12 @@
                                         "set_variable": {
                                             "name": "apple_intelligence_layer",
                                             "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
                                         }
                                     }
                                 ],
