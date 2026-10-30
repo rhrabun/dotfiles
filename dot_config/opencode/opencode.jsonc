@@ -3,5 +3,13 @@
   "model": "~deepseek/deepseek-v4-flash-latest",
   "update": "disable",
   "references": {
+  },
+  "mcp": {
+    "servers": {
+      "rex-community": {
+        "type": "remote",
+        "url": "https://www.superlogical.com/rex/community-mcp"
+      }
+    }
   }
 }
