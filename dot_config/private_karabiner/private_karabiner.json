@@ -1,6 +1,7 @@
 {
     "global": {
-        "check_for_updates": false
+        "check_for_updates": false,
+        "notification_window_position": "top_right"
     },
     "profiles": [
         {
@@ -217,6 +218,13 @@
                                     }
                                 },
                                 "to": [
+                                    {
+                                        "set_notification_message": {
+                                            "duration_milliseconds": 800,
+                                            "id": "layer",
+                                            "text": "Todoist"
+                                        }
+                                    },
                                     {
                                         "set_variable": {
                                             "name": "todoist_layer",
@@ -483,6 +491,13 @@
                                     }
                                 },
                                 "to": [
+                                    {
+                                        "set_notification_message": {
+                                            "duration_milliseconds": 800,
+                                            "id": "layer",
+                                            "text": "Apps"
+                                        }
+                                    },
                                     {
                                         "set_variable": {
                                             "name": "apps_layer",
@@ -1056,6 +1071,13 @@
                                 },
                                 "to": [
                                     {
+                                        "set_notification_message": {
+                                            "duration_milliseconds": 800,
+                                            "id": "layer",
+                                            "text": "Obsidian"
+                                        }
+                                    },
+                                    {
                                         "set_variable": {
                                             "name": "obsidian_layer",
                                             "value": 1
@@ -1247,6 +1269,13 @@
                                     }
                                 },
                                 "to": [
+                                    {
+                                        "set_notification_message": {
+                                            "duration_milliseconds": 800,
+                                            "id": "layer",
+                                            "text": "Files"
+                                        }
+                                    },
                                     {
                                         "set_variable": {
                                             "name": "files_layer",
@@ -1476,6 +1505,13 @@
                                     }
                                 },
                                 "to": [
+                                    {
+                                        "set_notification_message": {
+                                            "duration_milliseconds": 800,
+                                            "id": "layer",
+                                            "text": "Apple Intelligence"
+                                        }
+                                    },
                                     {
                                         "set_variable": {
                                             "name": "apple_intelligence_layer",
