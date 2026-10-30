@@ -30,6 +30,9 @@ rex.bind("pane/x", "one_shot", { action = "pane.close" })
 rex.bind("pane/f", "one_shot", { action = "pane.zoom" })
 rex.bind("pane/w", "one_shot", { action = "pane.float" })
 
+rex.bind("pane/m", "one_shot", { action = "pane.minimize_floating" })
+rex.bind("pane/shift+m", "one_shot", { action = "pane.minimize_all_floating" })
+
 rex.bind("pane/b", "one_shot", { action = "pane.move_to_new_tab" })
 
 -- Tab mode
