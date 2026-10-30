@@ -35,4 +35,3 @@ fi
 
 # Use zoxide instead of cd
 eval "$(zoxide init bash --cmd cd)"
-
