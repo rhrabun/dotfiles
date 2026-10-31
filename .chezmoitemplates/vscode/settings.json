@@ -144,6 +144,13 @@
       "after": [ "<Esc>" ]
     },
   ],
+  "vim.insertModeKeyBindingsNonRecursive": [
+    // Disable arrow keys in insert mode
+    { "before": [ "<Up>" ], "after": [] },
+    { "before": [ "<Down>" ], "after": [] },
+    { "before": [ "<Left>" ], "after": [] },
+    { "before": [ "<Right>" ], "after": [] },
+  ],
   "vim.visualModeKeyBindings": [
     {
       "before": [ "<" ],
@@ -155,6 +162,11 @@
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
+    // Disable arrow keys in normal mode
+    { "before": [ "<Up>" ], "after": [] },
+    { "before": [ "<Down>" ], "after": [] },
+    { "before": [ "<Left>" ], "after": [] },
+    { "before": [ "<Right>" ], "after": [] },
     { "before": [ "leader", "w" ], "commands": [ ":w!" ] },
     { "before": [ "leader", "q" ], "commands": [ ":q!" ] },
     { "before": [ "leader", "w", "q" ], "commands": [ ":wq!" ] },
