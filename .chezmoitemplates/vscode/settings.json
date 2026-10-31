@@ -125,7 +125,7 @@
     "!Sub"
   ],
   // VIM Config
-  "vim.showMarksInGutter": false,
+  "vim.showMarksInGutter": true,
   "editor.lineNumbers": "relative",
   "vim.useSystemClipboard": true,
   "vim.foldfix": true,
