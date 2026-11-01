@@ -4,12 +4,12 @@
 
   // General
   "update.mode": "manual",
-  "extensions.autoCheckUpdates": false,
   "extensions.autoUpdate": "off",
   "telemetry.telemetryLevel": "off",
-  "security.workspace.trust.untrustedFiles": "open",
   "redhat.telemetry.enabled": false,
   "explorer.confirmDragAndDrop": false,
+  "extensions.autoCheckUpdates": false,
+  "security.workspace.trust.untrustedFiles": "open",
   // Visual
   "editor.fontSize": 16,
   "editor.fontFamily": "'FiraCode Nerd Font', 'Cascadia Code', 'Fira Code'",
@@ -21,8 +21,8 @@
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono', 'Cascadia Mono', 'Fira Mono'",
   "window.customTitleBarVisibility": "auto",
-  "workbench.colorTheme": "Catppuccin Frappé",
   "window.autoDetectColorScheme": true,
+  "workbench.colorTheme": "Catppuccin Frappé",
   "workbench.preferredDarkColorTheme": "Catppuccin Frappé",
   "workbench.preferredLightColorTheme": "Catppuccin Latte",
   "workbench.iconTheme": "catppuccin-frappe",
@@ -45,6 +45,7 @@
   "editor.accessibilitySupport": "off",
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
+  "editor.linkedEditing": true,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "files.eol": "\n",
   "files.exclude": {
@@ -125,15 +126,19 @@
     "!Sub"
   ],
   // VIM Config
-  "vim.showMarksInGutter": true,
-  "editor.lineNumbers": "relative",
-  "vim.useSystemClipboard": true,
+  "vim.leader": "<space>",
   "vim.foldfix": true,
   "vim.surround": true,
   "vim.easymotion": true,
+  "vim.visualstar": true,
   "vim.useCtrlKeys": true,
+  "vim.targets.enable": true,
+  "vim.smartRelativeLine": true,
+  "vim.showMarksInGutter": true,
+  "vim.useSystemClipboard": true,
+  "vim.highlightedyank.enable": true,
+  "editor.lineNumbers": "relative",
   "vim.easymotionKeys": "asdghklqwertyuiopzxcvbnmfj",
-  "vim.leader": "<space>",
   "vim.insertModeKeyBindings": [
     {
       "before": [ "j", "k" ],
