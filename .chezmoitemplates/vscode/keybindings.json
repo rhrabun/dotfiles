@@ -135,7 +135,7 @@
   {
     "key": "ctrl+alt+y",
     "command": "workbench.action.closeAuxiliaryBar",
-    "when": "!editorFocus"
+    "when": "!editorFocus && !terminalFocus"
   },
   {
     "key": "ctrl+alt+f",
