@@ -28,7 +28,8 @@ rex.bind("pane/r", "one_shot", { action = "pane.split", args = { direction = "ri
 
 rex.bind("pane/x", "one_shot", { action = "pane.close" })
 rex.bind("pane/f", "one_shot", { action = "pane.zoom" })
-rex.bind("pane/w", "one_shot", { action = "pane.float" })
+rex.bind("pane/w", "one_shot", { action = "pane.new_floating" })
+rex.bind("pane/shift+w", "one_shot", { action = "pane.float" })
 
 rex.bind("pane/m", "one_shot", { action = "pane.minimize_floating" })
 rex.bind("pane/shift+m", "one_shot", { action = "pane.minimize_all_floating" })

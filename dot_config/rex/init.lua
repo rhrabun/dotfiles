@@ -10,6 +10,8 @@ rex.bind("alt+l", "pane.focus.right")
 rex.bind("alt+;", "pane.focus_next")
 rex.bind("alt+p", "pane.focus_previous")
 
+rex.bind("cmd+shift+f", "pane.new_floating")
+
 -- Tabs
 rex.bind("cmd+r", "client.tab.rename")
 
