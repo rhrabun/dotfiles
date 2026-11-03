@@ -1,25 +1,5 @@
 [
   {
-    "id": "049e08a3-615d-4039-a943-23ca914dc74d",
-    "category": "Apple Intelligence",
-    "title": "List writing tools",
-    "keys": "F1",
-    "tags": [
-      "ai",
-      "raycast"
-    ]
-  },
-  {
-    "id": "d92ec68b-228a-4bb4-a870-f8ec3bae5fd7",
-    "category": "Apple Intelligence",
-    "title": "Rewrite",
-    "keys": "F2",
-    "tags": [
-      "ai",
-      "raycast"
-    ]
-  },
-  {
     "id": "cb6c4147-76cd-445e-a756-4cf8e485c3f2",
     "category": "Raycast",
     "title": "Search Bitwarden vault",
