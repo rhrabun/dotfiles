@@ -4,6 +4,9 @@ README.md
 .gitignore
 .pre-commit-config.yaml
 
+# Work branch: ssh config stays local
+.ssh/config
+
 # macOS only
 {{- if ne .chezmoi.os "darwin" }}
 Library
