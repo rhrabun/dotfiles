@@ -1,5 +1,5 @@
 -- General
-rex.bind("cmd+alt+p", "pane.insert_path")
+rex.bind("cmd+shift+i", "pane.insert_path")
 rex.bind("cmd+shift+.", "client.sidebar.activity.toggle")
 
 -- Panes
