@@ -21,6 +21,7 @@
     window-rule {
         match app-id="helium"
         open-maximized true
+        scroll-factor 0.3
     }
 
     // if you use steam you will probably like these
