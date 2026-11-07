@@ -15,7 +15,8 @@ Library
 
 # Linux only
 {{- if ne .chezmoi.os "linux" }}
-.config/hypr
+.config/niri
+.config/noctalia
 .config/Code
 .config/voxtype
 .config/opencode/tui.json
