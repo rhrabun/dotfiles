@@ -18,6 +18,11 @@
         default-window-height { fixed 920; }
     }
 
+    window-rule {
+        match app-id="helium"
+        open-maximized true
+    }
+
     // if you use steam you will probably like these
     window-rule {
         match app-id="steam"
