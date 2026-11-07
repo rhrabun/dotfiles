@@ -4,7 +4,7 @@
 
 theme = light:Catppuccin Latte,dark:Catppuccin Frappe
 
-font-size = 15
+font-size = {{ if eq .chezmoi.os "linux" }}11{{ else }}15{{ end }}
 font-family="FiraCode Nerd Font Mono"
 font-thicken=true
 
