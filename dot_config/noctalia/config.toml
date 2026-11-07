@@ -4,6 +4,6 @@ polkit_agent = true
 [bar.default]
 smart_auto_hide = true
 reserve_space = false
-start = ["control-center", "launcher", "workspaces"]
+start = ["control-center", "launcher", "workspaces", "sysmon"]
 center = ["clipboard", "clock", "notifications"]
 end = ["tray", "volume", "network", "battery"]
