@@ -11,3 +11,10 @@ reserve_space = false
 start = ["control-center", "launcher", "workspaces"]
 center = ["clipboard", "clock", "notifications"]
 end = ["tray", "sysmon", "volume", "network", "battery"]
+
+[plugins]
+enabled = ["kenn/keybind-cheatsheet"]
+
+[plugin_settings."kenn/keybind-cheatsheet"]
+compositor = "niri"
+show_undescribed = false
