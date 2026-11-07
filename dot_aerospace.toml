@@ -8,6 +8,17 @@ on-window-detected = [
 
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
+[workspace-to-monitor-force-assignment]
+    1 = 'built-in'
+    2 = 'secondary'
+    3 = 'secondary'
+    4 = 'secondary'
+    5 = 'secondary'
+    6 = 'secondary'
+    7 = 'secondary'
+    8 = 'secondary'
+    9 = 'secondary'
+
 [mode.main.binding]
     ctrl-cmd-1 = 'workspace 1'
     ctrl-cmd-2 = 'workspace 2'
@@ -19,18 +30,16 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     ctrl-cmd-8 = 'workspace 8'
     ctrl-cmd-9 = 'workspace 9'
 
-    ctrl-cmd-shift-1 = 'move-node-to-workspace 1'
-    ctrl-cmd-shift-2 = 'move-node-to-workspace 2'
-    ctrl-cmd-shift-3 = 'move-node-to-workspace 3'
-    ctrl-cmd-shift-4 = 'move-node-to-workspace 4'
-    ctrl-cmd-shift-5 = 'move-node-to-workspace 5'
-    ctrl-cmd-shift-6 = 'move-node-to-workspace 6'
-    ctrl-cmd-shift-7 = 'move-node-to-workspace 7'
-    ctrl-cmd-shift-8 = 'move-node-to-workspace 8'
-    ctrl-cmd-shift-9 = 'move-node-to-workspace 9'
+    ctrl-cmd-alt-1 = 'move-node-to-workspace 1'
+    ctrl-cmd-alt-2 = 'move-node-to-workspace 2'
+    ctrl-cmd-alt-3 = 'move-node-to-workspace 3'
+    ctrl-cmd-alt-4 = 'move-node-to-workspace 4'
+    ctrl-cmd-alt-5 = 'move-node-to-workspace 5'
+    ctrl-cmd-alt-6 = 'move-node-to-workspace 6'
+    ctrl-cmd-alt-7 = 'move-node-to-workspace 7'
+    ctrl-cmd-alt-8 = 'move-node-to-workspace 8'
+    ctrl-cmd-alt-9 = 'move-node-to-workspace 9'
 
-    ctrl-cmd-left = 'workspace --wrap-around prev'
-    ctrl-cmd-right = 'workspace --wrap-around next'
     ctrl-cmd-tab = 'workspace-back-and-forth'
 
     ctrl-cmd-shift-r = 'reload-config'
