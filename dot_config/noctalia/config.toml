@@ -1,5 +1,9 @@
+[accessibility]
+ui_scale = 0.9
+
 [shell]
 polkit_agent = true
+font_family = "Inter"
 
 [bar.default]
 smart_auto_hide = true
