@@ -21,3 +21,14 @@ show_undescribed = false
 
 [audio]
 enable_volume_sounds = false
+
+[notification]
+filter_order = ["niri-screenshot"]
+
+[notification.filter.niri-screenshot]
+enabled = true
+match = "niri"
+match_content = "Screenshot captured"
+show_toast = false
+save_history = false
+play_sound = false
