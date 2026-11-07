@@ -6,7 +6,7 @@ binds {
     // ─── noctalia-shell keybinds ───
     // https://docs.noctalia.dev/getting-started/keybinds/
 
-    Mod+Shift+Slash                     hotkey-overlay-title="Show Hotkeys" { show-hotkey-overlay; }
+    Mod+Shift+Slash                     hotkey-overlay-title="Keybind Cheatsheet" { spawn "noctalia" "msg" "panel-toggle" "kenn/keybind-cheatsheet:cheatsheet"; }
 
     // ─── Applications ───
     Mod+Return                          hotkey-overlay-title="Open Terminal: Ghostty" { spawn "ghostty"; }
@@ -37,8 +37,8 @@ binds {
     XF86AudioPause                      hotkey-overlay-title=null allow-when-locked=true { spawn-sh "noctalia msg media stop"; }
 
     // ─── Brightness Controls ───
-    XF86MonBrightnessUp                 hotkey-overlay-title="Brightness Up" allow-when-locked=true { spawn-sh "noctalia msg brightness-up"; }
-    XF86MonBrightnessDown               hotkey-overlay-title="Brightness Down" allow-when-locked=true { spawn-sh "noctalia msg brightness-down"; }
+    XF86MonBrightnessUp                 hotkey-overlay-title=null allow-when-locked=true { spawn-sh "noctalia msg brightness-up"; }
+    XF86MonBrightnessDown               hotkey-overlay-title=null allow-when-locked=true { spawn-sh "noctalia msg brightness-down"; }
 
     // ─── Window Movement and Focus ───
     Mod+Q                               hotkey-overlay-title="Close Window" { close-window; }
@@ -47,18 +47,18 @@ binds {
     Mod+H                               { focus-column-left; }
     Mod+Right                           hotkey-overlay-title="Focus Column Right" { focus-column-right; }
     Mod+L                               { focus-column-right; }
-    Mod+Up                              hotkey-overlay-title="Focus Window Up" { focus-window-up; }
+    Mod+Up                              hotkey-overlay-title="Focus Workspace Up" { focus-workspace-up; }
     Mod+K                               { focus-window-up; }
-    Mod+Down                            hotkey-overlay-title="Focus Window Down" { focus-window-down; }
+    Mod+Down                            hotkey-overlay-title="Focus Workspace Down" { focus-workspace-down; }
     Mod+J                               { focus-window-down; }
 
     Mod+CTRL+Left                       hotkey-overlay-title="Move Column Left" { move-column-left; }
     Mod+CTRL+H                          { move-column-left; }
     Mod+CTRL+Right                      hotkey-overlay-title="Move Column Right" { move-column-right; }
     Mod+CTRL+L                          { move-column-right; }
-    Mod+CTRL+UP                         hotkey-overlay-title="Move Window Up" { move-window-up; }
+    Mod+CTRL+Up                         hotkey-overlay-title="Move Column To Workspace Up" { move-column-to-workspace-up; }
     Mod+CTRL+K                          { move-window-up; }
-    Mod+CTRL+Down                       hotkey-overlay-title="Move Window Down" { move-window-down; }
+    Mod+CTRL+Down                       hotkey-overlay-title="Move Column To Workspace Down" { move-column-to-workspace-down; }
     Mod+CTRL+J                          { move-window-down; }
 
     Mod+Home                            hotkey-overlay-title="Focus First Column" { focus-column-first; }
@@ -93,8 +93,6 @@ binds {
     // ─── Workspace Switching ───
     Mod+WheelScrollDown                 cooldown-ms=150 { focus-workspace-down; }
     Mod+WheelScrollUp                   cooldown-ms=150 { focus-workspace-up; }
-    Mod+CTRL+WheelScrollDown            cooldown-ms=150 { move-column-to-workspace-down; }
-    Mod+CTRL+WheelScrollUp              cooldown-ms=150 { move-column-to-workspace-up; }
 
     Mod+WheelScrollRight                { focus-column-right; }
     Mod+WheelScrollLeft                 { focus-column-left; }
