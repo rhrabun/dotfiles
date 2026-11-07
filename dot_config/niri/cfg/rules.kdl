@@ -1,3 +1,8 @@
+    // Open apps maximized by default.
+    window-rule {
+        open-maximized true
+    }
+
     window-rule {
         geometry-corner-radius 20 // Set every window radius to 20
         clip-to-geometry true
@@ -14,6 +19,7 @@
     window-rule {
         match app-id="dev.noctalia.Noctalia"
         open-floating true
+        open-maximized false
         default-column-width { proportion 0.90; }
         default-window-height { proportion 0.90; }
     }
@@ -29,12 +35,14 @@
         match app-id="steam"
         exclude title=r#"^[Ss]team$"#
         open-floating true
+        open-maximized false
     }
 
     window-rule {
        match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
        default-floating-position x=10 y=10 relative-to="bottom-right"
        open-focused false
+       open-maximized false
     }
 
     layer-rule {
