@@ -13,6 +13,7 @@ input {
 
     touchpad {
         tap // Enable tap-to-click
+        scroll-factor 0.75 // Slower touchpad scrolling (default 1.0)
     }
 
     mouse {
