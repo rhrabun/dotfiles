@@ -18,3 +18,6 @@ enabled = ["kenn/keybind-cheatsheet"]
 [plugin_settings."kenn/keybind-cheatsheet"]
 compositor = "niri"
 show_undescribed = false
+
+[audio]
+enable_volume_sounds = false
