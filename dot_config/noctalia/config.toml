@@ -1,2 +1,8 @@
 [shell]
 polkit_agent = true
+
+[bar.default]
+smart_auto_hide = true
+start = ["session", "launcher", "wallpaper", "workspaces"]
+center = ["clipboard", "clock", "notifications"]
+end = ["volume", "network", "battery", "tray", "bluetooth", "brightness", "control-center"]
