@@ -19,7 +19,6 @@ Library
 .config/noctalia
 .config/Code
 .config/voxtype
-.config/opencode/tui.json
 {{- end }}
 
 # Windows only
