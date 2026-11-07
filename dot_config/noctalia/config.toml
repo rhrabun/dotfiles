@@ -8,8 +8,8 @@ font_family = "Inter"
 [bar.default]
 smart_auto_hide = true
 reserve_space = false
-start = ["control-center", "launcher", "workspaces"]
-center = ["clipboard", "clock", "notifications"]
+start = ["workspaces"]
+center = ["launcher", "control-center", "clock", "notifications", "clipboard"]
 end = ["tray", "sysmon", "volume", "network", "battery"]
 
 [plugins]
