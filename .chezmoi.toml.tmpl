@@ -1,5 +1,9 @@
+{{ $profile := promptStringOnce . "profile" "Profile (personal/work)" "personal" -}}
 verbose = true
 encryption = "age"
+
+[data]
+    profile = {{ $profile | quote }}
 
 [age]
     identity = "{{ .chezmoi.homeDir }}/.config/chezmoi/key.txt"
