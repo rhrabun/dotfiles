@@ -1,6 +1,6 @@
 [settings]
-not_found_auto_install = false
 minimum_release_age = "7d"
+not_found_auto_install = false
 tool_update.global_auto = true
 locked_verify_provenance = true
 
@@ -12,6 +12,7 @@ ruff = "latest"
 awscli = "latest"
 lazygit = "latest"
 terraform = "1.16"
+pre-commit="latest"
 lazydocker = "latest"
 
 node = { version = "latest", os = ["linux"] }
