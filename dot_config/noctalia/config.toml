@@ -10,10 +10,10 @@ smart_auto_hide = true
 reserve_space = false
 start = ["workspaces"]
 center = ["launcher", "control-center", "clock", "notifications", "clipboard"]
-end = ["tray", "sysmon", "volume", "network", "battery"]
+end = ["tray", "sysmon", "volume", "davemhammer/tailscale:status", "network", "battery"]
 
 [plugins]
-enabled = ["kenn/keybind-cheatsheet"]
+enabled = ["kenn/keybind-cheatsheet", "davemhammer/tailscale"]
 
 [plugin_settings."kenn/keybind-cheatsheet"]
 compositor = "niri"
