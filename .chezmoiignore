@@ -8,6 +8,8 @@ README.md
 {{- if eq (.profile | default "personal") "work" }}
 .config/opencode
 .ssh
+.gitconfig
+.local/bin
 {{- end }}
 
 # macOS only
