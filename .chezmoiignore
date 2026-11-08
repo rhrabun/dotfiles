@@ -4,6 +4,13 @@ README.md
 .gitignore
 .pre-commit-config.yaml
 
+# Unused tools, kept in the repo for later
+.config/herdr
+.config/lazydocker
+.config/tmux
+.config/zed
+.config/zellij
+
 # Work profile: personal config stays off the machine
 {{- if eq (.profile | default "personal") "work" }}
 .config/opencode
