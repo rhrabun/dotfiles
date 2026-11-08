@@ -9,6 +9,13 @@
       "rex-community": {
         "type": "remote",
         "url": "https://www.superlogical.com/rex/community-mcp"
+      },
+      "executor": {
+        "type": "remote",
+        "url": "{file:~/.config/opencode/executor/url}",
+        "headers": {
+          "Authorization": "Bearer {file:~/.config/opencode/executor/token}"
+        }
       }
     }
   }
