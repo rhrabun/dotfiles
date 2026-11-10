@@ -2,6 +2,11 @@
   "$schema": "https://opencode.ai/config.json",
   "model": "~deepseek/deepseek-v4-flash-latest",
   "update": "disable",
+  "agents": {
+    "oracle": {
+      "model": "opencode-go/deepseek-v4-pro#max"
+    }
+  },
   "references": {
   },
   "mcp": {
