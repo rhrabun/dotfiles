@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+# sync Time Machine path exclusions from ~/.config/tm-excludes.conf (add-only)
+
+set -euo pipefail
+
+CONF="${TM_EXCLUDES_CONF:-$HOME/.config/tm-excludes.conf}"
+DRY=0
+case "${1:-}" in -n|--dry-run) DRY=1 ;; esac
+
+[ -f "$CONF" ] || { echo "missing config: $CONF" >&2; exit 1; }
+
+paths=()
+while IFS= read -r raw || [ -n "$raw" ]; do
+  line="${raw%%#*}"
+  line="${line#"${line%%[![:space:]]*}"}"
+  line="${line%"${line##*[![:space:]]}"}"
+  [ -z "$line" ] && continue
+  paths+=( "${line/#\~/$HOME}" )
+done < "$CONF"
+
+toadd=()
+already=0
+missing=0
+for p in ${paths[@]+"${paths[@]}"}; do
+  if [ ! -d "$p" ]; then
+    printf 'skip (missing): %s\n' "$p"
+    missing=$((missing + 1))
+    continue
+  fi
+  if tmutil isexcluded "$p" 2>/dev/null | grep -q '\[Excluded\]'; then
+    already=$((already + 1))
+    continue
+  fi
+  toadd+=( "$p" )
+done
+
+if [ "$DRY" -eq 1 ]; then
+  printf 'would add %d path(s):\n' "${#toadd[@]}"
+  printf '  %s\n' ${toadd[@]+"${toadd[@]}"}
+else
+  # -p (fixed path) needs root; sticky default is a lot slower and does not
+  # survive the directory being deleted and recreated.
+  sudo -v
+  for p in ${toadd[@]+"${toadd[@]}"}; do
+    sudo tmutil addexclusion -p "$p"
+    printf '  excluded %s\n' "$p"
+  done
+fi
+
+failed=0
+if [ "$DRY" -eq 0 ]; then
+  for p in ${toadd[@]+"${toadd[@]}"}; do
+    tmutil isexcluded "$p" 2>/dev/null | grep -q '\[Excluded\]' || { echo "not excluded: $p" >&2; failed=$((failed + 1)); }
+  done
+fi
+
+printf 'added: %d, already excluded: %d, missing on disk: %d, failed: %d\n' "${#toadd[@]}" "$already" "$missing" "$failed"
+[ "$failed" -eq 0 ]
