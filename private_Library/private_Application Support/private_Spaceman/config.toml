@@ -1,0 +1,78 @@
+# Spaceman configuration.
+version = 1
+
+[settings]
+hud = true
+hud_style = "icons"
+
+# Workspaces - Monitors mapping
+[[workspaces]]
+workspace = 1
+monitor = "main"
+
+[[workspaces]]
+workspace = 2
+monitor = "main"
+
+[[workspaces]]
+workspace = 3
+monitor = "secondary"
+
+[[workspaces]]
+workspace = 4
+monitor = "secondary"
+
+[[workspaces]]
+workspace = 5
+monitor = "secondary"
+
+[[workspaces]]
+workspace = 6
+monitor = "secondary"
+
+[[workspaces]]
+workspace = 7
+monitor = "secondary"
+
+[[workspaces]]
+workspace = 8
+monitor = "secondary"
+
+[[workspaces]]
+workspace = 9
+monitor = "secondary"
+
+[[workspaces]]
+workspace = 10
+monitor = "secondary"
+
+# Apps - Workspaces mapping
+[[rules]]
+bundle_id = "com.tdesktop.Telegram"
+action = "route"
+workspace = 2
+
+[[rules]]
+bundle_id = "ch.protonmail.desktop"
+action = "route"
+workspace = 1
+
+[[rules]]
+bundle_id = "app.zen-browser.zen"
+action = "route"
+workspace = 3
+
+[[rules]]
+bundle_id = "com.superlogical.rex"
+action = "route"
+workspace = 4
+
+[[rules]]
+bundle_id = "com.microsoft.VSCode"
+action = "route"
+workspace = 4
+
+# Other mappings
+[[rules]]
+bundle_id = "com.apple.finder"
+action = "float"
