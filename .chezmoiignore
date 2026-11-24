@@ -10,6 +10,7 @@ README.md
 .config/tmux
 .config/zed
 .config/zellij
+.config/aerospace
 
 # Work profile: personal config stays off the machine
 {{- if eq (.profile | default "personal") "work" }}
