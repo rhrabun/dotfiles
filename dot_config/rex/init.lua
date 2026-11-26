@@ -1,4 +1,5 @@
 -- General
+rex.bind("ctrl+[Backquote]", "client.quick_terminal.toggle")
 rex.bind("cmd+shift+i", "pane.insert_path")
 rex.bind("cmd+shift+.", "client.sidebar.activity.toggle")
 
