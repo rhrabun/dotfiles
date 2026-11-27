@@ -50,6 +50,11 @@
       "~/Applications"
     ],
     "apps": {
+      "com.apple.ExpansionSlotUtility": {
+        "shortcut": null,
+        "alias": null,
+        "showInLauncher": false
+      },
       "com.nvidia.gfnpc.mall": {
         "shortcut": null,
         "alias": "gfn",
