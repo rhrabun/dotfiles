@@ -184,6 +184,33 @@
                                     }
                                 ],
                                 "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "ai_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "escape"
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "ai_layer",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -214,6 +241,11 @@
                                     },
                                     {
                                         "name": "files_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "ai_layer",
                                         "type": "variable_if",
                                         "value": 0
                                     }
@@ -517,6 +549,11 @@
                                     },
                                     {
                                         "name": "files_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "ai_layer",
                                         "type": "variable_if",
                                         "value": 0
                                     }
@@ -1182,6 +1219,11 @@
                                         "name": "files_layer",
                                         "type": "variable_if",
                                         "value": 0
+                                    },
+                                    {
+                                        "name": "ai_layer",
+                                        "type": "variable_if",
+                                        "value": 0
                                     }
                                 ],
                                 "from": {
@@ -1397,6 +1439,11 @@
                                     },
                                     {
                                         "name": "files_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "ai_layer",
                                         "type": "variable_if",
                                         "value": 0
                                     }
@@ -1631,6 +1678,303 @@
                         ]
                     },
                     {
+                        "description": "Hyper+A: arm AI layer",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "todoist_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "apps_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "obsidian_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "files_layer",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": "AI"
+                                        }
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "ai_layer",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "AI layer: F = Fix Grammar",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "ai_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -g 'tinycast://command/fix-grammar'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "ai_layer",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "AI layer: R = Rewrite",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "ai_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -g 'tinycast://command/rewrite'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "ai_layer",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "AI layer: S = Summarize",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "ai_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -g 'tinycast://command/summarize'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "ai_layer",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "AI layer: T = Translate",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "ai_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -g 'tinycast://command/translate'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "ai_layer",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "AI layer: Q = Quick AI",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "ai_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "q",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open 'tinycast://command/ai-chat'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "ai_layer",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "AI layer: C = AI Chat window",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "ai_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open 'tinycast://command/ai-chat-window'"
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "ai_layer",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer",
+                                            "text": ""
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Hyper+Left: Window Left Half",
                         "manipulators": [
                             {
@@ -1651,7 +1995,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -g 'raycast://extensions/raycast/window-management/left-half'"
+                                        "shell_command": "open -g 'tinycast://window-command/left-half'"
                                     }
                                 ],
                                 "type": "basic"
@@ -1679,7 +2023,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -g 'raycast://extensions/raycast/window-management/right-half'"
+                                        "shell_command": "open -g 'tinycast://window-command/right-half'"
                                     }
                                 ],
                                 "type": "basic"
@@ -1707,7 +2051,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -g 'raycast://extensions/raycast/window-management/make-larger'"
+                                        "shell_command": "open -g 'tinycast://window-command/make-larger'"
                                     }
                                 ],
                                 "type": "basic"
@@ -1735,7 +2079,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -g 'raycast://extensions/raycast/window-management/make-smaller'"
+                                        "shell_command": "open -g 'tinycast://window-command/make-smaller'"
                                     }
                                 ],
                                 "type": "basic"
@@ -1763,7 +2107,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -g 'raycast://extensions/raycast/window-management/maximize'"
+                                        "shell_command": "open -g 'tinycast://window-command/maximize'"
                                     }
                                 ],
                                 "type": "basic"
@@ -1791,7 +2135,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -g 'raycast://extensions/raycast/window-management/center'"
+                                        "shell_command": "open -g 'tinycast://window-command/center'"
                                     }
                                 ],
                                 "type": "basic"
@@ -1819,7 +2163,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -g 'raycast://extensions/raycast/window-management/restore'"
+                                        "shell_command": "open -g 'tinycast://window-command/restore'"
                                     }
                                 ],
                                 "type": "basic"
