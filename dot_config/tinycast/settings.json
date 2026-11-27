@@ -68,7 +68,13 @@
   },
   "systemActions": {
     "enabled": true,
-    "actions": {}
+    "actions": {
+      "lock-screen": {
+        "shortcut": "ctrl+cmd+l",
+        "alias": null,
+        "showInLauncher": true
+      }
+    }
   },
   "commands": {
     "builtInEnabled": true,
