@@ -89,7 +89,7 @@
   },
   "quicklinks": {
     "enabled": true,
-    "showInLauncher": false,
+    "showInLauncher": true,
     "opensNewWindow": false,
     "passesSelectedText": false,
     "confirmsBeforeDelete": true,
